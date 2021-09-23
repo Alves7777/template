@@ -19,10 +19,10 @@ class TopbarRequest extends FormRequest
             'icon_phone' => ['required'],
             'phone' => ['required'],
             'color_top_bar' => ['required'],
-            'icon_1' => ['required'],
-            'icon_2' => ['required'],
-            'icon_3' => ['required'],
-            'icon_4' => ['required'],
+            'icon_1' => ['sometimes'],
+            'icon_2' => ['sometimes'],
+            'icon_3' => ['sometimes'],
+            'icon_4' => ['sometimes'],
         ];
     }
 

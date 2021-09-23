@@ -23,17 +23,17 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <p><strong>Título_1: </strong>{{ $navbar->titulo_1  }}</p>
-                    <p><strong>Título_2: </strong>{{ $navbar->titulo_2  }}</p>
-                    <p><strong>Título_3: </strong>{{ $navbar->titulo_3  }}</p>
-                    <p><strong>Título_4: </strong>{{ $navbar->titulo_4  }}</p>
-                    <p><strong>Título_5: </strong>{{ $navbar->titulo_5  }}</p>
-                    <p><strong>Título_6: </strong>{{ $navbar->titulo_6  }}</p>
-                    <p><strong>Título_7: </strong>{{ $navbar->titulo_7  }}</p>
-                    <p><strong>Título_8: </strong>{{ $navbar->titulo_8  }}</p>
-                    <p><strong>Título_9: </strong>{{ $navbar->titulo_9  }}</p>
-                    <p><strong>Título_10: </strong>{{ $navbar->titulo_10  }}</p>
-                    <p><strong>Título_11: </strong>{{ $navbar->titulo_11  }}</p>
+                    <p><strong>Título_1: </strong>{{ $navbar->title_1  }}</p>
+                    <p><strong>Título_2: </strong>{{ $navbar->title_2  }}</p>
+                    <p><strong>Título_3: </strong>{{ $navbar->title_3  }}</p>
+                    <p><strong>Título_4: </strong>{{ $navbar->title_4  }}</p>
+                    <p><strong>Título_5: </strong>{{ $navbar->title_5  }}</p>
+                    <p><strong>Título_6: </strong>{{ $navbar->title_6  }}</p>
+                    <p><strong>Título_7: </strong>{{ $navbar->title_7  }}</p>
+                    <p><strong>Título_8: </strong>{{ $navbar->title_8  }}</p>
+                    <p><strong>Título_9: </strong>{{ $navbar->title_9  }}</p>
+                    <p><strong>Título_10: </strong>{{ $navbar->title_10  }}</p>
+                    <p><strong>Título_11: </strong>{{ $navbar->title_11  }}</p>
 {{--                    <p><strong>Foto:</strong><br>--}}
 {{--                        <img src="{{ asset("/storage/$navbar->photo") }}"--}}
 {{--                             alt="{{ $navbar->name }}"--}}

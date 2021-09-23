@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Navbar;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Navbar\TopbarRequest;
+use App\Http\Requests\Navbar\NavbarRequest;
 use App\Models\NavBar\Navbar;
 use App\Services\Navbar\NavbarService;
 use Exception;
@@ -44,7 +44,7 @@ class NavbarController extends Controller
     }
     }
 
-    public function store(TopbarRequest $request): RedirectResponse
+    public function store(NavbarRequest $request): RedirectResponse
     {
         try {
             $this->navbarService->create($request->validated());
@@ -71,14 +71,14 @@ class NavbarController extends Controller
     {
         try {
             $navbar = $this->navbarService->findOrFail($id);
-            return view('navbar.show', compact('navbar'));
+            return view('navbar.edit', compact('navbar'));
         } catch (Exception $e) {
             alert()->error($this->title . " não encontrada.");
             return redirect()->back();
         }
     }
 
-    public function update(TopbarRequest $request, $id): RedirectResponse
+    public function update(NavbarRequest $request, $id): RedirectResponse
     {
         try {
             $this->navbarService->update($id, $request->validated());

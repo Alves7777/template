@@ -14,18 +14,19 @@ class NavbarRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title_1' => ['required'],
-            'title_2' => ['required'],
-            'title_3' => ['required'],
-            'title_4' => ['required'],
-            'title_5' => ['required'],
-            'title_6' => ['required'],
-            'title_7' => ['required'],
-            'title_8' => ['required'],
-            'title_9' => ['required'],
-            'title_10' => ['required'],
-            'title_11' => ['required'],
-            'logo' => ['required']
+            'title_1' => ['sometimes'],
+            'title_2' => ['sometimes'],
+            'title_3' => ['sometimes'],
+            'title_4' => ['sometimes'],
+            'title_5' => ['sometimes'],
+            'title_6' => ['sometimes'],
+
+            'title_7' => ['sometimes'],
+            'title_8' => ['sometimes'],
+            'title_9' => ['sometimes'],
+            'title_10' => ['sometimes'],
+            'title_11' => ['sometimes'],
+            'logo' => ['sometimes']
         ];
     }
 

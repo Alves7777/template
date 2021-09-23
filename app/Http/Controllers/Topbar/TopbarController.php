@@ -25,13 +25,13 @@ class TopbarController extends Controller
 
     public function index()
     {
-//        try {
+        try {
             $topbar = $this->topbarService->all();
             return view($this->route_index, compact('topbar', 'topbar'));
-//        } catch (Exception $e) {
-//            alert()->error('Ops', 'Algo deu errado.');
-//            return redirect()->back();
-//        }
+        } catch (Exception $e) {
+            alert()->error('Ops', 'Algo deu errado.');
+            return redirect()->back();
+        }
     }
 
     public function create()
@@ -71,7 +71,7 @@ class TopbarController extends Controller
     {
         try {
             $topbar = $this->topbarService->findOrFail($id);
-            return view('topbar.show', compact('topbar'));
+            return view('topbar.edit', compact('topbar'));
         } catch (Exception $e) {
             alert()->error($this->title . " não encontrada.");
             return redirect()->back();
