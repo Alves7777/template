@@ -1233,7 +1233,7 @@ module.exports = (
 /**
  * Determines whether the specified URL is absolute
  *
- * @param {string} url The URL to test
+ * @param {string} url The URL to sectionone
  * @returns {boolean} True if the specified URL is absolute, otherwise false
  */
 module.exports = function isAbsoluteURL(url) {
@@ -1258,7 +1258,7 @@ module.exports = function isAbsoluteURL(url) {
 /**
  * Determines whether the payload is an error thrown by Axios
  *
- * @param {*} payload The value to test
+ * @param {*} payload The value to sectionone
  * @returns {boolean} True if the payload is an error thrown by Axios, otherwise false
  */
 module.exports = function isAxiosError(payload) {
@@ -1282,7 +1282,7 @@ var utils = __webpack_require__(/*! ./../utils */ "./node_modules/axios/lib/util
 module.exports = (
   utils.isStandardBrowserEnv() ?
 
-  // Standard browser envs have full support of the APIs needed to test
+  // Standard browser envs have full support of the APIs needed to sectionone
   // whether the request URL is of the same origin as current location.
     (function standardBrowserEnv() {
       var msie = /(msie|trident)/i.test(navigator.userAgent);
@@ -1326,7 +1326,7 @@ module.exports = (
       /**
     * Determine if a URL shares the same origin as the current location
     *
-    * @param {String} requestURL The URL to test
+    * @param {String} requestURL The URL to sectionone
     * @returns {boolean} True if URL shares the same origin, otherwise false
     */
       return function isURLSameOrigin(requestURL) {
@@ -1492,7 +1492,7 @@ var toString = Object.prototype.toString;
 /**
  * Determine if a value is an Array
  *
- * @param {Object} val The value to test
+ * @param {Object} val The value to sectionone
  * @returns {boolean} True if value is an Array, otherwise false
  */
 function isArray(val) {
@@ -1502,7 +1502,7 @@ function isArray(val) {
 /**
  * Determine if a value is undefined
  *
- * @param {Object} val The value to test
+ * @param {Object} val The value to sectionone
  * @returns {boolean} True if the value is undefined, otherwise false
  */
 function isUndefined(val) {
@@ -1512,7 +1512,7 @@ function isUndefined(val) {
 /**
  * Determine if a value is a Buffer
  *
- * @param {Object} val The value to test
+ * @param {Object} val The value to sectionone
  * @returns {boolean} True if value is a Buffer, otherwise false
  */
 function isBuffer(val) {
@@ -1523,7 +1523,7 @@ function isBuffer(val) {
 /**
  * Determine if a value is an ArrayBuffer
  *
- * @param {Object} val The value to test
+ * @param {Object} val The value to sectionone
  * @returns {boolean} True if value is an ArrayBuffer, otherwise false
  */
 function isArrayBuffer(val) {
@@ -1533,7 +1533,7 @@ function isArrayBuffer(val) {
 /**
  * Determine if a value is a FormData
  *
- * @param {Object} val The value to test
+ * @param {Object} val The value to sectionone
  * @returns {boolean} True if value is an FormData, otherwise false
  */
 function isFormData(val) {
@@ -1543,7 +1543,7 @@ function isFormData(val) {
 /**
  * Determine if a value is a view on an ArrayBuffer
  *
- * @param {Object} val The value to test
+ * @param {Object} val The value to sectionone
  * @returns {boolean} True if value is a view on an ArrayBuffer, otherwise false
  */
 function isArrayBufferView(val) {
@@ -1559,7 +1559,7 @@ function isArrayBufferView(val) {
 /**
  * Determine if a value is a String
  *
- * @param {Object} val The value to test
+ * @param {Object} val The value to sectionone
  * @returns {boolean} True if value is a String, otherwise false
  */
 function isString(val) {
@@ -1569,7 +1569,7 @@ function isString(val) {
 /**
  * Determine if a value is a Number
  *
- * @param {Object} val The value to test
+ * @param {Object} val The value to sectionone
  * @returns {boolean} True if value is a Number, otherwise false
  */
 function isNumber(val) {
@@ -1579,7 +1579,7 @@ function isNumber(val) {
 /**
  * Determine if a value is an Object
  *
- * @param {Object} val The value to test
+ * @param {Object} val The value to sectionone
  * @returns {boolean} True if value is an Object, otherwise false
  */
 function isObject(val) {
@@ -1589,7 +1589,7 @@ function isObject(val) {
 /**
  * Determine if a value is a plain Object
  *
- * @param {Object} val The value to test
+ * @param {Object} val The value to sectionone
  * @return {boolean} True if value is a plain Object, otherwise false
  */
 function isPlainObject(val) {
@@ -1604,7 +1604,7 @@ function isPlainObject(val) {
 /**
  * Determine if a value is a Date
  *
- * @param {Object} val The value to test
+ * @param {Object} val The value to sectionone
  * @returns {boolean} True if value is a Date, otherwise false
  */
 function isDate(val) {
@@ -1614,7 +1614,7 @@ function isDate(val) {
 /**
  * Determine if a value is a File
  *
- * @param {Object} val The value to test
+ * @param {Object} val The value to sectionone
  * @returns {boolean} True if value is a File, otherwise false
  */
 function isFile(val) {
@@ -1624,7 +1624,7 @@ function isFile(val) {
 /**
  * Determine if a value is a Blob
  *
- * @param {Object} val The value to test
+ * @param {Object} val The value to sectionone
  * @returns {boolean} True if value is a Blob, otherwise false
  */
 function isBlob(val) {
@@ -1634,7 +1634,7 @@ function isBlob(val) {
 /**
  * Determine if a value is a Function
  *
- * @param {Object} val The value to test
+ * @param {Object} val The value to sectionone
  * @returns {boolean} True if value is a Function, otherwise false
  */
 function isFunction(val) {
@@ -1644,7 +1644,7 @@ function isFunction(val) {
 /**
  * Determine if a value is a Stream
  *
- * @param {Object} val The value to test
+ * @param {Object} val The value to sectionone
  * @returns {boolean} True if value is a Stream, otherwise false
  */
 function isStream(val) {
@@ -1654,7 +1654,7 @@ function isStream(val) {
 /**
  * Determine if a value is a URLSearchParams object
  *
- * @param {Object} val The value to test
+ * @param {Object} val The value to sectionone
  * @returns {boolean} True if value is a URLSearchParams object, otherwise false
  */
 function isURLSearchParams(val) {
@@ -13501,7 +13501,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
      * @example
      *
      * function isGreeting(value) {
-     *   return /^h(?:i|ello)$/.test(value);
+     *   return /^h(?:i|ello)$/.sectionone(value);
      * }
      *
      * function customizer(objValue, othValue) {
@@ -13793,7 +13793,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
      * @example
      *
      * function isGreeting(value) {
-     *   return /^h(?:i|ello)$/.test(value);
+     *   return /^h(?:i|ello)$/.sectionone(value);
      * }
      *
      * function customizer(objValue, srcValue) {
@@ -17477,7 +17477,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
      * // Create custom iteratee shorthands.
      * _.iteratee = _.wrap(_.iteratee, function(iteratee, func) {
      *   return !_.isRegExp(func) ? iteratee(func) : function(string) {
-     *     return func.test(string);
+     *     return func.sectionone(string);
      *   };
      * });
      *
@@ -17644,7 +17644,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
      *
      * function vowels(string) {
      *   return _.filter(string, function(v) {
-     *     return /[aeiou]/i.test(v);
+     *     return /[aeiou]/i.sectionone(v);
      *   });
      * }
      *
@@ -19106,7 +19106,7 @@ throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugi
 // shim for using process in browser
 var process = module.exports = {};
 
-// cached from whatever global is present so that test runners that stub it
+// cached from whatever global is present so that sectionone runners that stub it
 // don't break things.  But we need to wrap it in a try catch in case it is
 // wrapped in strict mode code which doesn't define any globals.  It's inside a
 // function because try/catches deoptimize in certain engines.
@@ -19295,7 +19295,7 @@ process.umask = function() { return 0; };
 /************************************************************************/
 /******/ 	// The module cache
 /******/ 	var __webpack_module_cache__ = {};
-/******/ 	
+/******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/ 		// Check if module is in cache
@@ -19309,17 +19309,17 @@ process.umask = function() { return 0; };
 /******/ 			loaded: false,
 /******/ 			exports: {}
 /******/ 		};
-/******/ 	
+/******/
 /******/ 		// Execute the module function
 /******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/ 	
+/******/
 /******/ 		// Flag the module as loaded
 /******/ 		module.loaded = true;
-/******/ 	
+/******/
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-/******/ 	
+/******/
 /************************************************************************/
 /******/ 	/* webpack/runtime/global */
 /******/ 	(() => {
@@ -19332,7 +19332,7 @@ process.umask = function() { return 0; };
 /******/ 			}
 /******/ 		})();
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/node module decorator */
 /******/ 	(() => {
 /******/ 		__webpack_require__.nmd = (module) => {
@@ -19341,14 +19341,14 @@ process.umask = function() { return 0; };
 /******/ 			return module;
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /************************************************************************/
-/******/ 	
+/******/
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	__webpack_require__("./resources/js/app.js");
 /******/ 	// This entry module doesn't tell about it's top-level declarations so it can't be inlined
 /******/ 	var __webpack_exports__ = __webpack_require__("./resources/css/app.css");
-/******/ 	
+/******/
 /******/ })()
 ;

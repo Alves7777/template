@@ -4,7 +4,7 @@
         <div class="card-body">
             <div class="form-group">
                 {{Form::label('logo', 'Logo', ['class' => 'control-label'])}}
-                {{ Form::file('logo',$navbar->logo ?? old('logo'), ['placeholder' => 'Informe o título', 'class'=>'form-control'])}}
+                {{ Form::file('logo',$navbar->logo ?? old('logo'), ['accept'=>'image/*','placeholder' => 'Informe o título', 'class'=>'form-control'])}}
             </div>
             <div class="form-group">
                 {{ Form::label('title_1', 'Titulo 1', ['class' => 'control-label']) }}

@@ -8,6 +8,7 @@ use App\Traits\UploadFile;
 class SectionOneService
 {
     private SectionOneRepository $sectionOneRepository;
+    use UploadFile;
 
     public function __construct(SectionOneRepository $sectionOneRepository)
     {
@@ -21,6 +22,10 @@ class SectionOneService
 
     public function create(array $property)
     {
+        if (!empty($property['image'])) {
+            $property['image'] = $this->uploadPhoto($property['image']);
+        }
+
         return $this->sectionOneRepository->create($property);
     }
 

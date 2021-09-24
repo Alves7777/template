@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\NavBar\Navbar;
+use App\Models\SectionOne\SectionOne;
 use App\Models\Topbar\Topbar;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -19,5 +20,6 @@ class Controller extends BaseController
     {
         View::share( 'navbar', Navbar::all());
         View::share( 'topbar', Topbar::all());
+        View::share( 'sectionone', SectionOne::all());
     }
 }

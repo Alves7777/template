@@ -26,8 +26,8 @@ class SectionOneController extends Controller
     public function index()
     {
         try {
-            $sectionOne = $this->sectionOneService->all();
-            return view($this->route_index, compact('sectionOne', 'sectionOne'));
+            $sectionone = $this->sectionOneService->all();
+            return view($this->route_index, compact('sectionone'));
         } catch (Exception $e) {
             alert()->error('Ops', 'Algo deu errado.');
             return redirect()->back();
@@ -37,11 +37,11 @@ class SectionOneController extends Controller
     public function create()
     {
         try {
-        return view('sectionone.create');
-    } catch (Exception $e) {
-        alert()->error($this->title . " não encontrada.");
-        return redirect()->back();
-    }
+            return view('sectionone.create');
+        } catch (Exception $e) {
+            alert()->error($this->title . " não encontrada.");
+            return redirect()->back();
+        }
     }
 
     public function store(SectionOneRequest $request): RedirectResponse
@@ -59,8 +59,8 @@ class SectionOneController extends Controller
     public function show($id)
     {
         try {
-            $sectionOne = $this->sectionOneService->findOrFail($id);
-            return view('sectionone.show', compact('sectionOne'));
+            $sectionone = $this->sectionOneService->findOrFail($id);
+            return view('sectionone.show', compact('sectionone'));
         } catch (Exception $e) {
             alert()->error($this->title . " não encontrada.");
             return redirect()->back();
@@ -70,8 +70,8 @@ class SectionOneController extends Controller
     public function edit($id)
     {
         try {
-            $sectionOne = $this->sectionOneService->findOrFail($id);
-            return view('sectionone.edit', compact('sectionOne'));
+            $sectionone = $this->sectionOneService->findOrFail($id);
+            return view('sectionone.edit', compact('sectionone'));
         } catch (Exception $e) {
             alert()->error($this->title . " não encontrada.");
             return redirect()->back();

@@ -20,6 +20,7 @@ class SectionOneRequest extends FormRequest
             'text_button'=> ['sometimes'],
             'color_button'=> ['sometimes'],
             'url_button'=> ['sometimes'],
+
             'text_video'=> ['sometimes'],
             'url_video'=> ['sometimes'],
             'icon_video'=> ['sometimes'],

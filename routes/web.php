@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Site\HomeController;
 use App\Routes\Navbar\NavbarRoute;
+use App\Routes\SectionOne\SectionOneRoute;
 use App\Routes\Topbar\TopbarRoute;
 use Illuminate\Support\Facades\Route;
 
@@ -20,3 +21,5 @@ Route::get('/contato', function () {
 
 NavbarRoute::routes();
 TopbarRoute::routes();
+SectionOneRoute::routes();
+
