@@ -9,14 +9,14 @@
         <div class="container d-flex justify-content-center justify-content-md-between">
             <div class="contact-info d-flex align-items-center">
                 <i class="{{ $topbars->icon_email }} d-flex align-items-center"><a
-                        href="mailto:contact@example.com">{{ $topbars->email }}</a></i>
+                        href="{{ $topbars->link_email }}">{{ $topbars->email }}</a></i>
                 <i class="{{ $topbars->icon_phone }} d-flex align-items-center ms-4"><span>{{ $topbars->phone }}</span></i>
             </div>
             <div class="social-links d-none d-md-flex align-items-center">
-                <a href="#" class="twitter"><i class="{{ $topbars->icon_1 }}"></i></a>
-                <a href="#" class="facebook"><i class="{{ $topbars->icon_2 }}"></i></a>
-                <a href="#" class="instagram"><i class="{{ $topbars->icon_3 }}"></i></a>
-                <a href="#" class="linkedin"><i class="{{ $topbars->icon_4 }}"></i></a>
+                <a href="{{ $topbars->link_icon_1 }}" class="twitter"><i class="{{ $topbars->icon_1 }}"></i></a>
+                <a href="{{ $topbars->link_icon_2 }}" class="facebook"><i class="{{ $topbars->icon_2 }}"></i></a>
+                <a href="{{ $topbars->link_icon_3 }}" class="instagram"><i class="{{ $topbars->icon_3 }}"></i></a>
+                <a href="{{ $topbars->link_icon_4 }}" class="linkedin"><i class="{{ $topbars->icon_4 }}"></i></a>
             </div>
         </div>
         @endforeach
@@ -27,28 +27,28 @@
             <div class="container d-flex align-items-center justify-content-between">
             {{--        <h1 class="logo"><a href="index.html">BizLand<span>.</span></a></h1>--}}
             <!-- Uncomment below if you prefer to use an image logo -->
-                <a href="index.html" class="">
+                <a href="/" class="">
                     <img src="{{ asset("/storage/$navbars->logo") }}"
                          alt="#"
-                         style="width: 162px; height: 75px">
+                         style="width: 162px; height: 70px">
                 </a>
                 <nav id="navbar" class="navbar">
                     <ul>
-                        <li><a class="nav-link scrollto active" href="#hero">{{$navbars->title_1}}</a></li>
-                        <li><a class="nav-link scrollto" href="#about">{{$navbars->title_2}}</a></li>
-                        <li><a class="nav-link scrollto" href="#services">{{$navbars->title_3}}</a></li>
-                        <li><a class="nav-link scrollto " href="#portfolio">{{$navbars->title_4}}</a></li>
-                        <li><a class="nav-link scrollto" href="#team">{{$navbars->title_5}}</a></li>
-                        <li class="dropdown"><a href="#"><span>{{$navbars->title_6}}</span> <i
+                        <li><a class="nav-link scrollto active" href="{{ $navbars->link_title_1 }}">{{$navbars->title_1}}</a></li>
+                        <li><a class="nav-link scrollto" href="{{ $navbars->link_title_2 }}">{{$navbars->title_2}}</a></li>
+                        <li><a class="nav-link scrollto" href="{{ $navbars->link_title_3 }}">{{$navbars->title_3}}</a></li>
+                        <li><a class="nav-link scrollto " href="{{ $navbars->link_title_4 }}">{{$navbars->title_4}}</a></li>
+                        <li><a class="nav-link scrollto" href="{{ $navbars->link_title_5 }}">{{$navbars->title_5}}</a></li>
+                        <li class="dropdown"><a href="{{ $navbars->link_title_6 }}"><span>{{$navbars->title_6}}</span> <i
                                     class="bi bi-chevron-down"></i></a>
                             <ul>
-                                <li><a href="#">{{$navbars->title_7}}</a></li>
-                                <li><a href="#">{{$navbars->title_8}}</a></li>
-                                <li><a href="#">{{$navbars->title_9}}</a></li>
-                                <li><a href="#">{{$navbars->title_10}}</a></li>
+                                <li><a href="{{ $navbars->link_title_7 }}">{{$navbars->title_7}}</a></li>
+                                <li><a href="{{ $navbars->link_title_8 }}">{{$navbars->title_8}}</a></li>
+                                <li><a href="{{ $navbars->link_title_9 }}">{{$navbars->title_9}}</a></li>
+                                <li><a href="{{ $navbars->link_title_10 }}">{{$navbars->title_10}}</a></li>
                             </ul>
                         </li>
-                        <li><a class="nav-link scrollto" href="#contact">{{$navbars->title_11}}</a></li>
+                        <li><a class="nav-link scrollto" href="{{ $navbars->link_title_11 }}">{{$navbars->title_11}}</a></li>
                     </ul>
                     <i class="bi bi-list mobile-nav-toggle"></i>
                     @endforeach

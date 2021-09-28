@@ -26,10 +26,6 @@
                 {{ Form::label('title_5', 'Titulo 5', ['class' => 'control-label']) }}
                 {{ Form::text('title_5', $navbar->title_5 ?? old('title_5'), ['placeholder' => 'Informe o título','class'=>'form-control'])}}
             </div>
-        </div>
-    </div>
-    <div class="col-6">
-        <div class="card-body">
             <div class="form-group">
                 {{Form::label('title_6', 'Titulo 6', ['class' => 'control-label'])}}
                 {{ Form::text('title_6', $navbar->title_6 ?? old('title_6'), ['placeholder' => 'Informe o título', 'class'=>'form-control'])}}
@@ -53,6 +49,54 @@
             <div class="form-group">
                 {{Form::label('title_11', 'Titulo 11', ['class' => 'control-label'])}}
                 {{ Form::text('title_11',$navbar->title_11 ?? old('title_11'), ['placeholder' => 'Informe o título', 'class'=>'form-control'])}}
+            </div>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="card-body">
+            <div class="form-group">
+                {{Form::label('link_title_1', 'Link Título 1', ['class' => 'control-label'])}}
+                {{ Form::text('link_title_1', $navbar->link_title_1 ?? old('link_title_1'), ['placeholder' => 'Informe o título', 'class'=>'form-control'])}}
+            </div>
+            <div class="form-group">
+                {{Form::label('link_title_2', 'Link Título 2', ['class' => 'control-label'])}}
+                {{ Form::text('link_title_2',$navbar->link_title_2 ?? old('link_title_2'), ['placeholder' => 'Informe o título', 'class'=>'form-control'])}}
+            </div>
+            <div class="form-group">
+                {{Form::label('link_title_3', 'Link Título 3', ['class' => 'control-label'])}}
+                {{ Form::text('link_title_3',$navbar->link_title_3 ?? old('link_title_3'), ['placeholder' => 'Informe o título', 'class'=>'form-control'])}}
+            </div>
+            <div class="form-group">
+                {{ Form::label('link_title_4', 'Link Título 4', ['class' => 'control-label']) }}
+                {{ Form::text('link_title_4', $navbar->link_title_4 ?? old('link_title_4'), ['placeholder' => 'Informe o título','class'=>'form-control'])}}
+            </div>
+            <div class="form-group">
+                {{Form::label('link_title_5', 'Link Título 5', ['class' => 'control-label'])}}
+                {{ Form::text('link_title_5', $navbar->link_title_5 ?? old('link_title_5'), ['placeholder' => 'Informe o título', 'class'=>'form-control'])}}
+            </div>
+            <div class="form-group">
+                {{Form::label('link_title_6', 'Link Título 6', ['class' => 'control-label'])}}
+                {{ Form::text('link_title_6', $navbar->link_title_6 ?? old('link_title_6'), ['placeholder' => 'Informe o título', 'class'=>'form-control'])}}
+            </div>
+            <div class="form-group">
+                {{Form::label('link_title_7', 'Link Título 7', ['class' => 'control-label'])}}
+                {{ Form::text('link_title_7',$navbar->link_title_7 ?? old('link_title_7'), ['placeholder' => 'Informe o título', 'class'=>'form-control'])}}
+            </div>
+            <div class="form-group">
+                {{Form::label('link_title_8', 'Link Título 8', ['class' => 'control-label'])}}
+                {{ Form::text('link_title_8',$navbar->link_title_8 ?? old('link_title_8'), ['placeholder' => 'Informe o título', 'class'=>'form-control'])}}
+            </div>
+            <div class="form-group">
+                {{ Form::label('link_title_9', 'Link Título 9', ['class' => 'control-label']) }}
+                {{ Form::text('link_title_9', $navbar->link_title_9 ?? old('link_title_9'), ['placeholder' => 'Informe o título','class'=>'form-control'])}}
+            </div>
+            <div class="form-group">
+                {{Form::label('link_title_10', 'Link Título 10', ['class' => 'control-label'])}}
+                {{ Form::text('link_title_10', $navbar->link_title_10 ?? old('link_title_10'), ['placeholder' => 'Informe o título', 'class'=>'form-control'])}}
+            </div>
+            <div class="form-group">
+                {{Form::label('link_title_11', 'Link Título 11', ['class' => 'control-label'])}}
+                {{ Form::text('link_title_11',$navbar->link_title_11 ?? old('link_title_11'), ['placeholder' => 'Informe o título', 'class'=>'form-control'])}}
             </div>
         </div>
     </div>
