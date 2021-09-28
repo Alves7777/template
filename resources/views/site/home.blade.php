@@ -1,29 +1,37 @@
 @extends('site.master.layout')
 
 @section('content')
+    @foreach($sectionone as $sectionones)
     <style>
-        /*#hero h1 span {*/
-        /*    color: blue;*/
-        /*}*/
-        /*#hero a span {*/
-        /*    color: blue;*/
-        /*}*/
+        #hero h1 span {
+            color: {{ $sectionones->color_title }};
+        }
+        #hero a span {
+            color: {{ $sectionones->color_text_video }};
+        }
 
-        /*#hero .btn-get-started {*/
-        /*    background-color: red;*/
-        /*}*/
+        #hero .btn-get-started {
+            background-color: {{ $sectionones->color_button }};
+        }
+
+        #hero {
+            background: url("{{ asset("/storage/$sectionones->image") }}");
+        }
+
     </style>
-    <section id="hero" class="d-flex align-items-center">
-        <div class="container" data-aos="zoom-out" data-aos-delay="100">
-            <h1>Welcome to <span>BizLand</span></h1>
-            <h2>We are team of talented designers making websites with Bootstrap</h2>
+    <section id="hero" class="d-flex align-items-center" >
+        <div class="container" id="test" data-aos="zoom-out" data-aos-delay="100">
+            <h1><span>{{ $sectionones->title }}</span></h1>
+            <h2>{{ $sectionones->description }}</h2>
             <div class="d-flex">
-                <a href="#about" class="btn-get-started scrollto">Get Started</a>
-                <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video">
-                    <i style="color: black" class="bi bi-play-circle"></i><span>Watch Video</span></a>
+                <a href="{{ $sectionones->url_button }}" class="btn-get-started scrollto">{{ $sectionones->text_button }}</a>
+                <a href="{{ $sectionones->url_video }}" class="glightbox btn-watch-video">
+                    <i style="color: {{ $sectionones->color_icon_video }}" class="{{ $sectionones->icon_video }}"></i><span>{{ $sectionones->text_video }}</span></a>
             </div>
         </div>
-    </section><!-- End Hero -->
+    </section>
+    @endforeach
+    <!-- End Hero -->
     <main id="main">
 
     <!-- ======= Featured Services Section ======= -->

@@ -23,6 +23,12 @@ class TopbarRequest extends FormRequest
             'icon_2' => ['sometimes'],
             'icon_3' => ['sometimes'],
             'icon_4' => ['sometimes'],
+            'link_phone' => ['sometimes'],
+            'link_email' => ['sometimes'],
+            'link_icon_1' => ['sometimes'],
+            'link_icon_2' => ['sometimes'],
+            'link_icon_3' => ['sometimes'],
+            'link_icon_4' => ['sometimes'],
         ];
     }
 

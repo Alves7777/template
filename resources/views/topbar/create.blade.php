@@ -29,12 +29,7 @@
     </div>
 @stop
 
-@section('css')
-@stop
 
-@section('js')
-    <script src="{{asset('js/jquery-mask-plugin/dist/jquery.mask.min.js')}}"></script>
-    <script src="{{asset('js/topbar/topbar.js')}}"></script>
-@stop
+
 
 

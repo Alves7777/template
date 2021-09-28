@@ -9,7 +9,7 @@ class CreateSectionOnesTable extends Migration
 
     public function up()
     {
-        Schema::create('sectionones', function (Blueprint $table) {
+        Schema::create('section_ones', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('title');
             $table->string('color_title')->default('#000000')->nullable();
@@ -24,13 +24,13 @@ class CreateSectionOnesTable extends Migration
             $table->string('color_text_video')->default('#000000')->nullable();
             $table->string('image')->nullable();
 
-            $table->timestamps();
             $table->softDeletes();
+            $table->timestamps();
         });
     }
 
     public function down()
     {
-        Schema::dropIfExists('sectionones');
+        Schema::dropIfExists('section_ones');
     }
 }
