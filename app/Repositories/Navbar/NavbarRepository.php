@@ -3,10 +3,12 @@
 namespace App\Repositories\Navbar;
 
 use App\Models\NavBar\Navbar;
+use App\Traits\UploadFile;
 
 class NavbarRepository
 {
     private Navbar $entity;
+    use UploadFile;
 
     public function __construct(Navbar $entity)
     {
@@ -32,6 +34,8 @@ class NavbarRepository
     {
         $navbar = $this->findOrFail($id);
         if (!empty($property)) {
+            self::removePhoto($navbar->logo);
+
             $navbar->update($property);
         }
         return $navbar;
@@ -40,6 +44,8 @@ class NavbarRepository
     public function delete(string $id)
     {
         $navbar = $this->findOrFail($id);
+        self::removePhoto($navbar->logo);
+
         return $navbar->delete();
     }
 

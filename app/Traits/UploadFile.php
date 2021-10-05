@@ -21,16 +21,11 @@ trait UploadFile
         return $uploadImages;
     }
 
-    public static function removePhoto(Request $request): bool
+    public static function removePhoto(string $photo = null): bool
     {
-//        $photoName = $request->get('photo');
-//        if (Storage::disk('public')->exists($photoName)) {
-//            Storage::disk('public')->delete($photoName);
-//        }
-//
-//        $removePhoto = RegisterCustomer::where('photo', $photoName);
-//        $removePhoto->delete();
-
+        if (Storage::disk('public')->exists($photo)) {
+            Storage::disk('public')->delete($photo);
+        }
         return false;
     }
 

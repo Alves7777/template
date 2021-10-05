@@ -35,6 +35,9 @@ class NavbarService
 
     public function update($id, array $property)
     {
+        if (!empty($property['logo'])) {
+            $property['logo'] = $this->uploadPhoto($property['logo']);
+        }
         return $this->navbarRepository->update($id, $property);
     }
 

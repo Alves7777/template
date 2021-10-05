@@ -2,9 +2,12 @@
 <div class="row">
     <div class="col-6">
         <div class="card-body">
+
             <div class="form-group">
-                {{Form::label('logo', 'Logo', ['class' => 'control-label'])}}
-                {{ Form::file('logo',$navbar->logo ?? old('logo'), ['accept'=>'image/*','placeholder' => 'Informe o título', 'class'=>'form-control'])}}
+                <label for="logo">Foto</label>
+                <input name="logo" value="{{ $navbar->logo ?? old('logo') }}" type="file" class="form-control"
+                       id="logo"
+                       placeholder="Enter logo">
             </div>
             <div class="form-group">
                 {{ Form::label('title_1', 'Titulo 1', ['class' => 'control-label']) }}
