@@ -51,8 +51,10 @@
                 {{ Form::color('color_text_video', $sectionone->color_text_video ?? old('color_text_video'), ['placeholder' => '','class'=>'form-control'])}}
             </div>
             <div class="form-group">
-                {{ Form::label('image', 'image', ['class' => 'control-label']) }}
-                {{ Form::file('image', $sectionone->image ?? old('image'), ['accept'=>'image/*','placeholder' => '','class'=>'form-control'])}}
+                <label for="image">Foto</label>
+                <input name="image" value="{{ $sectionone->image ?? old('image') }}" type="file" class="form-control"
+                       id="image"
+                       placeholder="Enter image">
             </div>
         </div>
     </div>
