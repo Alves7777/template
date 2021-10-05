@@ -36,6 +36,9 @@ class SectionOneService
 
     public function update($id, array $property)
     {
+        if (!empty($property['image'])) {
+            $property['image'] = $this->uploadPhoto($property['image']);
+        }
         return $this->sectionOneRepository->update($id, $property);
     }
 

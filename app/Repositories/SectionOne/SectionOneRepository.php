@@ -3,10 +3,12 @@
 namespace App\Repositories\SectionOne;
 
 use App\Models\SectionOne\SectionOne;
+use App\Traits\UploadFile;
 
 class SectionOneRepository
 {
     private SectionOne $entity;
+    use UploadFile;
 
     public function __construct(SectionOne $entity)
     {
@@ -32,6 +34,7 @@ class SectionOneRepository
     {
         $sectionOne = $this->findOrFail($id);
         if (!empty($property)) {
+            self::removePhoto($sectionOne->image);
             $sectionOne->update($property);
         }
         return $sectionOne;
@@ -40,6 +43,7 @@ class SectionOneRepository
     public function delete(string $id)
     {
         $sectionOne = $this->findOrFail($id);
+        self::removePhoto($sectionOne->image);
         return $sectionOne->delete();
     }
 
