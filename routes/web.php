@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\Pages\PagesController;
+use App\Http\Controllers\Site\_PagesController;
 use App\Http\Controllers\Site\HomeController;
 use App\Routes\Navbar\NavbarRoute;
+use App\Routes\Pages\PagesRoute;
 use App\Routes\SectionOne\SectionOneRoute;
 use App\Routes\Topbar\TopbarRoute;
 use Illuminate\Support\Facades\Route;
@@ -9,6 +12,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/',[HomeController::class, 'index']);
+Route::get('/page_1',[_PagesController::class, 'page_1']);
 
 
 Route::get('/cursos', function () {
@@ -22,4 +26,4 @@ Route::get('/contato', function () {
 NavbarRoute::routes();
 TopbarRoute::routes();
 SectionOneRoute::routes();
-
+PagesRoute::routes();
