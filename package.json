@@ -16,6 +16,7 @@
         "postcss": "^8.1.14"
     },
     "dependencies": {
-        "jquery.terminal": "^2.29.2"
+        "jquery.terminal": "^2.29.3",
+        "summernote": "^0.8.18"
     }
 }
