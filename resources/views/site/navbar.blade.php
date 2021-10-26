@@ -9,8 +9,9 @@
         <div class="container d-flex justify-content-center justify-content-md-between">
             <div class="contact-info d-flex align-items-center">
                 <i class="{{ $topbars->icon_email }} d-flex align-items-center"><a
-                        href="{{ $topbars->link_email }}">{{ $topbars->email }}</a></i>
-                <i class="{{ $topbars->icon_phone }} d-flex align-items-center ms-4"><span>{{ $topbars->phone }}</span></i>
+                        target="_blank" href="{{ $topbars->link_email }}">{{ $topbars->email }}</a></i>
+                <i class="p-2 {{ $topbars->icon_phone }} d-flex align-items-center"><a
+                        target="_blank" href="https://web.whatsapp.com/send?phone=55{{ $topbars->phone }}&text=Olá, entrei no site, gostaria de algumas informações.">{{ $topbars->phone }}</a></i>
             </div>
             <div class="social-links d-none d-md-flex align-items-center">
                 <a href="{{ $topbars->link_icon_1 }}" class="twitter"><i class="{{ $topbars->icon_1 }}"></i></a>
@@ -34,12 +35,18 @@
                 </a>
                 <nav id="navbar" class="navbar">
                     <ul>
-                        <li><a class="nav-link scrollto active" href="{{ $navbars->link_title_1 }}">{{$navbars->title_1}}</a></li>
-                        <li><a class="nav-link scrollto" href="{{ $navbars->link_title_2 }}">{{$navbars->title_2}}</a></li>
-                        <li><a class="nav-link scrollto" href="{{ $navbars->link_title_3 }}">{{$navbars->title_3}}</a></li>
-                        <li><a class="nav-link scrollto " href="{{ $navbars->link_title_4 }}">{{$navbars->title_4}}</a></li>
-                        <li><a class="nav-link scrollto" href="{{ $navbars->link_title_5 }}">{{$navbars->title_5}}</a></li>
-                        <li class="dropdown"><a href="{{ $navbars->link_title_6 }}"><span>{{$navbars->title_6}}</span> <i
+                        <li><a class="nav-link scrollto active"
+                               href="{{ $navbars->link_title_1 }}">{{$navbars->title_1}}</a></li>
+                        <li><a class="nav-link scrollto" href="{{ $navbars->link_title_2 }}">{{$navbars->title_2}}</a>
+                        </li>
+                        <li><a class="nav-link scrollto" href="{{ $navbars->link_title_3 }}">{{$navbars->title_3}}</a>
+                        </li>
+                        <li><a class="nav-link scrollto " href="{{ $navbars->link_title_4 }}">{{$navbars->title_4}}</a>
+                        </li>
+                        <li><a class="nav-link scrollto" href="{{ $navbars->link_title_5 }}">{{$navbars->title_5}}</a>
+                        </li>
+                        <li class="dropdown"><a href="{{ $navbars->link_title_6 }}"><span>{{$navbars->title_6}}</span>
+                                <i
                                     class="bi bi-chevron-down"></i></a>
                             <ul>
                                 <li><a href="{{ $navbars->link_title_7 }}">{{$navbars->title_7}}</a></li>
@@ -48,7 +55,8 @@
                                 <li><a href="{{ $navbars->link_title_10 }}">{{$navbars->title_10}}</a></li>
                             </ul>
                         </li>
-                        <li><a class="nav-link scrollto" href="{{ $navbars->link_title_11 }}">{{$navbars->title_11}}</a></li>
+                        <li><a class="nav-link scrollto" href="{{ $navbars->link_title_11 }}">{{$navbars->title_11}}</a>
+                        </li>
                     </ul>
                     <i class="bi bi-list mobile-nav-toggle"></i>
                     @endforeach
@@ -56,4 +64,12 @@
 
             </div>
     </header><!-- End Header -->
+    <script>
+        // fetch('')
+        let test = document.getElementById(
+            "phone"
+        ).href = `https://api.whatsapp.com/send?phone=55${phone}&text=Olá, entrei no site da gostaria de algumas informações.`;
+        console.log(test)
 
+
+    </script>
