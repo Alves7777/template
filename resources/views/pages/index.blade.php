@@ -19,7 +19,7 @@
                         <thead>
                         <tr>
                             <th>Título</th>
-                            <th>Url</th>
+{{--                            <th>Url</th>--}}
                             <th>Ação</th>
                         </tr>
                         </thead>
@@ -27,7 +27,7 @@
                         @foreach($page as $pages)
                             <tr>
                                 <td>{{ $pages->title }}</td>
-                                <td>{{ $pages->url }}</td>
+{{--                                <td>{{ $pages->url }}</td>--}}
                                 <td>
                                     <a href="{{ route('pages.show', $pages->id  ) }}"
                                        type="button" class="btn btn-secondary btn-sm">Detalhes</a>

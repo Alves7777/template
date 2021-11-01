@@ -36,6 +36,14 @@
             maxHeight: 500,
             focus: true
         });
+
+        const languagesSelect = document.getElementById("languages-select");
+        const languagesList = ["page_1", "page_2", "page_3", "page_4", "page_5", "page_6", "page_7", "page_8", "page_9", "page_10", "page_11"];
+        languagesList.forEach((language) => {
+            option = new Option(language, language.toLowerCase());
+            languagesSelect.options[languagesSelect.options.length] = option;
+        });
+
     </script>
 @stop
 

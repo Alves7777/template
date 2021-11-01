@@ -7,8 +7,14 @@
                 {{ Form::text('title',$pages->title ?? old('title'), ['placeholder' => 'Digite o título', 'class'=>'form-control'])}}
             </div>
             <div class="form-group">
-                {{Form::label('url', 'Url', ['class' => 'control-label'])}}
-                {{ Form::text('url',$pages->url ?? old('url'), ['placeholder' => 'Digite o título', 'class'=>'form-control'])}}
+{{--                {{Form::label('url', 'Url', ['class' => 'control-label'])}}--}}
+{{--                {{ Form::text('url',$pages->url ?? old('url'), ['placeholder' => 'Digite o título', 'class'=>'form-control'])}}--}}
+                <div class="form-group mb-4">
+                    <label class="mr-sm-2" for="languages-select">Link Título 1</label>
+                    <select name="url" class="custom-select mr-sm-2" id="languages-select">
+                        <option value="{{ $pages->url ?? old('url') }}" selected="">Selecione a Página</option>
+                    </select>
+                </div>
             </div>
             <div class="form-group">
                 {{ Form::label('description', 'Descrição', ['class' => 'control-label']) }}
