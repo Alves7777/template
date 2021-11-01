@@ -52,4 +52,93 @@ class PagesRepository
     {
         return $this->entity->newQuery()->pluck($column, $key);
     }
+
+    public function page_1()
+    {
+        return $this->entity
+            ->newQuery()
+            ->where('url','=','page_1')
+            ->get();
+    }
+
+    public function page_2()
+    {
+        return $this->entity
+            ->newQuery()
+            ->where('url','=','page_2')
+            ->get();
+    }
+
+    public function page_3()
+    {
+        return $this->entity
+            ->newQuery()
+            ->where('url','=','page_3')
+            ->get();
+    }
+
+    public function page_4()
+    {
+        return $this->entity
+            ->newQuery()
+            ->where('url','=','page_4')
+            ->get();
+    }
+
+    public function page_5()
+    {
+        return $this->entity
+            ->newQuery()
+            ->where('url','=','page_5')
+            ->get();
+
+    }
+
+    public function page_6()
+    {
+        return $this->entity
+            ->newQuery()
+            ->where('url','=','page_6')
+            ->get();
+    }
+
+    public function page_7()
+    {
+        return $this->entity
+            ->newQuery()
+            ->where('url','=','page_7')
+            ->get();
+    }
+
+    public function page_8()
+    {
+        return $this->entity
+            ->newQuery()
+            ->where('url','=','page_8')
+            ->get();
+    }
+
+    public function page_9()
+    {
+        return $this->entity
+            ->newQuery()
+            ->wher10('url','=','page_9')
+            ->get();
+    }
+
+    public function page_10()
+    {
+        return $this->entity
+            ->newQuery()
+            ->where('url','=','page_10')
+            ->get();
+    }
+
+    public function page_11()
+    {
+        return $this->entity
+            ->newQuery()
+            ->where('url','=','page_11')
+            ->get();
+    }
 }

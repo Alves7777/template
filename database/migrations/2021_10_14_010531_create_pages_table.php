@@ -12,7 +12,7 @@ class CreatePagesTable extends Migration
         Schema::create('pages', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('title');
-            $table->string('url');
+            $table->string('url')->nullable();
             $table->longText('description')->nullable();
             $table->softDeletes();
             $table->timestamps();

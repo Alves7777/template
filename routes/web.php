@@ -13,6 +13,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[HomeController::class, 'index']);
 Route::get('/page_1',[_PagesController::class, 'page_1']);
+Route::get('/page_2',[_PagesController::class, 'page_2']);
+Route::get('/page_3',[_PagesController::class, 'page_3']);
+Route::get('/page_4',[_PagesController::class, 'page_4']);
+Route::get('/page_5',[_PagesController::class, 'page_5']);
+Route::get('/page_6',[_PagesController::class, 'page_6']);
+Route::get('/page_7',[_PagesController::class, 'page_7']);
+Route::get('/page_8',[_PagesController::class, 'page_8']);
+Route::get('/page_9',[_PagesController::class, 'page_9']);
+Route::get('/page_10',[_PagesController::class, 'page_10']);
+Route::get('/page_11',[_PagesController::class, 'page_11']);
 
 
 Route::get('/cursos', function () {
