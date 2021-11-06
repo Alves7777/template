@@ -2,19 +2,26 @@
 
 namespace App\Http\Controllers\Site;
 
+use App\Http\Controllers\ApisController;
 use App\Http\Controllers\Controller;
+
 //use App\Services\Navbar\TopbarService;
 
 class HomeController extends Controller
 {
-    public function __construct()
+    private ApisController $apiController;
+
+    public function __construct(ApisController $apiController)
     {
         parent::__construct();
+        $this->apiController = $apiController;
     }
 
     public function index()
     {
-        return view('site.home');
+        $getFreight = $this->apiController->ApiFreightGet();
+
+        return view('site.home', compact('getFreight'));
     }
 
 }
