@@ -1,31 +1,23 @@
-@extends('site.master.layout')
+<link href="{{ asset('/assets/vendor/aos/aos.css')}}" rel="stylesheet">
+<link href="{{ asset('/assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+<link href="{{ asset('/assets/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+<link href="{{ asset('/assets/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
+<link href="{{ asset('/assets/vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
+<link href="{{ asset('/assets/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
 
-@section('content')
-    <div class="p-5 mb-4 bg-light rounded-3">
-        <div class="container-fluid py-5">
-            <h1 class="display-5 fw-bold">Custom jumbotron</h1>
-            <p class="col-md-8 fs-4">Using a series of utilities, you can create this jumbotron, just like the one in
-                previous versions of Bootstrap. Check out the examples below for how you can remix and restyle it to
-                your liking.</p>
-            <button class="btn btn-primary btn-lg" type="button">Example button</button>
-        </div>
+{{--TELA DE TESTES--}}
+
+@foreach($responseGet as $item)
+    <div class="col-md-6">
+        <ul class="list-group">
+            <li class="list-group-item active">{{ $item['plate']}}</li>
+            <li class="list-group-item">{{ $item['vehicle_owner'] }}</li>
+            <li class="list-group-item">{{ $item['cost_of_freight'] }}</li>
+            <li class="list-group-item">{{ $item['start_date'] }}</li>
+            <li class="list-group-item">{{ $item['end_date'] }}</li>
+            <li class="list-group-item">{{ $item['status'] }}</li>
+        </ul>
     </div>
-    <div class="container py-5">
-        <form>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
-            </div>
-            <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-    </div>
-@endsection
+@endforeach
+
+{{--@endsection--}}

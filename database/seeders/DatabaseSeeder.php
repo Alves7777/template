@@ -13,6 +13,7 @@ class DatabaseSeeder extends Seeder
         $this->call(TopbarTableSeeder::class);
         $this->call(NavbarTableSeeder::class);
         $this->call(SectionOneTableSeeder::class);
+        $this->call(SectionTwoTableSeeder::class);
 
     }
 }

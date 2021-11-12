@@ -1,11 +1,13 @@
 <?php
 
+use App\Http\Controllers\Api\ApiFreightController;
 use App\Http\Controllers\Pages\PagesController;
 use App\Http\Controllers\Site\_PagesController;
 use App\Http\Controllers\Site\HomeController;
 use App\Routes\Navbar\NavbarRoute;
 use App\Routes\Pages\PagesRoute;
 use App\Routes\SectionOne\SectionOneRoute;
+use App\Routes\SectionTwo\SectionTwoRoute;
 use App\Routes\Topbar\TopbarRoute;
 use Illuminate\Support\Facades\Route;
 
@@ -25,15 +27,35 @@ Route::get('/page_10',[_PagesController::class, 'page_10']);
 Route::get('/page_11',[_PagesController::class, 'page_11']);
 
 
+Route::get('/contato',[ApiFreightController::class, 'getFreight']);
+Route::get('/contato-post',[ApiFreightController::class, 'postFreight']);
+
+
+//API
+//Route::post('add', [FreightController::class, 'store']);
+//Route::put('edit/{id}', [FreightController::class, 'update']);
+//Route::delete('delete/{id}', [FreightController::class, 'destroy']);
+
 Route::get('/cursos', function () {
     return view('site.courses');
 })->name('site.courses');
 
-Route::get('/contato', function () {
-    return view('site.contact');
-})->name('site.contact');
+//Route::get('/contato', function () {
+//    return view('site.contact');
+//})->name('site.contact');
 
 NavbarRoute::routes();
 TopbarRoute::routes();
 SectionOneRoute::routes();
 PagesRoute::routes();
+SectionTwoRoute::routes();
+
+
+// API
+
+//Route::get('freight/get', [App\Http\Controllers\Api\ApiFreightController::class, 'getFreight']);
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

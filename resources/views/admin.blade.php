@@ -29,7 +29,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js" type="text/javascript"></script>
 
     <![endif]-->
 </head>
@@ -67,7 +67,7 @@
                 </div>
             </div>
         </div>
-        <div class="container-fluid">
+        <div id="app" class="container-fluid">
             @yield('content')
         </div>
         <footer class="footer text-center text-muted">
