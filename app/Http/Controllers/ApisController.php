@@ -2,21 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
-use Illuminate\Foundation\Bus\DispatchesJobs;
-use Illuminate\Foundation\Validation\ValidatesRequests;
-use Illuminate\Routing\Controller as BaseController;
+use App\Http\Requests\Api\SectionTwoRequest;
+use GuzzleHttp\Client;
+use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Http;
 
 class ApisController
 {
-//    O IDEAL É DEIXAR NO .ENV -> $responseGet = HTTP::get(env('APP_URL') . '/list')['data'];
 
-    public function ApiFreightGet()
+    public function ApiSectionTwoGet()
     {
-        $responseGet = HTTP::get('http://127.0.0.1:8001/api/freight/list')['data'];
+        $responseGet = HTTP::get(env('APP_URL') . 'section-two/list')['data'];
 
         return $responseGet;
 
     }
+
+
 }

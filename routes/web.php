@@ -7,6 +7,7 @@ use App\Http\Controllers\Site\HomeController;
 use App\Routes\Navbar\NavbarRoute;
 use App\Routes\Pages\PagesRoute;
 use App\Routes\SectionOne\SectionOneRoute;
+use App\Routes\SectionTwo\SectionTwoRoute;
 use App\Routes\Topbar\TopbarRoute;
 use Illuminate\Support\Facades\Route;
 
@@ -47,8 +48,14 @@ NavbarRoute::routes();
 TopbarRoute::routes();
 SectionOneRoute::routes();
 PagesRoute::routes();
+SectionTwoRoute::routes();
+
 
 // API
 
 //Route::get('freight/get', [App\Http\Controllers\Api\ApiFreightController::class, 'getFreight']);
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

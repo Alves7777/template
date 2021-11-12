@@ -3,10 +3,11 @@
 @section('content')
     @include('sweetalert::alert')
 
-    <div class="row">
+    <div id="navbar" class="row">
         <div class="col-12">
             <div class="card">
                 <div class="card-header test" style="display: flex; justify-content: flex-end;align-items: center;">
+                    <example-component></example-component>
                     <div>
                         <a href="{{route('navbar.index')}}" class="btn btn-navbar" type="submit"
                            style="margin-right: -15px;">
@@ -35,7 +36,7 @@
                                 <td>{{ $navbars->title_5 }}</td>
                                 <td>{{ $navbars->title_6 }}</td>
                                 <td>
-                                    <a href="{{ route('navbar.show', $navbars->id  ) }}"
+                                    <a @click="test" href="{{ route('navbar.show', $navbars->id  ) }}"
                                        type="button" class="btn btn-secondary btn-sm">Detalhes</a>
                                     <a href="{{ route('navbar.edit', $navbars->id  ) }}"
                                        type="button" class="btn btn-primary btn-sm">Editar</a>
