@@ -20,7 +20,7 @@
                 </div>
 {{--                @include('layouts.alerts')--}}
                 <div class="card-body">
-                    <form action="{{route('sectiontwo.update', $sectiontwo->id)}}" method="post" enctype="multipart/form-data">
+                    <form action="{{route('sectiontwo.update', $item['id'] ?? '') }}" method="" enctype="multipart/form-data">
                         <input type="hidden" name="_method" value="put">
                         @include('sectiontwo.form')
                     </form>

@@ -7,23 +7,36 @@ use App\Http\Controllers\Controller;
 use Facade\FlareClient\Http\Response;
 use Illuminate\Support\Facades\Http;
 
-class ApiFreightController extends ApisController
+class ApiFreightController
 {
+    public ApisController $apisController;
 
-    public function getFreight()
+    public function __construct(ApisController $apiController)
     {
-        $responseGet = $this->ApiFreightGet();
-//        $plate = $responseGet['plate'];
-//        $vehicleOwner = $responseGet['vehicle_owner'];
-//        $startDate = $responseGet['start_date'];
-//        $costFreight = $responseGet['cost_of_freight'];
-//        $endDate = $responseGet['end_date'];
-//        $status = $responseGet['status'];
-//        dd($responseGet, $res);
-        return view('site.contact', compact('responseGet'));
+        $this->apiController = $apiController;
+    }
+    const PREFIX = [
+        'error' => 'Página não encontrada.',
+        'registeredSuccess' => 'Cadastrado com Sucesso.',
+        'editedSuccess' => 'Editado com Sucesso.'
 
-//        $res = ['responseGet'=> $responseGet['data']];
-//        return view('site.contact', $res);
+    ];
+
+    public function getFreight($plate, $vehicleOwner, $startDate, $costFreight, $endDate, $status)
+    {
+        $method = 'testinho';
+
+        $data['plate'] = $plate;
+        $data['vehicle_owner'] = $vehicleOwner;
+        $data['start_date'] = $startDate;
+        $data['cost_of_freight'] = $costFreight;
+        $data['end_date'] = $endDate;
+        $data['status'] = $status;
+
+        $res = $this->apiController->makeRequest($method, $data);
+
+        return json_decode($res->getBody(), true);
+
     }
 
     public function postFreight()
@@ -45,4 +58,8 @@ class ApiFreightController extends ApisController
 
     }
 
+    public function test() {
+        $res = $this->makeRequest($method, $data);
+        return json_decode($res->getBody(), true);
+    }
 }

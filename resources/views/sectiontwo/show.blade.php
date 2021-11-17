@@ -23,8 +23,8 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <p><strong>Título_1: </strong>{{ $item['title'] }}</p>
-                    <p><strong>Título_2: </strong>{{ $item['description'] }}</p>
+{{--                    <p><strong>Título_1: </strong>{{ $item['title'] }}</p>--}}
+{{--                    <p><strong>Título_2: </strong>{{ $item['description'] }}</p>--}}
 {{--                    <p><strong>Foto:</strong><br>--}}
 {{--                        <img src="{{ asset("/storage/$sectionone->photo") }}"--}}
 {{--                             alt="{{ $sectionone->name }}"--}}

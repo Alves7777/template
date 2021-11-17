@@ -34,12 +34,12 @@
                                 <td>{{ $item['url'] }}</td>
                                 <td>{{ $item['icon'] }}</td>
                                 <td>{{ $item['color_icon'] }}</td>
-{{--                                <td>--}}
-{{--                                    <a href="{{ route('sectionone.show', $sectionones->id  ) }}"--}}
+                                <td>
+{{--                                    <a href="{{ route('sectionone.show', $item['color_icon'] ) }}"--}}
 {{--                                       type="button" class="btn btn-secondary btn-sm">Detalhes</a>--}}
-{{--                                    <a href="{{ route('sectionone.edit', $sectionones->id  ) }}"--}}
-{{--                                       type="button" class="btn btn-primary btn-sm">Editar</a>--}}
-{{--                                </td>--}}
+                                    <a href="{{ route('sectiontwo.edit', $item['id']) }}"
+                                       type="button" class="btn btn-primary btn-sm">Editar</a>
+                                </td>
                             </tr>
                         @endforeach
                         </tbody>

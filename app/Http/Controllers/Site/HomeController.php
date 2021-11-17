@@ -17,7 +17,7 @@ class HomeController extends Controller
 
     public function index()
     {
-        $getSection_0 = $this->apiController->ApiSectionTwoGet()[0];
+        $getSection_0 = $this->apiController->RESPONSE_SECTIONTWO_GET[0];
 
         $icon = $getSection_0['icon'];
         $colorIcon = $getSection_0['color_icon'];
@@ -25,7 +25,7 @@ class HomeController extends Controller
         $title = $getSection_0['title'];
         $description = $getSection_0['description'];
 
-        $getSection_1 = $this->apiController->ApiSectionTwoGet()[1];
+        $getSection_1 = $this->apiController->RESPONSE_SECTIONTWO_GET[1];
 
         $icon_1 = $getSection_1['icon'];
         $colorIcon_1 = $getSection_1['color_icon'];
@@ -33,7 +33,7 @@ class HomeController extends Controller
         $title_1 = $getSection_1['title'];
         $description_1 = $getSection_1['description'];
 
-        $getSection_2 = $this->apiController->ApiSectionTwoGet()[2];
+        $getSection_2 = $this->apiController->RESPONSE_SECTIONTWO_GET[2];
 
         $icon_2 = $getSection_2['icon'];
         $colorIcon_2 = $getSection_2['color_icon'];
@@ -41,7 +41,7 @@ class HomeController extends Controller
         $title_2 = $getSection_2['title'];
         $description_2 = $getSection_2['description'];
 
-        $getSection_3 = $this->apiController->ApiSectionTwoGet()[3];
+        $getSection_3 = $this->apiController->RESPONSE_SECTIONTWO_GET[3];
 
         $icon_3 = $getSection_3['icon'];
         $colorIcon_3 = $getSection_3['color_icon'];
