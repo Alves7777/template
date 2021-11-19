@@ -459,7 +459,7 @@
             return Math.round(val * 100) / 100;
         };
 
-        // Abstract methods
+        // AbstractSite methods
         this.listen = function () {}; // on start, one time
         this.extend = function () {}; // each time configure triggered
         this.init = function () {}; // each time configure triggered

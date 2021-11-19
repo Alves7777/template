@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder
         $this->call(NavbarTableSeeder::class);
         $this->call(SectionOneTableSeeder::class);
         $this->call(SectionTwoTableSeeder::class);
+        $this->call(SectionThreeTableSeeder::class);
 
     }
 }
