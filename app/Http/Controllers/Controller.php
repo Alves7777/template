@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\AbstractView\AbstractView;
 use App\Http\Controllers\SectionThree\SectionThreeController;
 use App\Models\NavBar\Navbar;
 use App\Models\Pages\Pages;
+use App\Models\Progress\Progress;
 use App\Models\SectionOne\SectionOne;
 use App\Models\SectionThree\SectionThree;
 use App\Models\Topbar\Topbar;
@@ -27,7 +29,8 @@ class Controller extends BaseController
         View::share('topbar', Topbar::all());
         View::share('sectionone', SectionOne::all());
         View::share('page_1', Pages::all());
-        View::share('sectionthree', SectionThree::all());
+        View::share(AbstractView::VIEWS['Seção 3'], SectionThree::all());
+        View::share(AbstractView::VIEWS['Progresso'], Progress::all());
 
         //MESSAGES
         $this->MSG_ERROR = 'Página não encontrada.';

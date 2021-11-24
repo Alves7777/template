@@ -1,0 +1,15 @@
+<?php
+
+namespace App\Routes\Progress;
+
+use App\Http\Controllers\Progress\ProgressController;
+use Illuminate\Support\Facades\Route;
+
+class ProgressRoute
+{
+    public static function routes()
+    {
+        Route::resource('progress',ProgressController::class);
+
+    }
+}
