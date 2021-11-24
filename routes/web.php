@@ -5,6 +5,7 @@ use App\Http\Controllers\Site\_PagesController;
 use App\Http\Controllers\Site\HomeController;
 use App\Routes\Navbar\NavbarRoute;
 use App\Routes\Pages\PagesRoute;
+use App\Routes\Progress\ProgressRoute;
 use App\Routes\SectionOne\SectionOneRoute;
 use App\Routes\SectionThree\SectionThreeRoute;
 use App\Routes\SectionTwo\SectionTwoRoute;
@@ -42,6 +43,7 @@ PagesRoute::routes();
 SectionOneRoute::routes();
 SectionTwoRoute::routes();
 SectionThreeRoute::routes();
+ProgressRoute::routes();
 
 
 Auth::routes();

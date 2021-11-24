@@ -4,6 +4,9 @@ namespace App\AbstractView;
 
 class AbstractView
 {
+    const QTD_SEEDER = ['qtd_1'=> 5, 'qtd_2' => 10];
+    const VIEWS = ['Seção 3'=> 'sectionthree', 'Progresso' => 'progress'];
+
     public string $title, $index, $create, $show, $edit;
 
     public function setSectionThree(): string
@@ -17,7 +20,20 @@ class AbstractView
         return true;
 
     }
+
+    public function setProgress(): string
+    {
+        $this->title = 'Página Progresso';
+        $this->index = 'progress.index';
+        $this->create = 'progress.create';
+        $this->show = 'progress.show';
+        $this->edit = 'progress.edit';
+
+        return true;
+    }
+
 }
+
 
 
 
