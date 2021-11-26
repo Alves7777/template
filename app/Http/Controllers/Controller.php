@@ -33,11 +33,11 @@ class Controller extends BaseController
         View::share(AbstractView::VIEWS['Progresso'], Progress::all());
 
         //MESSAGES
-        $this->MSG_ERROR = 'Página não encontrada.';
-        $this->MSG_REGISTER_SUCCESS = 'Cadastrado com Sucesso.';
-        $this->MSG_EDITING_SUCCESS = 'Editado com Suecesso.';
-        $this->MSG_OPS = 'Ops, Algo deu errado.';
-        $this->MSG_DELETE = 'Deletado com sucesso';
+        $this->MSG_ERROR = ' Página não encontrada.';
+        $this->MSG_REGISTER_SUCCESS = ' Cadastrado com Sucesso.';
+        $this->MSG_EDITING_SUCCESS = ' Editado com Suecesso.';
+        $this->MSG_OPS = ' Ops, Algo deu errado.';
+        $this->MSG_DELETE = ' Deletado com sucesso';
 
     }
 

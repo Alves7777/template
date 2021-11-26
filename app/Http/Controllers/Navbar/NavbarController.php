@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Navbar;
 
+use App\AbstractView\AbstractView;
+use App\AbstractView\MasksView;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Navbar\NavbarRequest;
 use App\Models\NavBar\Navbar;
@@ -16,6 +18,7 @@ class NavbarController extends Controller
     private NavbarService $navbarService;
     private string $title = 'NavBar';
     private string $route_index = 'navbar.index';
+    private string $create = 'navbar.create';
 
     public function __construct(Navbar $navbar, NavbarService $navbarService)
     {
@@ -37,11 +40,20 @@ class NavbarController extends Controller
     public function create()
     {
         try {
-        return view('navbar.create');
-    } catch (Exception $e) {
-        alert()->error($this->title . " não encontrada.");
-        return redirect()->back();
-    }
+            $qtdMax = 0; // array
+            $data = $this->navbarService->all();
+            $viewAbstract = new AbstractView();
+            $viewAbstract->getValidation($data, $qtdMax);
+            return view($this->create);
+
+        } catch (\ErrorException $e) {
+            alert()->warning('Você não pode adicionar mais opção!!!');
+            return redirect()->back();
+
+        } catch (\Exception $e) {
+            alert()->error($this->title . " não encontrada.");
+            return redirect()->back();
+        }
     }
 
     public function store(NavbarRequest $request): RedirectResponse

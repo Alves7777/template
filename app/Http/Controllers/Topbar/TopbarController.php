@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Topbar;
 
+use App\AbstractView\AbstractView;
+use App\AbstractView\MasksView;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Topbar\TopbarRequest;
 use App\Models\Topbar\Topbar;
@@ -9,6 +11,7 @@ use App\Services\Topbar\TopbarService;
 use Exception;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use function App\AbstractView\MasksView;
 
 class TopbarController extends Controller
 {
@@ -16,18 +19,21 @@ class TopbarController extends Controller
     private TopbarService $topbarService;
     private string $title = 'Topbar';
     private string $route_index = 'topbar.index';
+    private string $create = 'topbar.create';
+    private AbstractView $abstractView;
 
-    public function __construct(Topbar $topbar, TopbarService $topbarService)
+    public function __construct(Topbar $topbar, TopbarService $topbarService, AbstractView $abstractView)
     {
         $this->topbar = $topbar;
         $this->topbarService = $topbarService;
+        $this->abstractView = $abstractView;
     }
 
     public function index()
     {
         try {
             $topbar = $this->topbarService->all();
-            return view($this->route_index, compact('topbar', 'topbar'));
+            return view($this->route_index, compact('topbar'));
         } catch (Exception $e) {
             alert()->error('Ops', 'Algo deu errado.');
             return redirect()->back();
@@ -37,11 +43,19 @@ class TopbarController extends Controller
     public function create()
     {
         try {
-        return view('topbar.create');
-    } catch (Exception $e) {
-        alert()->error($this->title . " não encontrada.");
-        return redirect()->back();
-    }
+            $qtdMax = 0; // array
+            $data = $this->topbarService->all();
+            $this->abstractView->getValidation($data, $qtdMax);
+            return view($this->create);
+
+        } catch (\ErrorException $e) {
+            alert()->warning('Você não pode adicionar mais ' . $this->title);
+            return redirect()->back();
+
+        } catch (\Exception $e) {
+            alert()->error($this->title . " não encontrada.");
+            return redirect()->back();
+        }
     }
 
     public function store(TopbarRequest $request): RedirectResponse
