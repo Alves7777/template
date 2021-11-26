@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Pages;
 
+use App\AbstractView\AbstractView;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Pages\PagesRequest;
 use App\Models\Pages\Pages;
@@ -16,6 +17,7 @@ class PagesController extends Controller
     private PagesService $pagesService;
     private string $title = 'Pages';
     private string $route_index = 'pages.index';
+    private string $create = 'pages.create';
 
     public function  __construct(Pages $pages, PagesService $pagesService)
     {
@@ -25,20 +27,29 @@ class PagesController extends Controller
 
     public function index()
     {
-//        try {
+        try {
             $page = $this->pagesService->all();
             return view($this->route_index, compact('page'));
-//        } catch (Exception $e) {
-//            alert()->error('Ops', 'Algo deu errado.');
-//            return redirect()->back();
-//        }
+        } catch (Exception $e) {
+            alert()->error('Ops', 'Algo deu errado.');
+            return redirect()->back();
+        }
     }
 
     public function create()
     {
         try {
-            return view('pages.create');
-        } catch (Exception $e) {
+            $qtdMax = 10; // array
+            $data = $this->pagesService->all();
+            $abstractView = new AbstractView();
+            $abstractView->getValidation($data, $qtdMax);
+            return view($this->create);
+
+        } catch (\ErrorException $e) {
+            alert()->warning('Você não pode adicionar mais ' . $this->title);
+            return redirect()->back();
+
+        } catch (\Exception $e) {
             alert()->error($this->title . " não encontrada.");
             return redirect()->back();
         }
@@ -46,14 +57,14 @@ class PagesController extends Controller
 
     public function store(PagesRequest $request): RedirectResponse
     {
-//        try {
+        try {
             $this->pagesService->create($request->validated());
             alert()->success($this->title . ' Cadastrado com Sucesso.');
             return redirect()->route($this->route_index);
-//        } catch (Exception $e) {
-//            alert()->error($e->getMessage());
-//            return redirect()->back();
-//        }
+        } catch (Exception $e) {
+            alert()->error($e->getMessage());
+            return redirect()->back();
+        }
     }
 
     public function show($id)

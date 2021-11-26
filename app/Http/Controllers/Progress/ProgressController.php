@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Progress;
 use App\AbstractView\AbstractView;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Progress\ProgressRequest;
+use App\Models\Progress\Progress;
+use App\Repositories\Progress\ProgressRepository;
 use App\Services\Progress\ProgressService;
 use Exception;
 use Illuminate\Http\RedirectResponse;
@@ -27,6 +29,7 @@ class ProgressController extends Controller
     public function index()
     {
         try {
+
             $this->type = $this->progressService->all();
             return view($this->abstract->index, compact(json_decode($this->type)));
         } catch (Exception $e) {
@@ -38,9 +41,16 @@ class ProgressController extends Controller
     public function create()
     {
         try {
+            $qtdMax = 5; // array
+            $data = $this->progressService->all();
+            $this->abstract->getValidation($data, $qtdMax);
             return view($this->abstract->create);
-        } catch (Exception $e) {
-            $this->error($this->abstract->title);
+        } catch (\ErrorException $e) {
+            alert()->warning('Você não pode adicionar mais ' . $this->abstract->title);
+            return redirect()->back();
+
+        } catch (\Exception $e) {
+            alert()->error($this->abstract->index . " não encontrada.");
             return redirect()->back();
         }
     }

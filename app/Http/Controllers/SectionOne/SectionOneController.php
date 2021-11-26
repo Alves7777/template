@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\SectionOne;
 
+use App\AbstractView\AbstractView;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\SectionOne\SectionOneRequest;
 use App\Models\SectionOne\SectionOne;
@@ -16,6 +17,7 @@ class SectionOneController extends Controller
     private SectionOneService $sectionOneService;
     private string $title = 'Seção 1';
     private string $route_index = 'sectionone.index';
+    private string $create = 'sectionone.create';
 
     public function __construct(SectionOne $sectionOne, SectionOneService $sectionOneService)
     {
@@ -37,8 +39,17 @@ class SectionOneController extends Controller
     public function create()
     {
         try {
-            return view('sectionone.create');
-        } catch (Exception $e) {
+            $qtdMax = 0; // array
+            $data = $this->sectionOneService->all();
+            $abstractView = new AbstractView();
+            $abstractView->getValidation($data, $qtdMax);
+            return view($this->create);
+
+        } catch (\ErrorException $e) {
+            alert()->warning('Você não pode adicionar mais ' . $this->title);
+            return redirect()->back();
+
+        } catch (\Exception $e) {
             alert()->error($this->title . " não encontrada.");
             return redirect()->back();
         }

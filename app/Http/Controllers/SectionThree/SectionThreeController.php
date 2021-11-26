@@ -38,9 +38,17 @@ class SectionThreeController extends Controller
     public function create()
     {
         try {
+            $qtdMax = 0; // array
+            $data = $this->sectionThreeService->all();
+            $this->abstract->getValidation($data, $qtdMax);
             return view($this->abstract->create);
-        } catch (Exception $e) {
-            $this->error($this->abstract->title);
+
+        } catch (\ErrorException $e) {
+            alert()->warning('Você não pode adicionar mais ' . $this->abstract->title);
+            return redirect()->back();
+
+        } catch (\Exception $e) {
+            alert()->error($this->abstract->index . " não encontrada.");
             return redirect()->back();
         }
     }

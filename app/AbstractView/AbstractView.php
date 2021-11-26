@@ -4,10 +4,10 @@ namespace App\AbstractView;
 
 class AbstractView
 {
-    const QTD_SEEDER = ['qtd_1'=> 5, 'qtd_2' => 10];
-    const VIEWS = ['Seção 3'=> 'sectionthree', 'Progresso' => 'progress'];
+    const QTD_SEEDER = ['qtd_1' => 5, 'qtd_2' => 10];
+    const VIEWS = ['Seção 3' => 'sectionthree', 'Progresso' => 'progress'];
 
-    public string $title, $index, $create, $show, $edit;
+    public string $title, $index, $create, $show, $edit, $pattern;
 
     public function setSectionThree(): string
     {
@@ -28,6 +28,15 @@ class AbstractView
         $this->create = 'progress.create';
         $this->show = 'progress.show';
         $this->edit = 'progress.edit';
+
+        return true;
+    }
+
+    public function getValidation($data = null, $qtdMax = null): string
+    {
+        if ($data->count() > $qtdMax) {
+            throw new \ErrorException();
+        }
 
         return true;
     }

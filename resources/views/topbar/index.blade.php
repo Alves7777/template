@@ -1,5 +1,4 @@
 @extends('admin')
-@extends('admin')
 
 @section('content')
     @include('sweetalert::alert')
