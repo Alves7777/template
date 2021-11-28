@@ -2,58 +2,40 @@
 
 namespace App\Http\Controllers\Site;
 
-use App\Http\Controllers\ApisController;
 use App\Http\Controllers\Controller;
+use App\Services\Score\ScoreService;
 
 class HomeController extends Controller
 {
-    private ApisController $apiController;
+    private ScoreService $scoreService;
+    private SiteHomeApi $siteHomeApi;
 
-    public function __construct(ApisController $apiController)
+    public function __construct(ScoreService $scoreService, SiteHomeApi $siteHomeApi)
     {
         parent::__construct();
-        $this->apiController = $apiController;
+        $this->scoreService = $scoreService;
+        $this->siteHomeApi = new SiteHomeApi();
+        $this->siteHomeApi->getSectionTwo();
     }
 
     public function index()
     {
-        $getSection_0 = $this->apiController->RESPONSE_SECTIONTWO_GET[0];
+//      SEÇÃO 2 / CONSUMO DA API
+        $sectionTwo_1 = $this->siteHomeApi->sectionTwo1;
+        $sectionTwo_2 = $this->siteHomeApi->sectionTwo2;
+        $sectionTwo_3 = $this->siteHomeApi->sectionTwo3;
+        $sectionTwo_4 = $this->siteHomeApi->sectionTwo4;
 
-        $icon = $getSection_0['icon'];
-        $colorIcon = $getSection_0['color_icon'];
-        $url = $getSection_0['url'];
-        $title = $getSection_0['title'];
-        $description = $getSection_0['description'];
+//      CONTAGEM
+        $getScore = $this->scoreService->all();
 
-        $getSection_1 = $this->apiController->RESPONSE_SECTIONTWO_GET[1];
-
-        $icon_1 = $getSection_1['icon'];
-        $colorIcon_1 = $getSection_1['color_icon'];
-        $url_1 = $getSection_1['url'];
-        $title_1 = $getSection_1['title'];
-        $description_1 = $getSection_1['description'];
-
-        $getSection_2 = $this->apiController->RESPONSE_SECTIONTWO_GET[2];
-
-        $icon_2 = $getSection_2['icon'];
-        $colorIcon_2 = $getSection_2['color_icon'];
-        $url_2 = $getSection_2['url'];
-        $title_2 = $getSection_2['title'];
-        $description_2 = $getSection_2['description'];
-
-        $getSection_3 = $this->apiController->RESPONSE_SECTIONTWO_GET[3];
-
-        $icon_3 = $getSection_3['icon'];
-        $colorIcon_3 = $getSection_3['color_icon'];
-        $url_3 = $getSection_3['url'];
-        $title_3 = $getSection_3['title'];
-        $description_3 = $getSection_3['description'];
+        $score_1 = $getScore[0];
+        $score_2 = $getScore[1];
+        $score_3 = $getScore[2];
+        $score_4 = $getScore[3];
 
         return view('site.home', compact(
-            'icon', 'colorIcon', 'url', 'title', 'description',
-            'icon_1', 'colorIcon_1', 'url_1', 'title_1', 'description_1',
-            'icon_2', 'colorIcon_2', 'url_2', 'title_2', 'description_2',
-            'icon_3', 'colorIcon_3', 'url_3', 'title_3', 'description_3'));
+            'sectionTwo_1', 'sectionTwo_2', 'sectionTwo_3', 'sectionTwo_4', 'score_1', 'score_2', 'score_3', 'score_4'));
     }
 
 }

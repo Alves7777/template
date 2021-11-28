@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\AbstractView\AbstractView;
-use App\Http\Controllers\SectionThree\SectionThreeController;
 use App\Models\NavBar\Navbar;
 use App\Models\Pages\Pages;
 use App\Models\Progress\Progress;
+use App\Models\Score\Score;
 use App\Models\SectionOne\SectionOne;
 use App\Models\SectionThree\SectionThree;
 use App\Models\Topbar\Topbar;
@@ -31,6 +31,7 @@ class Controller extends BaseController
         View::share('page_1', Pages::all());
         View::share(AbstractView::VIEWS['Seção 3'], SectionThree::all());
         View::share(AbstractView::VIEWS['Progresso'], Progress::all());
+        View::share(AbstractView::VIEWS['Contagem'], Score::all());
 
         //MESSAGES
         $this->MSG_ERROR = ' Página não encontrada.';
@@ -70,6 +71,5 @@ class Controller extends BaseController
     {
         return alert()->error($e->getMessage());
     }
-
 
 }

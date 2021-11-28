@@ -42,33 +42,33 @@
                 <div class="row" id="row">
                     <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                            <div class="icon" style="color: {{ $colorIcon }}"><i class="{{ $icon }}"></i></div>
-                            <h4 class="title" id=""><a href="{{ $url }}"></a>{{ $title }}</h4>
-                            <p class="description" id="">{{ $description }}</p>
+                            <div class="icon" style="color: {{ $sectionTwo_1['color_icon'] }}"><i class="{{ $sectionTwo_1['icon'] }}"></i></div>
+                            <h4 class="title" id=""><a href="{{ $sectionTwo_1['url'] }}"></a>{{ $sectionTwo_1['title'] }}</h4>
+                            <p class="description" id="">{{ $sectionTwo_1['description'] }}</p>
                         </div>
                     </div>
 
                     <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                            <div class="icon" style="color: {{ $colorIcon_1 }}"><i class="{{ $icon_1 }}"></i></div>
-                            <h4 class="title" id=""><a href="{{ $url_1 }}"></a>{{ $title_1 }}</h4>
-                            <p class="description" id="">{{ $description_1 }}</p>
+                            <div class="icon" style="color: {{ $sectionTwo_2['color_icon'] }}"><i class="{{ $sectionTwo_2['icon'] }}"></i></div>
+                            <h4 class="title" id=""><a href="{{ $sectionTwo_2['url'] }}"></a>{{ $sectionTwo_2['title'] }}</h4>
+                            <p class="description" id="">{{ $sectionTwo_2['description'] }}</p>
                         </div>
                     </div>
 
                     <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                            <div class="icon" style="color: {{ $colorIcon_2 }}"><i class="{{ $icon_2 }}"></i></div>
-                            <h4 class="title" id=""><a href="{{ $url_2 }}"></a>{{ $title_2 }}</h4>
-                            <p class="description" id="">{{ $description_2 }}</p>
+                            <div class="icon" style="color: {{ $sectionTwo_3['color_icon'] }}"><i class="{{ $sectionTwo_3['icon'] }}"></i></div>
+                            <h4 class="title" id=""><a href="{{ $sectionTwo_3['url'] }}"></a>{{ $sectionTwo_3['title'] }}</h4>
+                            <p class="description" id="">{{ $sectionTwo_3['description'] }}</p>
                         </div>
                     </div>
 
                     <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                            <div class="icon" style="color: {{ $colorIcon_3 }}"><i class="{{ $icon_3 }}"></i></div>
-                            <h4 class="title" id=""><a href="{{ $url_3 }}"></a>{{ $title_3 }}</h4>
-                            <p class="description" id="">{{ $description_3 }}</p>
+                            <div class="icon" style="color: {{ $sectionTwo_4['color_icon'] }}"><i class="{{ $sectionTwo_4['icon'] }}"></i></div>
+                            <h4 class="title" id=""><a href="{{ $sectionTwo_4['url'] }}"></a>{{ $sectionTwo_4['title'] }}</h4>
+                            <p class="description" id="">{{ $sectionTwo_4['description'] }}</p>
                         </div>
                     </div>
 
@@ -140,43 +140,43 @@
 
                     <div class="row">
 
-                        <div class="col-lg-3 col-md-6">
+                        <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
                             <div class="count-box">
-                                <i class="bi bi-emoji-smile"></i>
-                                <span data-purecounter-start="0" data-purecounter-end="232"
+                                <i class="{{ $score_1->icon }}"></i>
+                                <span data-purecounter-start="0" data-purecounter-end="{{ $score_1->number }}"
                                       data-purecounter-duration="1"
                                       class="purecounter"></span>
-                                <p>Happy Clients</p>
+                                <p>{{ $score_1->name }}</p>
                             </div>
                         </div>
 
                         <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
                             <div class="count-box">
-                                <i class="bi bi-journal-richtext"></i>
-                                <span data-purecounter-start="0" data-purecounter-end="521"
+                                <i class="{{ $score_2->icon }}"></i>
+                                <span data-purecounter-start="0" data-purecounter-end="{{ $score_2->number }}"
                                       data-purecounter-duration="1"
                                       class="purecounter"></span>
-                                <p>Projects</p>
+                                <p>{{ $score_2->name }}</p>
                             </div>
                         </div>
 
-                        <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+                        <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
                             <div class="count-box">
-                                <i class="bi bi-headset"></i>
-                                <span data-purecounter-start="0" data-purecounter-end="1463"
+                                <i class="{{ $score_3->icon }}"></i>
+                                <span data-purecounter-start="0" data-purecounter-end="{{ $score_3->number }}"
                                       data-purecounter-duration="1"
                                       class="purecounter"></span>
-                                <p>Hours Of Support</p>
+                                <p>{{ $score_3->name }}</p>
                             </div>
                         </div>
 
-                        <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+                        <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
                             <div class="count-box">
-                                <i class="bi bi-people"></i>
-                                <span data-purecounter-start="0" data-purecounter-end="15"
+                                <i class="{{ $score_4->icon }}"></i>
+                                <span data-purecounter-start="0" data-purecounter-end="{{ $score_4->number }}"
                                       data-purecounter-duration="1"
                                       class="purecounter"></span>
-                                <p>Hard Workers</p>
+                                <p>{{ $score_4->name }}</p>
                             </div>
                         </div>
 
