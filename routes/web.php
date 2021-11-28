@@ -6,6 +6,7 @@ use App\Http\Controllers\Site\HomeController;
 use App\Routes\Navbar\NavbarRoute;
 use App\Routes\Pages\PagesRoute;
 use App\Routes\Progress\ProgressRoute;
+use App\Routes\Score\ScoreRoute;
 use App\Routes\SectionOne\SectionOneRoute;
 use App\Routes\SectionThree\SectionThreeRoute;
 use App\Routes\SectionTwo\SectionTwoRoute;
@@ -28,11 +29,11 @@ Route::get('/page_9',[_PagesController::class, 'page_9']);
 Route::get('/page_10',[_PagesController::class, 'page_10']);
 Route::get('/page_11',[_PagesController::class, 'page_11']);
 
-
+//api test
 Route::get('/contato',[ApiFreightController::class, 'getFreight']);
 Route::get('/contato-post',[ApiFreightController::class, 'postFreight']);
 
-
+//test
 Route::get('/cursos', function () {
     return view('site.courses');
 })->name('site.courses');
@@ -44,6 +45,7 @@ SectionOneRoute::routes();
 SectionTwoRoute::routes();
 SectionThreeRoute::routes();
 ProgressRoute::routes();
+ScoreRoute::routes();
 
 
 Auth::routes();

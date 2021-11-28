@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\Progress\Progress;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -17,6 +16,7 @@ class DatabaseSeeder extends Seeder
         $this->call(SectionTwoTableSeeder::class);
         $this->call(SectionThreeTableSeeder::class);
         $this->call(ProgressTableSeeder::class);
+        $this->call(ScoreTableSeeder::class);
 
     }
 }
