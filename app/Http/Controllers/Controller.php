@@ -7,8 +7,10 @@ use App\Models\NavBar\Navbar;
 use App\Models\Pages\Pages;
 use App\Models\Progress\Progress;
 use App\Models\Score\Score;
+use App\Models\SectionFour\SectionFour;
 use App\Models\SectionOne\SectionOne;
 use App\Models\SectionThree\SectionThree;
+use App\Models\Title\Title;
 use App\Models\Topbar\Topbar;
 use App\Services\SectionThree\SectionThreeService;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
@@ -32,6 +34,8 @@ class Controller extends BaseController
         View::share(AbstractView::VIEWS['Seção 3'], SectionThree::all());
         View::share(AbstractView::VIEWS['Progresso'], Progress::all());
         View::share(AbstractView::VIEWS['Contagem'], Score::all());
+        View::share(AbstractView::VIEWS['Seção 4'], SectionFour::all());
+        View::share(AbstractView::VIEWS['Titulo'], Title::all());
 
         //MESSAGES
         $this->MSG_ERROR = ' Página não encontrada.';

@@ -15,7 +15,10 @@ class ProgressRepository
 
     public function all()
     {
-        return $this->entity->newQuery()->get();
+        return $this->entity
+            ->newQuery()
+            ->orderBy('percentage', 'DESC')
+            ->get();
     }
 
     public function create(array $property)

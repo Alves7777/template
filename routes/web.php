@@ -7,9 +7,11 @@ use App\Routes\Navbar\NavbarRoute;
 use App\Routes\Pages\PagesRoute;
 use App\Routes\Progress\ProgressRoute;
 use App\Routes\Score\ScoreRoute;
+use App\Routes\SectionFour\SectionFourRoute;
 use App\Routes\SectionOne\SectionOneRoute;
 use App\Routes\SectionThree\SectionThreeRoute;
 use App\Routes\SectionTwo\SectionTwoRoute;
+use App\Routes\Title\TitleRoute;
 use App\Routes\Topbar\TopbarRoute;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -46,6 +48,8 @@ SectionTwoRoute::routes();
 SectionThreeRoute::routes();
 ProgressRoute::routes();
 ScoreRoute::routes();
+SectionFourRoute::routes();
+TitleRoute::routes();
 
 
 Auth::routes();

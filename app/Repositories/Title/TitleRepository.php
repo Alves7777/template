@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Repositories\Score;
+namespace App\Repositories\Title;
 
-use App\Models\Score\Score;
+use App\Models\Title\Title;
 
-class ScoreRepository
+class TitleRepository
 {
-    private Score $entity;
+    private Title $entity;
 
-    public function __construct(Score $entity)
+    public function __construct(Title $entity)
     {
         $this->entity = $entity;
     }
@@ -17,7 +17,7 @@ class ScoreRepository
     {
         return $this->entity
             ->newQuery()
-            ->orderBy('number', 'DESC')
+            ->orderBy('title', 'ASC')
             ->get();
     }
 
@@ -28,23 +28,22 @@ class ScoreRepository
 
     public function findOrFail($id)
     {
-
         return $this->entity->newQuery()->findOrFail($id);
     }
 
     public function update($id, array $property)
     {
-        $progress = $this->findOrFail($id);
+        $sectionFour = $this->findOrFail($id);
         if (!empty($property)) {
-            $progress->update($property);
+            $sectionFour->update($property);
         }
-        return $progress;
+        return $sectionFour;
     }
 
     public function delete(string $id)
     {
-        $progress = $this->findOrFail($id);
-        return $progress->delete();
+        $sectionFour = $this->findOrFail($id);
+        return $sectionFour->delete();
     }
 
     public function firstOrFail()

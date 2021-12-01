@@ -17,6 +17,9 @@ class DatabaseSeeder extends Seeder
         $this->call(SectionThreeTableSeeder::class);
         $this->call(ProgressTableSeeder::class);
         $this->call(ScoreTableSeeder::class);
+        $this->call(SectionFourTableSeeder::class);
+        $this->call(CarouselTableSeeder::class);
+        $this->call(TitleTableSeeder::class);
 
     }
 }
