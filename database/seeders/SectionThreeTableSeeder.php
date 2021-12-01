@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Services\SectionOne\SectionOneService;
 use App\Services\SectionThree\SectionThreeService;
 use Illuminate\Database\Seeder;
 use Illuminate\Http\UploadedFile;

@@ -1,35 +1,33 @@
 <?php
 
-namespace App\Http\Controllers\Progress;
+namespace App\Http\Controllers\Title;
 
 use App\AbstractView\AbstractView;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Progress\ProgressRequest;
-use App\Services\Progress\ProgressService;
+use App\Http\Requests\Title\TitleRequest;
+use App\Services\Title\TitleService;
 use Exception;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\DB;
 
-class ProgressController extends Controller
+class TitleController extends Controller
 {
     private AbstractView $abstract;
-    private ProgressService $progressService;
-    public string $type = AbstractView::VIEWS['Progresso'];
+    private TitleService $titleService;
 
-    public function __construct(ProgressService $progressService)
+    public function __construct(TitleService $titleService)
     {
         parent::__construct();
-        $this->progressService = $progressService;
+        $this->titleService = $titleService;
         $this->abstract = new AbstractView();
-        $this->abstract->setProgress();
+        $this->abstract->setTitle();
     }
 
     public function index()
     {
         try {
-
-            $this->type = $this->progressService->all();
-            return view($this->abstract->index, compact(json_decode($this->type)));
+            $title = $this->titleService->all();
+            return view($this->abstract->index, compact('title'));
         } catch (Exception $e) {
             $this->ops($e);
             return redirect()->back();
@@ -40,9 +38,10 @@ class ProgressController extends Controller
     {
         try {
             $qtdMax = 4; // array
-            $data = $this->progressService->all();
+            $data = $this->titleService->all();
             $this->abstract->getValidation($data, $qtdMax);
             return view($this->abstract->create);
+
         } catch (\ErrorException $e) {
             alert()->warning('Você não pode adicionar mais ' . $this->abstract->title);
             return redirect()->back();
@@ -53,11 +52,11 @@ class ProgressController extends Controller
         }
     }
 
-    public function store(ProgressRequest $request): RedirectResponse
+    public function store(TitleRequest $request): RedirectResponse
     {
         try {
             DB::beginTransaction();
-            $this->progressService->create($request->validated());
+            $this->titleService->create($request->validated());
             DB::commit();
             $this->successRegister($this->abstract->title);
             return redirect()->route($this->abstract->index);
@@ -71,8 +70,8 @@ class ProgressController extends Controller
     public function show($id)
     {
         try {
-            $progress = $this->progressService->findOrFail($id);
-            return view($this->abstract->show, compact('progress'));
+            $title = $this->titleService->findOrFail($id);
+            return view($this->abstract->show, compact('title'));
         } catch (Exception $e) {
             $this->error($this->abstract->title);
             return redirect()->back();
@@ -82,19 +81,19 @@ class ProgressController extends Controller
     public function edit(string $id)
     {
         try {
-            $progress = $this->progressService->findOrFail($id);
-            return view($this->abstract->edit, compact('progress'));
+            $title = $this->titleService->findOrFail($id);
+            return view($this->abstract->edit, compact('title'));
         } catch (Exception $e) {
             $this->error($this->abstract->title);
             return redirect()->back();
         }
     }
 
-    public function update(ProgressRequest $request, $id): RedirectResponse
+    public function update(TitleRequest $request, $id): RedirectResponse
     {
         try {
             DB::beginTransaction();
-            $this->progressService->update($id, $request->validated());
+            $this->titleService->update($id, $request->validated());
             DB::commit();
             $this->successEditing($this->abstract->title);
             return redirect()->route($this->abstract->index);
@@ -109,7 +108,7 @@ class ProgressController extends Controller
     {
         try {
             DB::beginTransaction();
-            $this->progressService->delete($id);
+            $this->titleService->delete($id);
             DB::commit();
             $this->successDelete($this->abstract->title);
             return redirect()->route($this->abstract->index);

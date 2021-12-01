@@ -40,6 +40,23 @@
                 </li>
             </ul>
         </li>
+
+        <li class="sidebar-item"><a class="sidebar-link has-arrow" href="javascript:void(0)"
+                                    aria-expanded="false"><i data-feather="grid" class="feather-icon"></i><span
+                    class="hide-menu">Títulos Site</span></a>
+            <ul aria-expanded="false" class="collapse  first-level base-level-line">
+                <li class="sidebar-item"><a href="{{ route('title.create') }}" class="sidebar-link"><span
+                            class="hide-menu"> Adicionar
+                                        </span></a>
+                </li>
+                <li class="sidebar-item"><a href="{{ route('title.index') }}" class="sidebar-link"><span
+                            class="hide-menu"> Listar
+                                        </span></a>
+                </li>
+            </ul>
+        </li>
+
+
         <li class="sidebar-item"><a class="sidebar-link has-arrow" href="javascript:void(0)"
                                     aria-expanded="false"><i data-feather="grid" class="feather-icon"></i><span
                     class="hide-menu">Navbar </span></a>
@@ -155,6 +172,21 @@
                                         </span></a>
                 </li>
                 <li class="sidebar-item"><a href="{{ route('score.index') }}" class="sidebar-link"><span
+                            class="hide-menu"> Listar
+                                        </span></a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="sidebar-item"><a class="sidebar-link has-arrow" href="javascript:void(0)"
+                                    aria-expanded="false"><i data-feather="grid" class="feather-icon"></i><span
+                    class="hide-menu">Seção 4 </span></a>
+            <ul aria-expanded="false" class="collapse  first-level base-level-line">
+                <li class="sidebar-item"><a href="{{ route('sectionfour.create') }}" class="sidebar-link"><span
+                            class="hide-menu"> Adicionar
+                                        </span></a>
+                </li>
+                <li class="sidebar-item"><a href="{{ route('sectionfour.index') }}" class="sidebar-link"><span
                             class="hide-menu"> Listar
                                         </span></a>
                 </li>

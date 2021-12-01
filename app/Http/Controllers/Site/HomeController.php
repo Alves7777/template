@@ -2,40 +2,53 @@
 
 namespace App\Http\Controllers\Site;
 
+use App\Http\Controllers\Api\ApiSectionTwoController;
 use App\Http\Controllers\Controller;
 use App\Services\Score\ScoreService;
+use App\Services\SectionFour\SectionFourService;
+use App\Services\Title\TitleService;
 
 class HomeController extends Controller
 {
     private ScoreService $scoreService;
-    private SiteHomeApi $siteHomeApi;
+    private SectionFourService $sectionFourService;
+    private ApiSectionTwoController $apiSectionTwoController;
+    private TitleService $titleService;
 
-    public function __construct(ScoreService $scoreService, SiteHomeApi $siteHomeApi)
+    public function __construct(ScoreService            $scoreService,
+                                ApiSectionTwoController $apiSectionTwoController,
+                                SectionFourService      $sectionFourService,
+                                TitleService            $titleService)
     {
         parent::__construct();
         $this->scoreService = $scoreService;
-        $this->siteHomeApi = new SiteHomeApi();
-        $this->siteHomeApi->getSectionTwo();
+        $this->sectionFourService = $sectionFourService;
+        $this->apiSectionTwoController = $apiSectionTwoController;
+        $this->titleService = $titleService;
     }
 
     public function index()
     {
 //      SEÇÃO 2 / CONSUMO DA API
-        $sectionTwo_1 = $this->siteHomeApi->sectionTwo1;
-        $sectionTwo_2 = $this->siteHomeApi->sectionTwo2;
-        $sectionTwo_3 = $this->siteHomeApi->sectionTwo3;
-        $sectionTwo_4 = $this->siteHomeApi->sectionTwo4;
+        $getSectionTwo = $this->apiSectionTwoController->RESPONSE_SECTIONTWO_GET;
 
 //      CONTAGEM
         $getScore = $this->scoreService->all();
 
-        $score_1 = $getScore[0];
-        $score_2 = $getScore[1];
-        $score_3 = $getScore[2];
-        $score_4 = $getScore[3];
+//      SEÇÃO 4
+        $getSectionFour = $this->sectionFourService->all();
+        $section_four_1 = $getSectionFour[0];
 
-        return view('site.home', compact(
-            'sectionTwo_1', 'sectionTwo_2', 'sectionTwo_3', 'sectionTwo_4', 'score_1', 'score_2', 'score_3', 'score_4'));
+//      TÍTULOS
+        $getTitle = $this->titleService->all();
+        $title_1 = $getTitle[0];
+        $title_2 = $getTitle[1];
+        $title_3 = $getTitle[2];
+        $title_4 = $getTitle[3];
+        $title_5 = $getTitle[4];
+
+        return view('site.home', compact('section_four_1','getSectionFour', 'getSectionTwo', 'getScore',
+            'title_1','title_2','title_3','title_4','title_5'));
     }
 
 }

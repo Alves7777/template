@@ -40,37 +40,17 @@
         <section id="featured-services" class="featured-services">
             <div class="container" data-aos="fade-up">
                 <div class="row" id="row">
+                    @foreach($getSectionTwo as $sectionTwo)
                     <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                            <div class="icon" style="color: {{ $sectionTwo_1['color_icon'] }}"><i class="{{ $sectionTwo_1['icon'] }}"></i></div>
-                            <h4 class="title" id=""><a href="{{ $sectionTwo_1['url'] }}"></a>{{ $sectionTwo_1['title'] }}</h4>
-                            <p class="description" id="">{{ $sectionTwo_1['description'] }}</p>
+                            <div class="icon" style="color: {{ $sectionTwo['color_icon'] }}"><i
+                                    class="{{ $sectionTwo['icon'] }}"></i></div>
+                            <h4 class="title" id=""><a
+                                    href="{{ $sectionTwo['url'] }}"></a>{{ $sectionTwo['title'] }}</h4>
+                            <p class="description" id="">{{ $sectionTwo['description'] }}</p>
                         </div>
                     </div>
-
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                        <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                            <div class="icon" style="color: {{ $sectionTwo_2['color_icon'] }}"><i class="{{ $sectionTwo_2['icon'] }}"></i></div>
-                            <h4 class="title" id=""><a href="{{ $sectionTwo_2['url'] }}"></a>{{ $sectionTwo_2['title'] }}</h4>
-                            <p class="description" id="">{{ $sectionTwo_2['description'] }}</p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                        <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                            <div class="icon" style="color: {{ $sectionTwo_3['color_icon'] }}"><i class="{{ $sectionTwo_3['icon'] }}"></i></div>
-                            <h4 class="title" id=""><a href="{{ $sectionTwo_3['url'] }}"></a>{{ $sectionTwo_3['title'] }}</h4>
-                            <p class="description" id="">{{ $sectionTwo_3['description'] }}</p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                        <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                            <div class="icon" style="color: {{ $sectionTwo_4['color_icon'] }}"><i class="{{ $sectionTwo_4['icon'] }}"></i></div>
-                            <h4 class="title" id=""><a href="{{ $sectionTwo_4['url'] }}"></a>{{ $sectionTwo_4['title'] }}</h4>
-                            <p class="description" id="">{{ $sectionTwo_4['description'] }}</p>
-                        </div>
-                    </div>
+                    @endforeach
 
                 </div>
             </div>
@@ -116,21 +96,23 @@
             <!-- ======= Skills Section ======= -->
             <section id="skills" class="skills">
                 @foreach($progress as $item)
-                <div class="container" data-aos="fade-up">
+                    <div class="container" data-aos="fade-up">
 
-                    <div class="row skills-content">
-                        <div class="col-lg-12">
-                            <div class="progress">
-                                <span class="skill">{{ $item->progress_name }} <i class="val">{{ $item->percentage . "%" }}</i></span>
-                                <div class="progress-bar-wrap">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="{{ $item->percentage }}"
-                                         aria-valuemin="0"
-                                         aria-valuemax="100"></div> <!--Value %-->
+                        <div class="row skills-content">
+                            <div class="col-lg-12">
+                                <div class="progress">
+                                    <span class="skill">{{ $item->progress_name }} <i
+                                            class="val">{{ $item->percentage . "%" }}</i></span>
+                                    <div class="progress-bar-wrap">
+                                        <div class="progress-bar" role="progressbar"
+                                             aria-valuenow="{{ $item->percentage }}"
+                                             aria-valuemin="0"
+                                             aria-valuemax="100"></div> <!--Value %-->
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 @endforeach
             </section><!-- End Skills Section -->
 
@@ -139,153 +121,38 @@
                 <div class="container" data-aos="fade-up">
 
                     <div class="row">
-
-                        <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
-                            <div class="count-box">
-                                <i class="{{ $score_1->icon }}"></i>
-                                <span data-purecounter-start="0" data-purecounter-end="{{ $score_1->number }}"
-                                      data-purecounter-duration="1"
-                                      class="purecounter"></span>
-                                <p>{{ $score_1->name }}</p>
+                        @foreach($getScore as $score)
+                            <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
+                                <div class="count-box">
+                                    <i class="{{ $score->icon }}"></i>
+                                    <span data-purecounter-start="0" data-purecounter-end="{{ $score->number }}"
+                                          data-purecounter-duration="1"
+                                          class="purecounter"></span>
+                                    <p>{{ $score->name }}</p>
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
-                            <div class="count-box">
-                                <i class="{{ $score_2->icon }}"></i>
-                                <span data-purecounter-start="0" data-purecounter-end="{{ $score_2->number }}"
-                                      data-purecounter-duration="1"
-                                      class="purecounter"></span>
-                                <p>{{ $score_2->name }}</p>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
-                            <div class="count-box">
-                                <i class="{{ $score_3->icon }}"></i>
-                                <span data-purecounter-start="0" data-purecounter-end="{{ $score_3->number }}"
-                                      data-purecounter-duration="1"
-                                      class="purecounter"></span>
-                                <p>{{ $score_3->name }}</p>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
-                            <div class="count-box">
-                                <i class="{{ $score_4->icon }}"></i>
-                                <span data-purecounter-start="0" data-purecounter-end="{{ $score_4->number }}"
-                                      data-purecounter-duration="1"
-                                      class="purecounter"></span>
-                                <p>{{ $score_4->name }}</p>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
+                @endforeach
             </section><!-- End Counts Section -->
 
-            <!-- ======= Clients Section ======= -->
-            <section id="clients" class="clients section-bg">
-                <div class="container" data-aos="zoom-in">
-
-                    <div class="row">
-
-                        <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                            <img src="/assets/img/clients/client-1.png" class="img-fluid" alt="">
-                        </div>
-
-                        <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                            <img src="/assets/img/clients/client-2.png" class="img-fluid" alt="">
-                        </div>
-
-                        <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                            <img src="/assets/img/clients/client-3.png" class="img-fluid" alt="">
-                        </div>
-
-                        <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                            <img src="/assets/img/clients/client-4.png" class="img-fluid" alt="">
-                        </div>
-
-                        <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                            <img src="/assets/img/clients/client-5.png" class="img-fluid" alt="">
-                        </div>
-
-                        <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                            <img src="/assets/img/clients/client-6.png" class="img-fluid" alt="">
-                        </div>
-
-                    </div>
-
-                </div>
-            </section><!-- End Clients Section -->
-
-            <!-- ======= Services Section ======= -->
             <section id="services" class="services">
                 <div class="container" data-aos="fade-up">
 
                     <div class="section-title">
-                        <h2>Services</h2>
-                        <h3>Check our <span>Services</span></h3>
-                        <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at
-                            voluptas
-                            atque vitae autem.</p>
+                        <h3 style="color: {{ $title_1->color_title }}"><div>{{ $title_1->title }}</div>
+                        </h3>
+                        <p>{{ $title_1->text }}</p>
                     </div>
-
                     <div class="row">
-                        <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in"
-                             data-aos-delay="100">
-                            <div class="icon-box">
-                                <div class="icon"><i class="bx bxl-dribbble"></i></div>
-                                <h4><a href="">Lorem Ipsum</a></h4>
-                                <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+                        @foreach($getSectionFour as $section_four)
+                            <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in"
+                                 data-aos-delay="100">
+                                <div class="icon-box">
+                                    <div class="icon"><i class="{{ $section_four->icon }}"></i></div>
+                                    <h4><a href="{{ $section_four->url }}">{{ $section_four->sub_title }}</a></h4>
+                                    <p>{{ $section_four->sub_text }}</p>
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in"
-                             data-aos-delay="200">
-                            <div class="icon-box">
-                                <div class="icon"><i class="bx bx-file"></i></div>
-                                <h4><a href="">Sed ut perspiciatis</a></h4>
-                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in"
-                             data-aos-delay="300">
-                            <div class="icon-box">
-                                <div class="icon"><i class="bx bx-tachometer"></i></div>
-                                <h4><a href="">Magni Dolores</a></h4>
-                                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in"
-                             data-aos-delay="100">
-                            <div class="icon-box">
-                                <div class="icon"><i class="bx bx-world"></i></div>
-                                <h4><a href="">Nemo Enim</a></h4>
-                                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in"
-                             data-aos-delay="200">
-                            <div class="icon-box">
-                                <div class="icon"><i class="bx bx-slideshow"></i></div>
-                                <h4><a href="">Dele cardo</a></h4>
-                                <p>Quis consequatur saepe eligendi voluptatem consequatur dolor consequuntur</p>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in"
-                             data-aos-delay="300">
-                            <div class="icon-box">
-                                <div class="icon"><i class="bx bx-arch"></i></div>
-                                <h4><a href="">Divera don</a></h4>
-                                <p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
-                            </div>
-                        </div>
+                        @endforeach
 
                     </div>
 
@@ -406,11 +273,9 @@
                 <div class="container" data-aos="fade-up">
 
                     <div class="section-title">
-                        <h2>Portfolio</h2>
-                        <h3>Check our <span>Portfolio</span></h3>
-                        <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at
-                            voluptas
-                            atque vitae autem.</p>
+                        <h3 style="color: {{ $title_2->color_title }}"><div>{{ $title_2->title }}</div>
+                        </h3>
+                        <p>{{ $title_2->text }}</p>
                     </div>
 
                     <div class="row" data-aos="fade-up" data-aos-delay="100">
@@ -544,11 +409,9 @@
                 <div class="container" data-aos="fade-up">
 
                     <div class="section-title">
-                        <h2>Team</h2>
-                        <h3>Our Hardworking <span>Team</span></h3>
-                        <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at
-                            voluptas
-                            atque vitae autem.</p>
+                        <h3 style="color: {{ $title_3->color_title }}"><div>{{ $title_3->title }}</div>
+                        </h3>
+                        <p>{{ $title_3->text }}</p>
                     </div>
 
                     <div class="row">
@@ -634,104 +497,14 @@
                 </div>
             </section><!-- End Team Section -->
 
-            <!-- ======= Pricing Section ======= -->
-            <section id="pricing" class="pricing">
-                <div class="container" data-aos="fade-up">
-
-                    <div class="section-title">
-                        <h2>Pricing</h2>
-                        <h3>Check our <span>Pricing</span></h3>
-                        <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at
-                            voluptas
-                            atque vitae autem.</p>
-                    </div>
-
-                    <div class="row">
-
-                        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                            <div class="box">
-                                <h3>Free</h3>
-                                <h4><sup>$</sup>0<span> / month</span></h4>
-                                <ul>
-                                    <li>Aida dere</li>
-                                    <li>Nec feugiat nisl</li>
-                                    <li>Nulla at volutpat dola</li>
-                                    <li class="na">Pharetra massa</li>
-                                    <li class="na">Massa ultricies mi</li>
-                                </ul>
-                                <div class="btn-wrap">
-                                    <a href="#" class="btn-buy">Buy Now</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="200">
-                            <div class="box featured">
-                                <h3>Business</h3>
-                                <h4><sup>$</sup>19<span> / month</span></h4>
-                                <ul>
-                                    <li>Aida dere</li>
-                                    <li>Nec feugiat nisl</li>
-                                    <li>Nulla at volutpat dola</li>
-                                    <li>Pharetra massa</li>
-                                    <li class="na">Massa ultricies mi</li>
-                                </ul>
-                                <div class="btn-wrap">
-                                    <a href="#" class="btn-buy">Buy Now</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="300">
-                            <div class="box">
-                                <h3>Developer</h3>
-                                <h4><sup>$</sup>29<span> / month</span></h4>
-                                <ul>
-                                    <li>Aida dere</li>
-                                    <li>Nec feugiat nisl</li>
-                                    <li>Nulla at volutpat dola</li>
-                                    <li>Pharetra massa</li>
-                                    <li>Massa ultricies mi</li>
-                                </ul>
-                                <div class="btn-wrap">
-                                    <a href="#" class="btn-buy">Buy Now</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="400">
-                            <div class="box">
-                                <span class="advanced">Advanced</span>
-                                <h3>Ultimate</h3>
-                                <h4><sup>$</sup>49<span> / month</span></h4>
-                                <ul>
-                                    <li>Aida dere</li>
-                                    <li>Nec feugiat nisl</li>
-                                    <li>Nulla at volutpat dola</li>
-                                    <li>Pharetra massa</li>
-                                    <li>Massa ultricies mi</li>
-                                </ul>
-                                <div class="btn-wrap">
-                                    <a href="#" class="btn-buy">Buy Now</a>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-            </section><!-- End Pricing Section -->
-
             <!-- ======= Frequently Asked Questions Section ======= -->
             <section id="faq" class="faq section-bg">
                 <div class="container" data-aos="fade-up">
 
                     <div class="section-title">
-                        <h2>F.A.Q</h2>
-                        <h3>Frequently Asked <span>Questions</span></h3>
-                        <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at
-                            voluptas
-                            atque vitae autem.</p>
+                        <h3 style="color: {{ $title_4->color_title }}"><div>{{ $title_4->title }}</div>
+                        </h3>
+                        <p>{{ $title_4->text }}</p>
                     </div>
 
                     <div class="row justify-content-center">
@@ -863,11 +636,9 @@
                 <div class="container" data-aos="fade-up">
 
                     <div class="section-title">
-                        <h2>Contact</h2>
-                        <h3><span>Contact Us</span></h3>
-                        <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at
-                            voluptas
-                            atque vitae autem.</p>
+                        <h3 style="color: {{ $title_5->color_title }}"><div>{{ $title_5->title }}</div>
+                        </h3>
+                        <p>{{ $title_5->text }}</p>
                     </div>
 
                     <div class="row" data-aos="fade-up" data-aos-delay="100">
@@ -947,19 +718,19 @@
 
     <!-- ======= Footer ======= -->
     <footer id="footer">
-        <div class="footer-newsletter">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-6">
-                        <h4>Join Our Newsletter</h4>
-                        <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-                        <form action="" method="post">
-                            <input type="email" name="email"><input type="submit" value="Subscribe">
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {{--        <div class="footer-newsletter">--}}
+        {{--            <div class="container">--}}
+        {{--                <div class="row justify-content-center">--}}
+        {{--                    <div class="col-lg-6">--}}
+        {{--                        <h4>Join Our Newsletter</h4>--}}
+        {{--                        <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>--}}
+        {{--                        <form action="" method="post">--}}
+        {{--                            <input type="email" name="email"><input type="submit" value="Subscribe">--}}
+        {{--                        </form>--}}
+        {{--                    </div>--}}
+        {{--                </div>--}}
+        {{--            </div>--}}
+        {{--        </div>--}}
 
         <div class="footer-top">
             <div class="container">
