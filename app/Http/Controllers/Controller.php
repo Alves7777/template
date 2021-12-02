@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\AbstractView\AbstractView;
+use App\Models\Admin;
 use App\Models\NavBar\Navbar;
 use App\Models\Pages\Pages;
 use App\Models\Progress\Progress;
@@ -31,6 +32,7 @@ class Controller extends BaseController
         View::share('topbar', Topbar::all());
         View::share('sectionone', SectionOne::all());
         View::share('page_1', Pages::all());
+        View::share('admin', Admin::all());
         View::share(AbstractView::VIEWS['Seção 3'], SectionThree::all());
         View::share(AbstractView::VIEWS['Progresso'], Progress::all());
         View::share(AbstractView::VIEWS['Contagem'], Score::all());

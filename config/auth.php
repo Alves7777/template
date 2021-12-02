@@ -1,5 +1,8 @@
 <?php
 
+use App\Models\Ecommerce\UserEcommerce\UserEcommerce;
+use App\Models\User;
+
 return [
 
     /*
@@ -40,6 +43,18 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'ecommerce' => [
+            'driver' => 'session',
+            'provider' => 'ecommerce',
+        ],
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
+//        'admin-api' => [
+//            'driver' => 'token',
+//            'provider' => 'admins',
+//        ],
     ],
 
     /*
@@ -62,7 +77,16 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\Models\User::class,
+            'model' => User::class,
+        ],
+        'ecommerce' => [
+            'driver' => 'eloquent',
+            'model' => UserEcommerce::class,
+        ],
+
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Admin::class,
         ],
 
         // 'users' => [
@@ -92,6 +116,11 @@ return [
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,
+        ],
+        'admins' => [
+            'provider' => 'admins',
+            'table' => 'admin_password_resets',
+            'expire' => 15,
         ],
     ],
 
