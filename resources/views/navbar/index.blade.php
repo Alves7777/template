@@ -7,7 +7,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header test" style="display: flex; justify-content: flex-end;align-items: center;">
-                    <example-component></example-component>
+{{--                    <example-component></example-component>--}}
                     <div>
                         <a href="{{route('navbar.index')}}" class="btn btn-navbar" type="submit"
                            style="margin-right: -15px;">

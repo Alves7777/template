@@ -4,20 +4,38 @@
                                     aria-expanded="false"><i data-feather="home" class="feather-icon"></i><span
                     class="hide-menu">SITE</span></a></li>
         <li class="list-divider"></li>
-        <li class="nav-small-cap"><span class="hide-menu">Applications</span></li>
 
-        <li class="sidebar-item"><a class="sidebar-link" href="ticket-list.html"
-                                    aria-expanded="false"><i data-feather="tag" class="feather-icon"></i><span
-                    class="hide-menu">Ticket List
-                                </span></a>
+        <li class="nav-small-cap"><span class="hide-menu">Authentication</span></li>
+
+{{--        <li class="sidebar-item"><a class="sidebar-link sidebar-link" href="authentication-login1.html"--}}
+{{--                                    aria-expanded="false"><i data-feather="lock" class="feather-icon"></i><span--}}
+{{--                    class="hide-menu">Login--}}
+{{--                                </span></a>--}}
+{{--        </li>--}}
+{{--        <li class="sidebar-item">--}}
+{{--            <a class="sidebar-link sidebar-link"--}}
+{{--                                    href="authentication-register1.html" aria-expanded="false"><i data-feather="lock"--}}
+{{--                                                                                                  class="feather-icon"></i><span--}}
+{{--                    class="hide-menu">Register--}}
+{{--                                </span></a>--}}
+{{--            <a class="sidebar-link sidebar-link" href="{{ route('register') }}"><i data-feather="lock"--}}
+{{--                                                                  class="feather-icon"></i>{{ __('Register') }}</a>--}}
+{{--        </li>--}}
+
+        <li class="sidebar-item">
+            <a class="sidebar-link sidebar-link dropdown-item" href="{{ route('logout') }}"
+               onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                <i data-feather="lock" class="feather-icon"></i>
+                {{ __('Sair') }}
+            </a>
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                @csrf
+            </form>
+
+
         </li>
-        <li class="sidebar-item"><a class="sidebar-link sidebar-link" href="app-chat.html"
-                                    aria-expanded="false"><i data-feather="message-square"
-                                                             class="feather-icon"></i><span
-                    class="hide-menu">Chat</span></a></li>
-        <li class="sidebar-item"><a class="sidebar-link sidebar-link" href="app-calendar.html"
-                                    aria-expanded="false"><i data-feather="calendar" class="feather-icon"></i><span
-                    class="hide-menu">Calendar</span></a></li>
+
 
         <li class="list-divider"></li>
         <li class="nav-small-cap"><span class="hide-menu">Components</span></li>
@@ -296,19 +314,6 @@
                                 </span></a>
         </li>
         <li class="list-divider"></li>
-        <li class="nav-small-cap"><span class="hide-menu">Authentication</span></li>
-
-        <li class="sidebar-item"><a class="sidebar-link sidebar-link" href="authentication-login1.html"
-                                    aria-expanded="false"><i data-feather="lock" class="feather-icon"></i><span
-                    class="hide-menu">Login
-                                </span></a>
-        </li>
-        <li class="sidebar-item"><a class="sidebar-link sidebar-link"
-                                    href="authentication-register1.html" aria-expanded="false"><i data-feather="lock"
-                                                                                                  class="feather-icon"></i><span
-                    class="hide-menu">Register
-                                </span></a>
-        </li>
 
         <li class="sidebar-item"><a class="sidebar-link has-arrow" href="javascript:void(0)"
                                     aria-expanded="false"><i data-feather="feather" class="feather-icon"></i><span

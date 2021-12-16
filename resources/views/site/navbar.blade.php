@@ -55,7 +55,7 @@
                                 <li><a href="{{ $navbars->link_title_10 }}">{{$navbars->title_10}}</a></li>
                             </ul>
                         </li>
-                        <li><a class="nav-link scrollto" href="{{ $navbars->link_title_11 }}">{{$navbars->title_11}}</a>
+                        <li><a class="nav-link scrollto" href="{{ route($navbars->link_title_11) }}"><i class="{{$navbars->title_11}}"></i></a>
                         </li>
                     </ul>
                     <i class="bi bi-list mobile-nav-toggle"></i>
@@ -63,13 +63,15 @@
                 </nav><!-- .navbar -->
 
             </div>
-    </header><!-- End Header -->
+    </header>
+    <script src="{{asset('js/jquery-mask-plugin/dist/jquery.mask.min.js')}}"></script><!-- End Header -->
     <script>
         // fetch('')
         let test = document.getElementById(
             "phone"
         ).href = `https://api.whatsapp.com/send?phone=55${phone}&text=Olá, entrei no site da gostaria de algumas informações.`;
-        console.log(test)
 
-
+        $('#cpf').mask('000.000.000-00');
     </script>
+
+
