@@ -15,4 +15,8 @@ class OrderItems extends Model
     use Timestamp;
 
     protected $guarded = ['id'];
+
+    protected $table = 'order_items';
+
+    protected $fillable = ['quantity', 'value', 'date_item', 'product_id', 'order_id'];
 }

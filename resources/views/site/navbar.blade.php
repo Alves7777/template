@@ -52,10 +52,11 @@
                                 <li><a href="{{ $navbars->link_title_7 }}">{{$navbars->title_7}}</a></li>
                                 <li><a href="{{ $navbars->link_title_8 }}">{{$navbars->title_8}}</a></li>
                                 <li><a href="{{ $navbars->link_title_9 }}">{{$navbars->title_9}}</a></li>
-                                <li><a href="{{ $navbars->link_title_10 }}">{{$navbars->title_10}}</a></li>
+{{--                                <li><a href="{{ $navbars->link_title_10 }}">{{$navbars->title_10}}</a></li>--}}
                             </ul>
                         </li>
-                        <li><a class="nav-link scrollto" href="{{ route($navbars->link_title_11) }}"><i class="{{$navbars->title_11}}"></i></a>
+                        <li><a class="nav-link scrollto" href="{{ $navbars->link_title_10 }}"><i class=""></i>{{$navbars->title_10}}</a>
+                        <li><a class="nav-link scrollto" href="{{ $navbars->link_title_11 }}"><i class=""></i>{{$navbars->title_11}}</a>
                         </li>
                     </ul>
                     <i class="bi bi-list mobile-nav-toggle"></i>

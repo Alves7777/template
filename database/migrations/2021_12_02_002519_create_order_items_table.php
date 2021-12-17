@@ -18,10 +18,10 @@ class CreateOrderItemsTable extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-//            $table->foreignId('product_id')
-//                ->references('id')
-//                ->on('products')
-//                ->onDelete('cascade');
+            $table->foreignId('product_id')
+                ->references('id')
+                ->on('products')
+                ->onDelete('cascade');
 
             $table->unsignedBigInteger('order_id');
         });

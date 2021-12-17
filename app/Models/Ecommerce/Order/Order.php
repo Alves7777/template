@@ -15,4 +15,29 @@ class Order extends Model
     use Timestamp;
 
     protected $guarded = ['id'];
+
+    protected $table = 'orders';
+
+    protected $dates = ['date_order'];
+
+    protected $fillable = ['date_order', 'status', 'admin_id'];
+
+    public function statusDesc(): string
+    {
+        $desc =  "";
+        switch ($this->status) {
+            case 'PEN' :
+                $desc = 'PENDENTE';
+                break;
+            case 'APR' :
+                $desc = 'APROVADO';
+                break;
+            case 'CAN' :
+                $desc = 'CANCELADO';
+                break;
+        }
+
+        return $desc;
+    }
+
 }

@@ -12,6 +12,10 @@
                            style="margin-right: -15px;">
                             <i class="fas fa-arrow-left"></i>
                         </a>
+                        <a href="{{route('export-excel')}}" class="btn btn-navbar" type="submit"
+                           style="margin-right: -15px;">
+                            <i class="fas fa-file-excel"></i>
+                        </a>
                     </div>
                 </div>
                 <div class="card-body table-responsive p-3">
