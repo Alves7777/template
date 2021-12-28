@@ -17,10 +17,7 @@ class CreateOrdersTable extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-            $table->foreignId('user_ecommerce_id')
-                ->references('id')
-                ->on('user_ecommerces')
-                ->onDelete('cascade');
+            $table->foreignId('admin_id');
 
         });
     }

@@ -6,9 +6,11 @@ use App\AbstractView\AbstractView;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Progress\ProgressRequest;
 use App\Services\Progress\ProgressService;
+use Carbon\Carbon;
 use Exception;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\DB;
+use Vtiful\Kernel\Format;
 
 class ProgressController extends Controller
 {
@@ -118,5 +120,40 @@ class ProgressController extends Controller
             $this->errorMsg($e);
             return redirect()->back();
         }
+    }
+
+    public function exportExcel()
+    {
+
+        $arquivo = date('d-m-Y') . '-dados-contagem.xls';
+
+        $response = $this->progressService->all();
+
+        $html = '<table border="1">';
+        $html .= '<tr>';
+        $html .= '<th colspan="3">Tabela de Contagem</th>';
+        $html .= '</tr>';
+        $html .= '<tr>';
+        $html .= '<th><b>Nome do Progresso</b></th>';
+        $html .= '<th><b>Porcentagem</b></th>';
+        $html .= '<th><b>Data da Create</b></th>';
+        $html .= '</tr>';
+
+        foreach ($response as $key => $result) {
+            $createDate = Carbon::createFromFormat("Y-m-d H:i:s", $result["created_at"])->format('d/m/Y');
+            $html .= '<tr>';
+            $html .= '<td><b>' . $result["progress_name"] . '</b></td>';
+            $html .= '<td><b>' . $result["percentage"] . '</b></td>';
+            $html .= '<td><b>' . $createDate . '</b></td>';
+            $html .= '</tr>';
+        }
+        $html .= '</table>';
+
+        header('Cache-Control: no-cache, must-revalidate');
+        header('Pragma: no-cache');
+        header('Content-Type: application/x-msexcel');
+        header("Content-Disposition: attachment; filename=\"{$arquivo}\"");
+        echo $html;
+        exit();
     }
 }

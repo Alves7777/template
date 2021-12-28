@@ -15,6 +15,10 @@ class ProductRoute
         Route::match(['get', 'post'], '{product_id}/cart/add', [ProductController::class, 'addCart'])->name('add_cart');
         Route::match(['get', 'post'], 'cart', [ProductController::class, 'viewCart'])->name('view_cart');
         Route::match(['get', 'post'], '{index}/delete/cart', [ProductController::class, 'deleteCart'])->name('cart_delete');
+        Route::post('cart/finish', [ProductController::class, 'finishCart'])->name('cart_finish');
+        Route::match(['get', 'post'], 'purchase/history', [ProductController::class, 'purchaseHistory'])->name('purchase_history');
+        Route::post('purchase/details', [ProductController::class, 'details'])->name('purchases_details');
+        Route::match(['get', 'post'], 'shopping/pay', [ProductController::class, 'pay'])->name('pay');
 
     }
 }
