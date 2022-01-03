@@ -1,35 +1,33 @@
 <?php
 
-namespace App\Http\Controllers\Score;
+namespace App\Http\Controllers\SectionFive;
 
 use App\AbstractView\AbstractView;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Score\ScoreRequest;
-use App\Services\Score\ScoreService;
+use App\Http\Requests\SectionFive\SectionFiveRequest;
+use App\Services\SectionFive\SectionFiveService;
 use Exception;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\DB;
 
-class ScoreController extends Controller
+class SectionFiveController extends Controller
 {
     private AbstractView $abstract;
-    private ScoreService $scoreService;
-    public string $type = AbstractView::VIEW[8];
+    private SectionFiveService $sectionFiveService;
 
-    public function __construct(ScoreService $scoreService)
+    public function __construct(SectionFiveService $sectionFiveService)
     {
         parent::__construct();
-        $this->scoreService = $scoreService;
+        $this->sectionFiveService = $sectionFiveService;
         $this->abstract = new AbstractView();
-        $this->abstract->setScore();
+        $this->abstract->setSectionFive();
     }
 
     public function index()
     {
         try {
-
-            $this->type = $this->scoreService->all();
-            return view($this->abstract->index, compact(json_decode($this->type)));
+            $sectionfive = $this->sectionFiveService->all();
+            return view($this->abstract->index, compact('sectionfive'));
         } catch (Exception $e) {
             $this->ops($e);
             return redirect()->back();
@@ -39,25 +37,25 @@ class ScoreController extends Controller
     public function create()
     {
         try {
-            $qtdMax = 3; // array
-            $data = $this->scoreService->all();
+            $qtdMax = 4; // array
+            $data = $this->sectionFiveService->all();
             $this->abstract->getValidation($data, $qtdMax);
             return view($this->abstract->create);
         } catch (\ErrorException $e) {
             alert()->warning('Você não pode adicionar mais ' . $this->abstract->title);
             return redirect()->back();
-
         } catch (\Exception $e) {
-            alert()->error($this->abstract->index . " não encontrada.");
+            alert()->error($e->getMessage());
             return redirect()->back();
         }
     }
 
-    public function store(ScoreRequest $request): RedirectResponse
+    public function store(SectionFiveRequest $request): RedirectResponse
     {
         try {
+            // se o primeiro array estiver adicionado, o restante é null
             DB::beginTransaction();
-            $this->scoreService->create($request->validated());
+            $this->sectionFiveService->create($request->validated());
             DB::commit();
             $this->successRegister($this->abstract->title);
             return redirect()->route($this->abstract->index);
@@ -71,8 +69,8 @@ class ScoreController extends Controller
     public function show($id)
     {
         try {
-            $score = $this->scoreService->findOrFail($id);
-            return view($this->abstract->show, compact('score'));
+            $sectionfive = $this->sectionFiveService->findOrFail($id);
+            return view($this->abstract->show, compact('sectionfive'));
         } catch (Exception $e) {
             $this->error($this->abstract->title);
             return redirect()->back();
@@ -82,19 +80,19 @@ class ScoreController extends Controller
     public function edit(string $id)
     {
         try {
-            $score = $this->scoreService->findOrFail($id);
-            return view($this->abstract->edit, compact('score'));
+            $sectionfive = $this->sectionFiveService->findOrFail($id);
+            return view($this->abstract->edit, compact('sectionfive'));
         } catch (Exception $e) {
             $this->error($this->abstract->title);
             return redirect()->back();
         }
     }
 
-    public function update(ScoreRequest $request, $id): RedirectResponse
+    public function update(SectionFiveRequest $request, $id): RedirectResponse
     {
         try {
             DB::beginTransaction();
-            $this->scoreService->update($id, $request->validated());
+            $this->sectionFiveService->update($id, $request->validated());
             DB::commit();
             $this->successEditing($this->abstract->title);
             return redirect()->route($this->abstract->index);
@@ -109,7 +107,7 @@ class ScoreController extends Controller
     {
         try {
             DB::beginTransaction();
-            $this->scoreService->delete($id);
+            $this->sectionFiveService->delete($id);
             DB::commit();
             $this->successDelete($this->abstract->title);
             return redirect()->route($this->abstract->index);

@@ -4,6 +4,7 @@ use App\Http\Controllers\Api\ApiFreightController;
 use App\Http\Controllers\Auth\AdminRegisterController;
 use App\Http\Controllers\Site\_PagesController;
 use App\Http\Controllers\Site\HomeController;
+use App\Routes\Dashboard\DashboardRoute;
 use App\Routes\Ecommerce\Product\ProductRoute;
 use App\Routes\Ecommerce\Client\ClientRoute;
 use App\Routes\Ecommerce\UserEcommerce\UserEcommerceRoute;
@@ -11,6 +12,7 @@ use App\Routes\Navbar\NavbarRoute;
 use App\Routes\Pages\PagesRoute;
 use App\Routes\Progress\ProgressRoute;
 use App\Routes\Score\ScoreRoute;
+use App\Routes\SectionFive\SectionFiveRoute;
 use App\Routes\SectionFour\SectionFourRoute;
 use App\Routes\SectionOne\SectionOneRoute;
 use App\Routes\SectionThree\SectionThreeRoute;
@@ -62,6 +64,8 @@ Route::group(['middleware'=> ['auth']], function () {
     ScoreRoute::routes();
     SectionFourRoute::routes();
     TitleRoute::routes();
+    SectionFiveRoute::routes();
+    DashboardRoute::routes();
 });
 
 Auth::routes();
@@ -79,3 +83,7 @@ Route::prefix('admin')->group(function() {
     Route::match(['get', 'post'], 'register-admin/add', [AdminRegisterController::class, 'addRegister'])->name('add_register');
 
 });
+
+/*
+Terminar crud de sectionFive
+*/

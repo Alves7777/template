@@ -5,6 +5,11 @@
                     class="hide-menu">SITE</span></a></li>
         <li class="list-divider"></li>
 
+        <li class="sidebar-item"><a class="sidebar-link sidebar-link" href="/dashboard"
+                                    aria-expanded="false"><i data-feather="home" class="feather-icon"></i><span
+                    class="hide-menu">DASHBOARD</span></a></li>
+        <li class="list-divider"></li>
+
         <li class="nav-small-cap"><span class="hide-menu">Authentication</span></li>
 
 {{--        <li class="sidebar-item"><a class="sidebar-link sidebar-link" href="authentication-login1.html"--}}
@@ -32,10 +37,7 @@
             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                 @csrf
             </form>
-
-
         </li>
-
 
         <li class="list-divider"></li>
         <li class="nav-small-cap"><span class="hide-menu">Components</span></li>
@@ -205,6 +207,21 @@
                                         </span></a>
                 </li>
                 <li class="sidebar-item"><a href="{{ route('sectionfour.index') }}" class="sidebar-link"><span
+                            class="hide-menu"> Listar
+                                        </span></a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="sidebar-item"><a class="sidebar-link has-arrow" href="javascript:void(0)"
+                                    aria-expanded="false"><i data-feather="grid" class="feather-icon"></i><span
+                    class="hide-menu">Seção 5 </span></a>
+            <ul aria-expanded="false" class="collapse  first-level base-level-line">
+                <li class="sidebar-item"><a href="{{ route('sectionfive.create') }}" class="sidebar-link"><span
+                            class="hide-menu"> Adicionar
+                                        </span></a>
+                </li>
+                <li class="sidebar-item"><a href="{{ route('sectionfive.index') }}" class="sidebar-link"><span
                             class="hide-menu"> Listar
                                         </span></a>
                 </li>

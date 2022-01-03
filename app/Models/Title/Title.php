@@ -16,4 +16,16 @@ class Title extends Model
     use SoftDeletes;
 
     protected $guarded = ['id'];
+
+    public static function countTitles()
+    {
+        $titles = self::get();
+
+        $titles->map(function ($item) {
+            return $item->title;
+        });
+
+        return $titles->count();
+    }
+
 }
