@@ -30,6 +30,25 @@
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js" type="text/javascript"></script>
+    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="../assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- apps -->
+    <!-- apps -->
+{{--    <script src="../dist/js/app-style-switcher.js"></script>--}}
+{{--    <script src="../dist/js/feather.min.js"></script>--}}
+{{--    <script src="../assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>--}}
+{{--    <script src="../dist/js/sidebarmenu.js"></script>--}}
+{{--    <!--Custom JavaScript -->--}}
+{{--    <script src="../dist/js/custom.min.js"></script>--}}
+{{--    <!--This page JavaScript -->--}}
+{{--    <script src="../assets/extra-libs/c3/d3.min.js"></script>--}}
+{{--    <script src="../assets/extra-libs/c3/c3.min.js"></script>--}}
+{{--    <script src="../assets/libs/chartist/dist/chartist.min.js"></script>--}}
+{{--    <script src="../assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>--}}
+{{--    <script src="../assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js"></script>--}}
+{{--    <script src="../assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js"></script>--}}
+{{--    <script src="../dist/js/pages/dashboards/dashboard1.min.js"></script>--}}
 
     <![endif]-->
 </head>
@@ -52,21 +71,21 @@
         </div>
     </aside>
     <div class="page-wrapper">
-        <div class="page-breadcrumb">
-            <div class="row">
-                <div class="col-7 align-self-center">
-                    <h3 class="page-title text-truncate text-dark font-weight-medium mb-1"></h3>
-                    <div class="d-flex align-items-center">
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb m-0 p-0">
-                                <li class="breadcrumb-item"><a href="">Dashboard</a>
-                                </li>
-                            </ol>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
+{{--        <div class="page-breadcrumb">--}}
+{{--            <div class="row">--}}
+{{--                <div class="col-7 align-self-center">--}}
+{{--                    <h3 class="page-title text-truncate text-dark font-weight-medium mb-1"></h3>--}}
+{{--                    <div class="d-flex align-items-center">--}}
+{{--                        <nav aria-label="breadcrumb">--}}
+{{--                            <ol class="breadcrumb m-0 p-0">--}}
+{{--                                <li class="breadcrumb-item"><a href="">Dashboard</a>--}}
+{{--                                </li>--}}
+{{--                            </ol>--}}
+{{--                        </nav>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
         <div id="app" class="container-fluid">
             @yield('content')
         </div>

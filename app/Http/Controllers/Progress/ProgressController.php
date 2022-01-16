@@ -16,7 +16,7 @@ class ProgressController extends Controller
 {
     private AbstractView $abstract;
     private ProgressService $progressService;
-    public string $type = AbstractView::VIEWS['Progresso'];
+    public string $type = AbstractView::VIEW[7];
 
     public function __construct(ProgressService $progressService)
     {

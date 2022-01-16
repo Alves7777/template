@@ -8,6 +8,7 @@ use App\Models\NavBar\Navbar;
 use App\Models\Pages\Pages;
 use App\Models\Progress\Progress;
 use App\Models\Score\Score;
+use App\Models\SectionFive\SectionFive;
 use App\Models\SectionFour\SectionFour;
 use App\Models\SectionOne\SectionOne;
 use App\Models\SectionThree\SectionThree;
@@ -28,16 +29,22 @@ class Controller extends BaseController
 
     public function __construct()
     {
-        View::share('navbar', Navbar::all());
-        View::share('topbar', Topbar::all());
-        View::share('sectionone', SectionOne::all());
-        View::share('page_1', Pages::all());
-        View::share('admin', Admin::all());
-        View::share(AbstractView::VIEWS['Seção 3'], SectionThree::all());
-        View::share(AbstractView::VIEWS['Progresso'], Progress::all());
-        View::share(AbstractView::VIEWS['Contagem'], Score::all());
-        View::share(AbstractView::VIEWS['Seção 4'], SectionFour::all());
-        View::share(AbstractView::VIEWS['Titulo'], Title::all());
+        $abstract = new AbstractView();
+        $view = $abstract::VIEW;
+
+        View::share([
+            $view[1] => Navbar::all(),
+            $view[2] => Topbar::all(),
+            $view[3] => SectionOne::all(),
+            $view[4] => Pages::all(),
+            $view[5] => Admin::all(),
+            $view[6] => SectionThree::all(),
+            $view[7] => Progress::all(),
+            $view[8] => Score::all(),
+            $view[9] => SectionFour::all(),
+            $view[10] => Title::all(),
+            $view[11] => SectionFive::all(),
+        ]);
 
         //MESSAGES
         $this->MSG_ERROR = ' Página não encontrada.';

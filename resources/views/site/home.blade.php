@@ -19,7 +19,16 @@
                 background: url("{{ asset("/storage/$sectionones->image") }}");
             }
 
+            .testimonials {
+                padding: 80px 0;
+                background: url("{{ asset("/storage/$section5_background") }}") no-repeat;
+                background-position: center center;
+                background-size: cover;
+                position: relative;
+            }
+
         </style>
+
         <section id="hero" class="d-flex align-items-center">
             <div class="container" id="test" data-aos="zoom-out" data-aos-delay="100">
                 <h1><span>{{ $sectionones->title }}</span></h1>
@@ -41,15 +50,15 @@
             <div class="container" data-aos="fade-up">
                 <div class="row" id="row">
                     @foreach($getSectionTwo as $sectionTwo)
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                        <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                            <div class="icon" style="color: {{ $sectionTwo['color_icon'] }}"><i
-                                    class="{{ $sectionTwo['icon'] }}"></i></div>
-                            <h4 class="title" id=""><a
-                                    href="{{ $sectionTwo['url'] }}"></a>{{ $sectionTwo['title'] }}</h4>
-                            <p class="description" id="">{{ $sectionTwo['description'] }}</p>
+                        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                            <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                                <div class="icon" style="color: {{ $sectionTwo['color_icon'] }}"><i
+                                        class="{{ $sectionTwo['icon'] }}"></i></div>
+                                <h4 class="title" id=""><a
+                                        href="{{ $sectionTwo['url'] }}"></a>{{ $sectionTwo['title'] }}</h4>
+                                <p class="description" id="">{{ $sectionTwo['description'] }}</p>
+                            </div>
                         </div>
-                    </div>
                     @endforeach
 
                 </div>
@@ -138,7 +147,8 @@
                 <div class="container" data-aos="fade-up">
 
                     <div class="section-title">
-                        <h3 style="color: {{ $title_1->color_title }}"><div>{{ $title_1->title }}</div>
+                        <h3 style="color: {{ $title_1->color_title }}">
+                            <div>{{ $title_1->title }}</div>
                         </h3>
                         <p>{{ $title_1->text }}</p>
                     </div>
@@ -162,105 +172,77 @@
             <!-- ======= Testimonials Section ======= -->
             <section id="testimonials" class="testimonials">
                 <div class="container" data-aos="zoom-in">
-
                     <div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
                         <div class="swiper-wrapper">
-
                             <div class="swiper-slide">
-                                <div class="testimonial-item">
-                                    <img src="/assets/img/testimonials/testimonials-1.jpg" class="testimonial-img"
-                                         alt="">
-                                    <h3>Saul Goodman</h3>
-                                    <h4>Ceo &amp; Founder</h4>
-                                    <p>
-                                        <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                        Proin iaculis purus consequat sem cure digni ssim donec porttitora entum
-                                        suscipit
-                                        rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen
-                                        aliquam,
-                                        risus at semper.
-                                        <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                    </p>
-                                </div>
+                                    <div class="testimonial-item">
+                                        <img src="{{ asset("/storage/$image_1") }}" class="testimonial-img"
+                                             alt="">
+                                        <h3>{{ $sectionFive[1]->title }}</h3>
+                                        <h4>{{ $sectionFive[1]->text }}</h4>
+                                        <p>
+                                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                            {{ $sectionFive[1]->text_one }}
+                                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                        </p>
+                                    </div>
                             </div><!-- End testimonial item -->
 
                             <div class="swiper-slide">
                                 <div class="testimonial-item">
-                                    <img src="/assets/img/testimonials/testimonials-2.jpg" class="testimonial-img"
+                                    <img src="{{ asset("/storage/$image_2") }}" class="testimonial-img"
                                          alt="">
-                                    <h3>Sara Wilsson</h3>
-                                    <h4>Designer</h4>
+                                    <h3>{{ $sectionFive[2]->title }}</h3>
+                                    <h4>{{ $sectionFive[2]->text }}</h4>
                                     <p>
                                         <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                        Export tempor illum tamen malis malis eram quae irure esse labore quem
-                                        cillum
-                                        quid
-                                        cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat
-                                        irure
-                                        amet
-                                        legam anim culpa.
+                                        {{ $sectionFive[2]->text_one }}
                                         <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                                     </p>
                                 </div>
-                            </div><!-- End testimonial item -->
+                            </div>
 
                             <div class="swiper-slide">
                                 <div class="testimonial-item">
-                                    <img src="/assets/img/testimonials/testimonials-3.jpg" class="testimonial-img"
+                                    <img src="{{ asset("/storage/$image_3") }}" class="testimonial-img"
                                          alt="">
-                                    <h3>Jena Karlis</h3>
-                                    <h4>Store Owner</h4>
+                                    <h3>{{ $sectionFive[3]->title }}</h3>
+                                    <h4>{{ $sectionFive[3]->text }}</h4>
                                     <p>
                                         <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                        Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla
-                                        quem
-                                        veniam duis minim tempor labore quem eram duis noster aute amet eram fore
-                                        quis
-                                        sint
-                                        minim.
+                                        {{ $sectionFive[3]->text_one }}
                                         <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                                     </p>
                                 </div>
-                            </div><!-- End testimonial item -->
+                            </div>
 
                             <div class="swiper-slide">
                                 <div class="testimonial-item">
-                                    <img src="/assets/img/testimonials/testimonials-4.jpg" class="testimonial-img"
+                                    <img src="{{ asset("/storage/$image_4") }}" class="testimonial-img"
                                          alt="">
-                                    <h3>Matt Brandon</h3>
-                                    <h4>Freelancer</h4>
+                                    <h3>{{ $sectionFive[4]->title }}</h3>
+                                    <h4>{{ $sectionFive[4]->text }}</h4>
                                     <p>
                                         <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                        Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export
-                                        minim
-                                        fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit
-                                        fore
-                                        quem
-                                        dolore labore illum veniam.
+                                        {{ $sectionFive[4]->text_one }}
                                         <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                                     </p>
                                 </div>
-                            </div><!-- End testimonial item -->
+                            </div>
 
                             <div class="swiper-slide">
                                 <div class="testimonial-item">
-                                    <img src="/assets/img/testimonials/testimonials-5.jpg" class="testimonial-img"
+                                    <img src="{{ asset("/storage/$image_5") }}" class="testimonial-img"
                                          alt="">
-                                    <h3>John Larson</h3>
-                                    <h4>Entrepreneur</h4>
+                                    <h3>{{ $sectionFive[5]->title }}</h3>
+                                    <h4>{{ $sectionFive[5]->text }}</h4>
                                     <p>
                                         <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                        Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor
-                                        noster
-                                        veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam
-                                        esse
-                                        veniam
-                                        culpa fore nisi cillum quid.
+                                        {{ $sectionFive[5]->text_one }}
                                         <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                                     </p>
                                 </div>
-                            </div><!-- End testimonial item -->
-
+                            </div>
                         </div>
                         <div class="swiper-pagination"></div>
                     </div>
@@ -273,7 +255,8 @@
                 <div class="container" data-aos="fade-up">
 
                     <div class="section-title">
-                        <h3 style="color: {{ $title_2->color_title }}"><div>{{ $title_2->title }}</div>
+                        <h3 style="color: {{ $title_2->color_title }}">
+                            <div>{{ $title_2->title }}</div>
                         </h3>
                         <p>{{ $title_2->text }}</p>
                     </div>
@@ -409,7 +392,8 @@
                 <div class="container" data-aos="fade-up">
 
                     <div class="section-title">
-                        <h3 style="color: {{ $title_3->color_title }}"><div>{{ $title_3->title }}</div>
+                        <h3 style="color: {{ $title_3->color_title }}">
+                            <div>{{ $title_3->title }}</div>
                         </h3>
                         <p>{{ $title_3->text }}</p>
                     </div>
@@ -502,7 +486,8 @@
                 <div class="container" data-aos="fade-up">
 
                     <div class="section-title">
-                        <h3 style="color: {{ $title_4->color_title }}"><div>{{ $title_4->title }}</div>
+                        <h3 style="color: {{ $title_4->color_title }}">
+                            <div>{{ $title_4->title }}</div>
                         </h3>
                         <p>{{ $title_4->text }}</p>
                     </div>
@@ -636,7 +621,8 @@
                 <div class="container" data-aos="fade-up">
 
                     <div class="section-title">
-                        <h3 style="color: {{ $title_5->color_title }}"><div>{{ $title_5->title }}</div>
+                        <h3 style="color: {{ $title_5->color_title }}">
+                            <div>{{ $title_5->title }}</div>
                         </h3>
                         <p>{{ $title_5->text }}</p>
                     </div>

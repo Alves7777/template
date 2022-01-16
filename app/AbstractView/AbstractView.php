@@ -6,8 +6,20 @@ class AbstractView
 {
     // PREFIXS
     const QTD_SEEDER = ['qtd_1' => 5, 'qtd_2' => 10, 'qtd_3' => 4, 'qtd_4' => 6];
-    const VIEWS = ['Seção 3' => 'sectionthree', 'Progresso' => 'progress', 'Contagem' => 'score', 'Seção 4' => 'sectionfour',
-        'Titulo' => 'title'];
+    const VIEW = [
+        0 => 'Error: Nome Não Existe',
+        1 => 'navbar',
+        2 => 'topbar',
+        3 => 'sectionone',
+        4 => 'page_1',
+        5 => 'admin',
+        6 => 'sectionthree',
+        7 => 'progress',
+        8 => 'score',
+        9 => 'sectionfour',
+        10 => 'title',
+        11 => 'sectionfive'
+    ];
 
     // CRUDS
     public string $title, $index, $create, $show, $edit, $delete;
@@ -71,6 +83,18 @@ class AbstractView
         return true;
     }
 
+    public function setSectionFive(): string
+    {
+        $this->title = 'Seção 5';
+        $this->index = 'sectionfive.index';
+        $this->create = 'sectionfive.create';
+        $this->show = 'sectionfive.show';
+        $this->edit = 'sectionfive.edit';
+        $this->delete = 'sectionfive.destroy';
+
+        return true;
+    }
+
     // LÓGICAS
     public function getValidation($data = null, $qtdMax = null): string
     {
@@ -79,6 +103,17 @@ class AbstractView
         }
 
         return true;
+    }
+
+    public function getConstViewValidation($name)
+    {
+        try {
+            $view = self::VIEW[$name];
+        } catch (\Exception $e) {
+            alert()->error($e->getMessage(),'Error: Tentando acessar um Nome que Não Existe');
+            return redirect()->back();
+        }
+        return $view[$name];
     }
 
 }

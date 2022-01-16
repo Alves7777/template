@@ -33,7 +33,7 @@ class SaleService
                 $items->save();
             }
             DB::commit();
-            return ['status' => 'success', 'message' => 'Venda finalizada com sucesso'];
+            return ['status' => 'success', 'message' => 'Venda finalizada com sucesso', 'order_id' => $order->id];
         } catch (\Exception $e) {
             DB::rollBack();
             Log::error('ERROR: VENDA SERVICE', ['message' => $e->getMessage()]);
