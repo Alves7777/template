@@ -5,8 +5,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <input style="display: none" type="text" name="hashseller" class="hashseller">
     <input style="display: none" type="text" id="sessionId" value="{{ $sessionID }}" name="ncredit" class="ncredit form-control">
-    <input style="display: none" type="text" id="cardToken" value="" name="cardToken" class="cardToken form-control">
-    <form class="container p-3">
+    <input style="display: none" type="hidden" id="cardToken" name="cardToken" class="cardToken form-control">
+    <form class="container p-3" id="form">
 
         @if(isset($cart) && count($cart) > 0)
 

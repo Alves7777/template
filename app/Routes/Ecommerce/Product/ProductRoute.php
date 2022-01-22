@@ -20,5 +20,7 @@ class ProductRoute
         Route::post('purchase/details', [ProductController::class, 'details'])->name('purchases_details');
         Route::match(['get', 'post'], 'shopping/pay', [ProductController::class, 'pay'])->name('pay');
 
+        Route::post('payment/cart', [ProductController::class, 'paymentCart'])->name('payment_cart');
+
     }
 }

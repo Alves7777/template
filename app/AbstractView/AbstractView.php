@@ -18,7 +18,8 @@ class AbstractView
         8 => 'score',
         9 => 'sectionfour',
         10 => 'title',
-        11 => 'sectionfive'
+        11 => 'sectionfive',
+        12 => 'collectionsimages'
     ];
 
     // CRUDS
@@ -95,6 +96,18 @@ class AbstractView
         return true;
     }
 
+    public function setCollectionsImages(): string
+    {
+        $this->title = 'Coleção de Imagens';
+        $this->index = 'collectionsimages.index';
+        $this->create = 'collectionsimages.create';
+        $this->show = 'collectionsimages.show';
+        $this->edit = 'collectionsimages.edit';
+        $this->delete = 'collectionsimages.destroy';
+
+        return true;
+    }
+
     // LÓGICAS
     public function getValidation($data = null, $qtdMax = null): string
     {
@@ -107,19 +120,65 @@ class AbstractView
 
     public function getConstViewValidation($name)
     {
+        // return redirect()->back();
         try {
             $view = self::VIEW[$name];
+            $msg = alert()->success('Sucesso ao acessar a view!');
+            return response()->json([
+                'status'   => 'success',
+                'message'  => $msg,
+                'data' => $view[$name]
+            ], 500);
         } catch (\Exception $e) {
-            alert()->error($e->getMessage(),'Error: Tentando acessar um Nome que Não Existe');
-            return redirect()->back();
+            alert()->error('Error: Tentando acessar um Nome que Não Existe');
+            return response()->json([
+                'status'   => 'error',
+                'message'  => $e->getMessage(),
+                'data' => null
+            ], 500);
         }
-        return $view[$name];
+    }
+
+    // percorre todo array
+    public static function loopThroughArray($data): array
+    {
+        return [
+            1 => $data[0] ?? null,
+            2 => $data[1] ?? null,
+            3 => $data[2] ?? null,
+            4 => $data[3] ?? null,
+            5 => $data[4] ?? null,
+            6 => $data[5] ?? null,
+            7 => $data[6] ?? null,
+            8 => $data[7] ?? null,
+            9 => $data[8] ?? null,
+            10 => $data[9] ?? null,
+        ];
+
+    }
+
+    // seleciona a informação do array que quiser
+    public static function getInfoFromArray($data, $position_1, $info_1, $position_2 = null, $info_2 = null,
+                                            $position_3 = null, $info_3 = null, $position_4 = null, $info_4 = null,
+                                            $position_5 = null, $info_5 = null, $position_6 = null, $info_6 = null,
+                                            $position_7 = null, $info_7 = null, $position_8 = null, $info_8 = null,
+                                            $position_9 = null, $info_9 = null, $position_10 = null, $info_10 = null): array
+    {
+        $getUnique = AbstractView::loopThroughArray($data);
+
+        return [
+            $getUnique[$position_1][$info_1] ?? null,
+            $getUnique[$position_2][$info_2] ?? null,
+            $getUnique[$position_3][$info_3] ?? null,
+            $getUnique[$position_4][$info_4] ?? null,
+            $getUnique[$position_5][$info_5] ?? null,
+            $getUnique[$position_6][$info_6] ?? null,
+            $getUnique[$position_7][$info_7] ?? null,
+            $getUnique[$position_8][$info_8] ?? null,
+            $getUnique[$position_9][$info_9] ?? null,
+            $getUnique[$position_10][$info_10] ?? null,
+        ];
+
     }
 
 }
-
-
-
-
-
-

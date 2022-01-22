@@ -170,10 +170,11 @@ class ProductController extends Controller
             $creditCard->setToken($token); //aqui
             $npacelas = request()->input('npacelas'); //aqui
             $totalPagar = request()->input('totalPagar');
-            $totalParcelas = (float)request()->input('totalParcelas');
+            $totalParcelas = request()->input('totalpart');
+            $resultTolalPagar = number_format($totalParcelas,2,'.','');
 
             // tive que aumentar 0.01 centavos no $totalParcelas, pois estava dando o erro: <message>installment value invalid value: $totalParcelas
-            $creditCard->setInstallment()->withParameters($npacelas, number_format($totalParcelas, 2, '.',''));
+            $creditCard->setInstallment()->withParameters($npacelas, $resultTolalPagar);
             //Dados do titltuat do cartão, ideal estpa no formulário.
             $creditCard->setHolder()->setName($userAdmin->name . "" . $userAdmin->name);
             $creditCard->setHolder()->setDocument()->withParameters('CPF', '04459085054');
@@ -226,6 +227,7 @@ class ProductController extends Controller
     public function pay()
     {
         $data = [];
+//        $test = \PagSeguro\Services\Installment::create('','');
 
         $cart = session('cart', []);
         $data['cart'] = $cart;
@@ -234,7 +236,7 @@ class ProductController extends Controller
         foreach ($data["cart"] as $value) {
             $total += $value['value'];
         }
-        (double)$totalProduct = number_format($total, 2, ',', '.');
+        (double)$totalProduct = number_format($total, 2, '.', ',');
 
         $sessionCode = Session::create(
             $this->getCredential()
@@ -244,5 +246,11 @@ class ProductController extends Controller
 
         return view('site.ecommerce.purchase.pay', $data, compact('totalProduct'));
     }
+
+    public function paymentCart(): array
+    {
+        return \request()->all();
+    }
+
 
 }

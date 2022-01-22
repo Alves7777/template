@@ -21,7 +21,7 @@
 
             .testimonials {
                 padding: 80px 0;
-                background: url("{{ asset("/storage/$section5_background") }}") no-repeat;
+                background: url("{{ asset("/storage/$listUnique[0]") }}") no-repeat;
                 background-position: center center;
                 background-size: cover;
                 position: relative;
@@ -147,10 +147,10 @@
                 <div class="container" data-aos="fade-up">
 
                     <div class="section-title">
-                        <h3 style="color: {{ $title_1->color_title }}">
-                            <div>{{ $title_1->title }}</div>
+                        <h3 style="color: {{ $title[0] }}">
+                            <div>{{ $title[1] }}</div>
                         </h3>
-                        <p>{{ $title_1->text }}</p>
+                        <p>{{ $title[2] }}</p>
                     </div>
                     <div class="row">
                         @foreach($getSectionFour as $section_four)
@@ -175,22 +175,22 @@
                     <div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                    <div class="testimonial-item">
-                                        <img src="{{ asset("/storage/$image_1") }}" class="testimonial-img"
-                                             alt="">
-                                        <h3>{{ $sectionFive[1]->title }}</h3>
-                                        <h4>{{ $sectionFive[1]->text }}</h4>
-                                        <p>
-                                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                            {{ $sectionFive[1]->text_one }}
-                                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                        </p>
-                                    </div>
+                                <div class="testimonial-item">
+                                    <img src="{{ asset("/storage/$listUnique[1]") }}" class="testimonial-img"
+                                         alt="">
+                                    <h3>{{ $sectionFive[1]->title }}</h3>
+                                    <h4>{{ $sectionFive[1]->text }}</h4>
+                                    <p>
+                                        <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                        {{ $sectionFive[1]->text_one }}
+                                        <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                    </p>
+                                </div>
                             </div><!-- End testimonial item -->
 
                             <div class="swiper-slide">
                                 <div class="testimonial-item">
-                                    <img src="{{ asset("/storage/$image_2") }}" class="testimonial-img"
+                                    <img src="{{ asset("/storage/$listUnique[2]") }}" class="testimonial-img"
                                          alt="">
                                     <h3>{{ $sectionFive[2]->title }}</h3>
                                     <h4>{{ $sectionFive[2]->text }}</h4>
@@ -204,7 +204,7 @@
 
                             <div class="swiper-slide">
                                 <div class="testimonial-item">
-                                    <img src="{{ asset("/storage/$image_3") }}" class="testimonial-img"
+                                    <img src="{{ asset("/storage/$listUnique[3]") }}" class="testimonial-img"
                                          alt="">
                                     <h3>{{ $sectionFive[3]->title }}</h3>
                                     <h4>{{ $sectionFive[3]->text }}</h4>
@@ -218,7 +218,7 @@
 
                             <div class="swiper-slide">
                                 <div class="testimonial-item">
-                                    <img src="{{ asset("/storage/$image_4") }}" class="testimonial-img"
+                                    <img src="{{ asset("/storage/$listUnique[4]") }}" class="testimonial-img"
                                          alt="">
                                     <h3>{{ $sectionFive[4]->title }}</h3>
                                     <h4>{{ $sectionFive[4]->text }}</h4>
@@ -232,7 +232,7 @@
 
                             <div class="swiper-slide">
                                 <div class="testimonial-item">
-                                    <img src="{{ asset("/storage/$image_5") }}" class="testimonial-img"
+                                    <img src="{{ asset("/storage/$listUnique[5]") }}" class="testimonial-img"
                                          alt="">
                                     <h3>{{ $sectionFive[5]->title }}</h3>
                                     <h4>{{ $sectionFive[5]->text }}</h4>
@@ -255,132 +255,237 @@
                 <div class="container" data-aos="fade-up">
 
                     <div class="section-title">
-                        <h3 style="color: {{ $title_2->color_title }}">
-                            <div>{{ $title_2->title }}</div>
+                        <h3 style="color: {{ $title[3] }}">
+                            <div>{{ $title[4] }}</div>
                         </h3>
-                        <p>{{ $title_2->text }}</p>
+                        <p>{{ $title[5] }}</p>
                     </div>
 
-                    <div class="row" data-aos="fade-up" data-aos-delay="100">
-                        <div class="col-lg-12 d-flex justify-content-center">
-                            <ul id="portfolio-flters">
-                                <li data-filter="*" class="filter-active">All</li>
-                                <li data-filter=".filter-app">App</li>
-                                <li data-filter=".filter-card">Card</li>
-                                <li data-filter=".filter-web">Web</li>
-                            </ul>
-                        </div>
-                    </div>
+{{--                    <div class="row" data-aos="fade-up" data-aos-delay="100">--}}
+{{--                        <div class="col-lg-12 d-flex justify-content-center">--}}
+{{--                            <ul id="portfolio-flters">--}}
+{{--                                <li data-filter="*" class="filter-active">All</li>--}}
+{{--                                <li data-filter=".filter-app">App</li>--}}
+{{--                                <li data-filter=".filter-card">Card</li>--}}
+{{--                                <li data-filter=".filter-web">Web</li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
 
                     <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
 
                         <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                            <img src="/assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+                            <img src="{{ asset("/storage/$getCollections[1]") }}" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h4>App 1</h4>
-                                <p>App</p>
-                                <a href="/assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery"
-                                   class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" class="details-link" title="More Details"><i
-                                        class="bx bx-link"></i></a>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                            <img src="/assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Web 3</h4>
-                                <p>Web</p>
-                                <a href="/assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery"
-                                   class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
+                                <h4>{{ $listCollections[1]['title'] }}</h4>
+                                <h6>{{ $listCollections[1]['sub_title'] }}</h6>
+                                <p>{{ $listCollections[1]['text'] }}</p>
+                                <a href="{{ asset("/storage/$getCollections[1]") }}" data-gallery="portfolioGallery"
+                                   class="portfolio-lightbox preview-link" title="{{ $listCollections[1]['title'] }}"><i class="bx bx-plus"></i></a>
                                 <a href="portfolio-details.html" class="details-link" title="More Details"><i
                                         class="bx bx-link"></i></a>
                             </div>
                         </div>
 
                         <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                            <img src="/assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
+                            <img src="{{ asset("/storage/$getCollections[2]") }}" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h4>App 2</h4>
-                                <p>App</p>
-                                <a href="/assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery"
-                                   class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" class="details-link" title="More Details"><i
-                                        class="bx bx-link"></i></a>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                            <img src="/assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Card 2</h4>
-                                <p>Card</p>
-                                <a href="/assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery"
-                                   class="portfolio-lightbox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" class="details-link" title="More Details"><i
-                                        class="bx bx-link"></i></a>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                            <img src="/assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Web 2</h4>
-                                <p>Web</p>
-                                <a href="/assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery"
-                                   class="portfolio-lightbox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
+                                <h4>{{ $listCollections[2]['title'] }}</h4>
+                                <h6>{{ $listCollections[2]['sub_title'] }}</h6>
+                                <p>{{ $listCollections[2]['text'] }}</p>
+                                <a href="{{ asset("/storage/$getCollections[2]") }}" data-gallery="portfolioGallery"
+                                   class="portfolio-lightbox preview-link" title="{{ $listCollections[2]['title'] }}"><i class="bx bx-plus"></i></a>
                                 <a href="portfolio-details.html" class="details-link" title="More Details"><i
                                         class="bx bx-link"></i></a>
                             </div>
                         </div>
 
                         <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                            <img src="/assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
+                            <img src="{{ asset("/storage/$getCollections[3]") }}" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h4>App 3</h4>
-                                <p>App</p>
-                                <a href="/assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery"
-                                   class="portfolio-lightbox preview-link" title="App 3"><i class="bx bx-plus"></i></a>
+                                <h4>{{ $listCollections[3]['title'] }}</h4>
+                                <h6>{{ $listCollections[3]['sub_title'] }}</h6>
+                                <p>{{ $listCollections[3]['text'] }}</p>
+                                <a href="{{ asset("/storage/$getCollections[3]") }}" data-gallery="portfolioGallery"
+                                   class="portfolio-lightbox preview-link" title="{{ $listCollections[3]['title'] }}"><i class="bx bx-plus"></i></a>
                                 <a href="portfolio-details.html" class="details-link" title="More Details"><i
                                         class="bx bx-link"></i></a>
                             </div>
                         </div>
 
-                        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                            <img src="/assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
+                        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                            <img src="{{ asset("/storage/$getCollections[4]") }}" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h4>Card 1</h4>
-                                <p>Card</p>
-                                <a href="/assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery"
-                                   class="portfolio-lightbox preview-link" title="Card 1"><i class="bx bx-plus"></i></a>
+                                <h4>{{ $listCollections[4]['title'] }}</h4>
+                                <h6>{{ $listCollections[4]['sub_title'] }}</h6>
+                                <p>{{ $listCollections[4]['text'] }}</p>
+                                <a href="{{ asset("/storage/$getCollections[4]") }}" data-gallery="portfolioGallery"
+                                   class="portfolio-lightbox preview-link" title="{{ $listCollections[4]['title'] }}"><i class="bx bx-plus"></i></a>
                                 <a href="portfolio-details.html" class="details-link" title="More Details"><i
                                         class="bx bx-link"></i></a>
                             </div>
                         </div>
 
-                        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                            <img src="/assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
+                        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                            <img src="{{ asset("/storage/$getCollections[5]") }}" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h4>Card 3</h4>
-                                <p>Card</p>
-                                <a href="/assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery"
-                                   class="portfolio-lightbox preview-link" title="Card 3"><i class="bx bx-plus"></i></a>
+                                <h4>{{ $listCollections[5]['title'] }}</h4>
+                                <h6>{{ $listCollections[5]['sub_title'] }}</h6>
+                                <p>{{ $listCollections[5]['text'] }}</p>
+                                <a href="{{ asset("/storage/$getCollections[5]") }}" data-gallery="portfolioGallery"
+                                   class="portfolio-lightbox preview-link" title="{{ $listCollections[5]['title'] }}"><i class="bx bx-plus"></i></a>
                                 <a href="portfolio-details.html" class="details-link" title="More Details"><i
                                         class="bx bx-link"></i></a>
                             </div>
                         </div>
 
-                        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                            <img src="/assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
+                        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                            <img src="{{ asset("/storage/$getCollections[6]") }}" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h4>Web 3</h4>
-                                <p>Web</p>
-                                <a href="/assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery"
-                                   class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
+                                <h4>{{ $listCollections[6]['title'] }}</h4>
+                                <h6>{{ $listCollections[6]['sub_title'] }}</h6>
+                                <p>{{ $listCollections[6]['text'] }}</p>
+                                <a href="{{ asset("/storage/$getCollections[6]") }}" data-gallery="portfolioGallery"
+                                   class="portfolio-lightbox preview-link" title="{{ $listCollections[6]['title'] }}"><i class="bx bx-plus"></i></a>
                                 <a href="portfolio-details.html" class="details-link" title="More Details"><i
                                         class="bx bx-link"></i></a>
                             </div>
                         </div>
+
+                        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                            <img src="{{ asset("/storage/$getCollections[7]") }}" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>{{ $listCollections[7]['title'] }}</h4>
+                                <h6>{{ $listCollections[7]['sub_title'] }}</h6>
+                                <p>{{ $listCollections[7]['text'] }}</p>
+                                <a href="{{ asset("/storage/$getCollections[7]") }}" data-gallery="portfolioGallery"
+                                   class="portfolio-lightbox preview-link" title="{{ $listCollections[7]['title'] }}"><i class="bx bx-plus"></i></a>
+                                <a href="portfolio-details.html" class="details-link" title="More Details"><i
+                                        class="bx bx-link"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                            <img src="{{ asset("/storage/$getCollections[8]") }}" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>{{ $listCollections[8]['title'] }}</h4>
+                                <h6>{{ $listCollections[8]['sub_title'] }}</h6>
+                                <p>{{ $listCollections[8]['text'] }}</p>
+                                <a href="{{ asset("/storage/$getCollections[8]") }}" data-gallery="portfolioGallery"
+                                   class="portfolio-lightbox preview-link" title="{{ $listCollections[8]['title'] }}"><i class="bx bx-plus"></i></a>
+                                <a href="portfolio-details.html" class="details-link" title="More Details"><i
+                                        class="bx bx-link"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                            <img src="{{ asset("/storage/$getCollections[9]") }}" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>{{ $listCollections[9]['title'] }}</h4>
+                                <h6>{{ $listCollections[9]['sub_title'] }}</h6>
+                                <p>{{ $listCollections[9]['text'] }}</p>
+                                <a href="{{ asset("/storage/$getCollections[9]") }}" data-gallery="portfolioGallery"
+                                   class="portfolio-lightbox preview-link" title="{{ $listCollections[9]['title'] }}"><i class="bx bx-plus"></i></a>
+                                <a href="portfolio-details.html" class="details-link" title="More Details"><i
+                                        class="bx bx-link"></i></a>
+                            </div>
+                        </div>
+
+{{--                        <div class="col-lg-4 col-md-6 portfolio-item filter-web">--}}
+{{--                            <img src="/assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">--}}
+{{--                            <div class="portfolio-info">--}}
+{{--                                <h4>Web 3</h4>--}}
+{{--                                <p>Web</p>--}}
+{{--                                <a href="/assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery"--}}
+{{--                                   class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>--}}
+{{--                                <a href="portfolio-details.html" class="details-link" title="More Details"><i--}}
+{{--                                        class="bx bx-link"></i></a>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+
+{{--                        <div class="col-lg-4 col-md-6 portfolio-item filter-app">--}}
+{{--                            <img src="/assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">--}}
+{{--                            <div class="portfolio-info">--}}
+{{--                                <h4>App 2</h4>--}}
+{{--                                <p>App</p>--}}
+{{--                                <a href="/assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery"--}}
+{{--                                   class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>--}}
+{{--                                <a href="portfolio-details.html" class="details-link" title="More Details"><i--}}
+{{--                                        class="bx bx-link"></i></a>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+
+{{--                        <div class="col-lg-4 col-md-6 portfolio-item filter-card">--}}
+{{--                            <img src="/assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">--}}
+{{--                            <div class="portfolio-info">--}}
+{{--                                <h4>Card 2</h4>--}}
+{{--                                <p>Card</p>--}}
+{{--                                <a href="/assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery"--}}
+{{--                                   class="portfolio-lightbox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>--}}
+{{--                                <a href="portfolio-details.html" class="details-link" title="More Details"><i--}}
+{{--                                        class="bx bx-link"></i></a>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+
+{{--                        <div class="col-lg-4 col-md-6 portfolio-item filter-web">--}}
+{{--                            <img src="/assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">--}}
+{{--                            <div class="portfolio-info">--}}
+{{--                                <h4>Web 2</h4>--}}
+{{--                                <p>Web</p>--}}
+{{--                                <a href="/assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery"--}}
+{{--                                   class="portfolio-lightbox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>--}}
+{{--                                <a href="portfolio-details.html" class="details-link" title="More Details"><i--}}
+{{--                                        class="bx bx-link"></i></a>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+
+{{--                        <div class="col-lg-4 col-md-6 portfolio-item filter-app">--}}
+{{--                            <img src="/assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">--}}
+{{--                            <div class="portfolio-info">--}}
+{{--                                <h4>App 3</h4>--}}
+{{--                                <p>App</p>--}}
+{{--                                <a href="/assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery"--}}
+{{--                                   class="portfolio-lightbox preview-link" title="App 3"><i class="bx bx-plus"></i></a>--}}
+{{--                                <a href="portfolio-details.html" class="details-link" title="More Details"><i--}}
+{{--                                        class="bx bx-link"></i></a>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+
+{{--                        <div class="col-lg-4 col-md-6 portfolio-item filter-card">--}}
+{{--                            <img src="/assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">--}}
+{{--                            <div class="portfolio-info">--}}
+{{--                                <h4>Card 1</h4>--}}
+{{--                                <p>Card</p>--}}
+{{--                                <a href="/assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery"--}}
+{{--                                   class="portfolio-lightbox preview-link" title="Card 1"><i class="bx bx-plus"></i></a>--}}
+{{--                                <a href="portfolio-details.html" class="details-link" title="More Details"><i--}}
+{{--                                        class="bx bx-link"></i></a>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+
+{{--                        <div class="col-lg-4 col-md-6 portfolio-item filter-card">--}}
+{{--                            <img src="/assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">--}}
+{{--                            <div class="portfolio-info">--}}
+{{--                                <h4>Card 3</h4>--}}
+{{--                                <p>Card</p>--}}
+{{--                                <a href="/assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery"--}}
+{{--                                   class="portfolio-lightbox preview-link" title="Card 3"><i class="bx bx-plus"></i></a>--}}
+{{--                                <a href="portfolio-details.html" class="details-link" title="More Details"><i--}}
+{{--                                        class="bx bx-link"></i></a>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+
+{{--                        <div class="col-lg-4 col-md-6 portfolio-item filter-web">--}}
+{{--                            <img src="/assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">--}}
+{{--                            <div class="portfolio-info">--}}
+{{--                                <h4>Web 3</h4>--}}
+{{--                                <p>Web</p>--}}
+{{--                                <a href="/assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery"--}}
+{{--                                   class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>--}}
+{{--                                <a href="portfolio-details.html" class="details-link" title="More Details"><i--}}
+{{--                                        class="bx bx-link"></i></a>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
 
                     </div>
 
@@ -392,10 +497,10 @@
                 <div class="container" data-aos="fade-up">
 
                     <div class="section-title">
-                        <h3 style="color: {{ $title_3->color_title }}">
-                            <div>{{ $title_3->title }}</div>
+                        <h3 style="color: {{ $titles[3]->color_title }}">
+                            <div>{{ $titles[3]->title }}</div>
                         </h3>
-                        <p>{{ $title_3->text }}</p>
+                        <p>{{ $titles[3]->text }}</p>
                     </div>
 
                     <div class="row">
@@ -486,10 +591,10 @@
                 <div class="container" data-aos="fade-up">
 
                     <div class="section-title">
-                        <h3 style="color: {{ $title_4->color_title }}">
-                            <div>{{ $title_4->title }}</div>
+                        <h3 style="color: {{ $titles[4]->color_title }}">
+                            <div>{{ $titles[4]->title }}</div>
                         </h3>
-                        <p>{{ $title_4->text }}</p>
+                        <p>{{ $titles[4]->text }}</p>
                     </div>
 
                     <div class="row justify-content-center">
@@ -621,10 +726,10 @@
                 <div class="container" data-aos="fade-up">
 
                     <div class="section-title">
-                        <h3 style="color: {{ $title_5->color_title }}">
-                            <div>{{ $title_5->title }}</div>
+                        <h3 style="color: {{ $titles[5]->color_title }}">
+                            <div>{{ $titles[5]->title }}</div>
                         </h3>
-                        <p>{{ $title_5->text }}</p>
+                        <p>{{ $titles[5]->text }}</p>
                     </div>
 
                     <div class="row" data-aos="fade-up" data-aos-delay="100">

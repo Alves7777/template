@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\AbstractView\AbstractView;
+use App\Http\Controllers\CollectionsImages\CollectionsImagesController;
 use App\Models\Admin;
+use App\Models\Carousel\Carousel;
 use App\Models\NavBar\Navbar;
 use App\Models\Pages\Pages;
 use App\Models\Progress\Progress;
@@ -19,6 +21,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\View;
 
 class Controller extends BaseController
@@ -44,6 +47,7 @@ class Controller extends BaseController
             $view[9] => SectionFour::all(),
             $view[10] => Title::all(),
             $view[11] => SectionFive::all(),
+            $view[12] => Carousel::all(),
         ]);
 
         //MESSAGES
