@@ -15,7 +15,7 @@ class CarouselTableSeeder extends Seeder
     {
         for ($i = 1;$i <= AbstractView::QTD_SEEDER['qtd_4']; $i++) {
             Carousel::create([
-                'background' => new UploadedFile(public_path() . '/storage/photos/bay.png', 'temp'),
+                'background' => '',
                 'photo' => new UploadedFile(public_path() . '/storage/photos/logo.jpeg', 'temp'),
                 'title' => "teste",
                 'sub_title' => "teste_sub{$i}",

@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\Api\ApiFreightController;
 use App\Http\Controllers\Auth\AdminRegisterController;
+use App\Http\Controllers\Ecommerce\PagSeguro\PagSeguroController;
 use App\Http\Controllers\Site\_PagesController;
 use App\Http\Controllers\Site\HomeController;
+use App\Routes\CollectionsImages\CollectionsImagesRoute;
 use App\Routes\Dashboard\DashboardRoute;
 use App\Routes\Ecommerce\Product\ProductRoute;
 use App\Routes\Ecommerce\Client\ClientRoute;
@@ -66,6 +68,7 @@ Route::group(['middleware'=> ['auth']], function () {
     TitleRoute::routes();
     SectionFiveRoute::routes();
     DashboardRoute::routes();
+    CollectionsImagesRoute::routes();
 });
 
 Auth::routes();
@@ -82,8 +85,7 @@ Route::prefix('admin')->group(function() {
     Route::get('/admin-register', [App\Http\Controllers\Auth\AdminRegisterController::class, 'adminRegister'])->name('admin_register');
     Route::match(['get', 'post'], 'register-admin/add', [AdminRegisterController::class, 'addRegister'])->name('add_register');
 
+    Route::post('pagseguro', [PagSeguroController::class, 'pagseguro'])->name('pagseguro');
+
 });
 
-/*
-Terminar crud de sectionFive
-*/

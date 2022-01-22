@@ -95,19 +95,17 @@ function pagar() {
         expirationMonth: mesExp, // Mês da expiração do cartão
         expirationYear: anoExp, // Ano da expiração do cartão, é necessário os 4 dígitos.
         success: function (response) {
-            let token = response.card.token
-            $(".cardToken").val(token)
-
+            $("input[name=cardToken]").val(response.card.token)
             $.post('/cart/finish', {
                 hashseller: hashseller,
                 cardtoken: response.card.token,
                 npacelas: $(".nparcels").val(),
                 totalPagar: $(".totalPagar").val(),
-                totalParcelas: $(".totalpart").val(),
+                totalpart: $(".totalpart").val(),
             }, function (result) {
                 alert(result);
             });
-            console.log(response)
+
         },
         error: function (error) {
             alert('Não pode buscar token do cartão, verificar todos os campos!')
@@ -115,5 +113,22 @@ function pagar() {
         }
 
     })
+
+    function createTransactionCard()
+    {
+        let data = $("#form").serialize()
+
+        $.ajax({
+            url: "/payment/cart",
+            method: "POST",
+            data: data
+        }).done(function (data) {
+            console.log(data)
+            alert(data)
+        }).fail(function () {
+            alert('fail request!!!')
+        })
+
+    }
 
 }
