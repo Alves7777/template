@@ -17,6 +17,8 @@ use App\Routes\Score\ScoreRoute;
 use App\Routes\SectionFive\SectionFiveRoute;
 use App\Routes\SectionFour\SectionFourRoute;
 use App\Routes\SectionOne\SectionOneRoute;
+use App\Routes\SectionSeven\SectionSevenRoute;
+use App\Routes\SectionSix\SectionSixRoute;
 use App\Routes\SectionThree\SectionThreeRoute;
 use App\Routes\SectionTwo\SectionTwoRoute;
 use App\Routes\Title\TitleRoute;
@@ -42,7 +44,7 @@ UserEcommerceRoute::routes();
 //    return view('site.ecommerce.product');
 //});
 
-Route::get('/',[HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index']);
 Route::get('/page_1',[_PagesController::class, 'page_1']);
 Route::get('/page_2',[_PagesController::class, 'page_2']);
 Route::get('/page_3',[_PagesController::class, 'page_3']);
@@ -67,8 +69,11 @@ Route::group(['middleware'=> ['auth']], function () {
     SectionFourRoute::routes();
     TitleRoute::routes();
     SectionFiveRoute::routes();
+    SectionSixRoute::routes();
     DashboardRoute::routes();
     CollectionsImagesRoute::routes();
+    SectionSevenRoute::routes();
+
 });
 
 Auth::routes();

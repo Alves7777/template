@@ -13,6 +13,8 @@ use App\Models\Score\Score;
 use App\Models\SectionFive\SectionFive;
 use App\Models\SectionFour\SectionFour;
 use App\Models\SectionOne\SectionOne;
+use App\Models\SectionSeven\SectionSeven;
+use App\Models\SectionSix\SectionSix;
 use App\Models\SectionThree\SectionThree;
 use App\Models\Title\Title;
 use App\Models\Topbar\Topbar;
@@ -48,6 +50,8 @@ class Controller extends BaseController
             $view[10] => Title::all(),
             $view[11] => SectionFive::all(),
             $view[12] => Carousel::all(),
+            $view[13] => SectionSix::all(),
+            $view[14] => SectionSeven::all(),
         ]);
 
         //MESSAGES
