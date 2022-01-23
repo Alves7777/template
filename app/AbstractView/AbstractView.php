@@ -19,7 +19,9 @@ class AbstractView
         9 => 'sectionfour',
         10 => 'title',
         11 => 'sectionfive',
-        12 => 'collectionsimages'
+        12 => 'collectionsimages',
+        13 => 'sectionsix',
+        14 => 'sectionseven'
     ];
 
     // CRUDS
@@ -92,6 +94,30 @@ class AbstractView
         $this->show = 'sectionfive.show';
         $this->edit = 'sectionfive.edit';
         $this->delete = 'sectionfive.destroy';
+
+        return true;
+    }
+
+    public function setSectionSix(): string
+    {
+        $this->title = 'Seção 6';
+        $this->index = 'sectionsix.index';
+        $this->create = 'sectionsix.create';
+        $this->show = 'sectionsix.show';
+        $this->edit = 'sectionsix.edit';
+        $this->delete = 'sectionsix.destroy';
+
+        return true;
+    }
+
+    public function setSectionSeven(): string
+    {
+        $this->title = 'Seção 7';
+        $this->index = 'sectionseven.index';
+        $this->create = 'sectionseven.create';
+        $this->show = 'sectionseven.show';
+        $this->edit = 'sectionseven.edit';
+        $this->delete = 'sectionseven.destroy';
 
         return true;
     }

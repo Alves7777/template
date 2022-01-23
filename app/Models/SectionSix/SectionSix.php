@@ -16,5 +16,9 @@ class SectionSix extends Model
     use Timestamp;
 
     protected $guarded = ['id'];
+    /**
+     * @var mixed
+     */
+    private $sections_sixes;
 
 }

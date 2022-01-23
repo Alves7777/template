@@ -261,16 +261,16 @@
                         <p>{{ $title[5] }}</p>
                     </div>
 
-{{--                    <div class="row" data-aos="fade-up" data-aos-delay="100">--}}
-{{--                        <div class="col-lg-12 d-flex justify-content-center">--}}
-{{--                            <ul id="portfolio-flters">--}}
-{{--                                <li data-filter="*" class="filter-active">All</li>--}}
-{{--                                <li data-filter=".filter-app">App</li>--}}
-{{--                                <li data-filter=".filter-card">Card</li>--}}
-{{--                                <li data-filter=".filter-web">Web</li>--}}
-{{--                            </ul>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
+                    {{--                    <div class="row" data-aos="fade-up" data-aos-delay="100">--}}
+                    {{--                        <div class="col-lg-12 d-flex justify-content-center">--}}
+                    {{--                            <ul id="portfolio-flters">--}}
+                    {{--                                <li data-filter="*" class="filter-active">All</li>--}}
+                    {{--                                <li data-filter=".filter-app">App</li>--}}
+                    {{--                                <li data-filter=".filter-card">Card</li>--}}
+                    {{--                                <li data-filter=".filter-web">Web</li>--}}
+                    {{--                            </ul>--}}
+                    {{--                        </div>--}}
+                    {{--                    </div>--}}
 
                     <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
 
@@ -281,7 +281,8 @@
                                 <h6>{{ $listCollections[1]['sub_title'] }}</h6>
                                 <p>{{ $listCollections[1]['text'] }}</p>
                                 <a href="{{ asset("/storage/$getCollections[1]") }}" data-gallery="portfolioGallery"
-                                   class="portfolio-lightbox preview-link" title="{{ $listCollections[1]['title'] }}"><i class="bx bx-plus"></i></a>
+                                   class="portfolio-lightbox preview-link" title="{{ $listCollections[1]['title'] }}"><i
+                                        class="bx bx-plus"></i></a>
                                 <a href="portfolio-details.html" class="details-link" title="More Details"><i
                                         class="bx bx-link"></i></a>
                             </div>
@@ -294,7 +295,8 @@
                                 <h6>{{ $listCollections[2]['sub_title'] }}</h6>
                                 <p>{{ $listCollections[2]['text'] }}</p>
                                 <a href="{{ asset("/storage/$getCollections[2]") }}" data-gallery="portfolioGallery"
-                                   class="portfolio-lightbox preview-link" title="{{ $listCollections[2]['title'] }}"><i class="bx bx-plus"></i></a>
+                                   class="portfolio-lightbox preview-link" title="{{ $listCollections[2]['title'] }}"><i
+                                        class="bx bx-plus"></i></a>
                                 <a href="portfolio-details.html" class="details-link" title="More Details"><i
                                         class="bx bx-link"></i></a>
                             </div>
@@ -307,7 +309,8 @@
                                 <h6>{{ $listCollections[3]['sub_title'] }}</h6>
                                 <p>{{ $listCollections[3]['text'] }}</p>
                                 <a href="{{ asset("/storage/$getCollections[3]") }}" data-gallery="portfolioGallery"
-                                   class="portfolio-lightbox preview-link" title="{{ $listCollections[3]['title'] }}"><i class="bx bx-plus"></i></a>
+                                   class="portfolio-lightbox preview-link" title="{{ $listCollections[3]['title'] }}"><i
+                                        class="bx bx-plus"></i></a>
                                 <a href="portfolio-details.html" class="details-link" title="More Details"><i
                                         class="bx bx-link"></i></a>
                             </div>
@@ -320,7 +323,8 @@
                                 <h6>{{ $listCollections[4]['sub_title'] }}</h6>
                                 <p>{{ $listCollections[4]['text'] }}</p>
                                 <a href="{{ asset("/storage/$getCollections[4]") }}" data-gallery="portfolioGallery"
-                                   class="portfolio-lightbox preview-link" title="{{ $listCollections[4]['title'] }}"><i class="bx bx-plus"></i></a>
+                                   class="portfolio-lightbox preview-link" title="{{ $listCollections[4]['title'] }}"><i
+                                        class="bx bx-plus"></i></a>
                                 <a href="portfolio-details.html" class="details-link" title="More Details"><i
                                         class="bx bx-link"></i></a>
                             </div>
@@ -333,7 +337,8 @@
                                 <h6>{{ $listCollections[5]['sub_title'] }}</h6>
                                 <p>{{ $listCollections[5]['text'] }}</p>
                                 <a href="{{ asset("/storage/$getCollections[5]") }}" data-gallery="portfolioGallery"
-                                   class="portfolio-lightbox preview-link" title="{{ $listCollections[5]['title'] }}"><i class="bx bx-plus"></i></a>
+                                   class="portfolio-lightbox preview-link" title="{{ $listCollections[5]['title'] }}"><i
+                                        class="bx bx-plus"></i></a>
                                 <a href="portfolio-details.html" class="details-link" title="More Details"><i
                                         class="bx bx-link"></i></a>
                             </div>
@@ -346,7 +351,8 @@
                                 <h6>{{ $listCollections[6]['sub_title'] }}</h6>
                                 <p>{{ $listCollections[6]['text'] }}</p>
                                 <a href="{{ asset("/storage/$getCollections[6]") }}" data-gallery="portfolioGallery"
-                                   class="portfolio-lightbox preview-link" title="{{ $listCollections[6]['title'] }}"><i class="bx bx-plus"></i></a>
+                                   class="portfolio-lightbox preview-link" title="{{ $listCollections[6]['title'] }}"><i
+                                        class="bx bx-plus"></i></a>
                                 <a href="portfolio-details.html" class="details-link" title="More Details"><i
                                         class="bx bx-link"></i></a>
                             </div>
@@ -359,7 +365,8 @@
                                 <h6>{{ $listCollections[7]['sub_title'] }}</h6>
                                 <p>{{ $listCollections[7]['text'] }}</p>
                                 <a href="{{ asset("/storage/$getCollections[7]") }}" data-gallery="portfolioGallery"
-                                   class="portfolio-lightbox preview-link" title="{{ $listCollections[7]['title'] }}"><i class="bx bx-plus"></i></a>
+                                   class="portfolio-lightbox preview-link" title="{{ $listCollections[7]['title'] }}"><i
+                                        class="bx bx-plus"></i></a>
                                 <a href="portfolio-details.html" class="details-link" title="More Details"><i
                                         class="bx bx-link"></i></a>
                             </div>
@@ -372,7 +379,8 @@
                                 <h6>{{ $listCollections[8]['sub_title'] }}</h6>
                                 <p>{{ $listCollections[8]['text'] }}</p>
                                 <a href="{{ asset("/storage/$getCollections[8]") }}" data-gallery="portfolioGallery"
-                                   class="portfolio-lightbox preview-link" title="{{ $listCollections[8]['title'] }}"><i class="bx bx-plus"></i></a>
+                                   class="portfolio-lightbox preview-link" title="{{ $listCollections[8]['title'] }}"><i
+                                        class="bx bx-plus"></i></a>
                                 <a href="portfolio-details.html" class="details-link" title="More Details"><i
                                         class="bx bx-link"></i></a>
                             </div>
@@ -385,107 +393,108 @@
                                 <h6>{{ $listCollections[9]['sub_title'] }}</h6>
                                 <p>{{ $listCollections[9]['text'] }}</p>
                                 <a href="{{ asset("/storage/$getCollections[9]") }}" data-gallery="portfolioGallery"
-                                   class="portfolio-lightbox preview-link" title="{{ $listCollections[9]['title'] }}"><i class="bx bx-plus"></i></a>
+                                   class="portfolio-lightbox preview-link" title="{{ $listCollections[9]['title'] }}"><i
+                                        class="bx bx-plus"></i></a>
                                 <a href="portfolio-details.html" class="details-link" title="More Details"><i
                                         class="bx bx-link"></i></a>
                             </div>
                         </div>
 
-{{--                        <div class="col-lg-4 col-md-6 portfolio-item filter-web">--}}
-{{--                            <img src="/assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">--}}
-{{--                            <div class="portfolio-info">--}}
-{{--                                <h4>Web 3</h4>--}}
-{{--                                <p>Web</p>--}}
-{{--                                <a href="/assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery"--}}
-{{--                                   class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>--}}
-{{--                                <a href="portfolio-details.html" class="details-link" title="More Details"><i--}}
-{{--                                        class="bx bx-link"></i></a>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
+<!--                                                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                                                    <img src="/assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
+                                                    <div class="portfolio-info">
+                                                        <h4>Web 3</h4>
+                                                        <p>Web</p>
+                                                        <a href="/assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery"
+                                                           class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
+                                                        <a href="portfolio-details.html" class="details-link" title="More Details"><i
+                                                                class="bx bx-link"></i></a>
+                                                    </div>
+                                                </div>
 
-{{--                        <div class="col-lg-4 col-md-6 portfolio-item filter-app">--}}
-{{--                            <img src="/assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">--}}
-{{--                            <div class="portfolio-info">--}}
-{{--                                <h4>App 2</h4>--}}
-{{--                                <p>App</p>--}}
-{{--                                <a href="/assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery"--}}
-{{--                                   class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>--}}
-{{--                                <a href="portfolio-details.html" class="details-link" title="More Details"><i--}}
-{{--                                        class="bx bx-link"></i></a>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
+                                                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                                                    <img src="/assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
+                                                    <div class="portfolio-info">
+                                                        <h4>App 2</h4>
+                                                        <p>App</p>
+                                                        <a href="/assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery"
+                                                           class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
+                                                        <a href="portfolio-details.html" class="details-link" title="More Details"><i
+                                                                class="bx bx-link"></i></a>
+                                                    </div>
+                                                </div>
 
-{{--                        <div class="col-lg-4 col-md-6 portfolio-item filter-card">--}}
-{{--                            <img src="/assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">--}}
-{{--                            <div class="portfolio-info">--}}
-{{--                                <h4>Card 2</h4>--}}
-{{--                                <p>Card</p>--}}
-{{--                                <a href="/assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery"--}}
-{{--                                   class="portfolio-lightbox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>--}}
-{{--                                <a href="portfolio-details.html" class="details-link" title="More Details"><i--}}
-{{--                                        class="bx bx-link"></i></a>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
+                                                <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                                                    <img src="/assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
+                                                    <div class="portfolio-info">
+                                                        <h4>Card 2</h4>
+                                                        <p>Card</p>
+                                                        <a href="/assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery"
+                                                           class="portfolio-lightbox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
+                                                        <a href="portfolio-details.html" class="details-link" title="More Details"><i
+                                                                class="bx bx-link"></i></a>
+                                                    </div>
+                                                </div>
 
-{{--                        <div class="col-lg-4 col-md-6 portfolio-item filter-web">--}}
-{{--                            <img src="/assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">--}}
-{{--                            <div class="portfolio-info">--}}
-{{--                                <h4>Web 2</h4>--}}
-{{--                                <p>Web</p>--}}
-{{--                                <a href="/assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery"--}}
-{{--                                   class="portfolio-lightbox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>--}}
-{{--                                <a href="portfolio-details.html" class="details-link" title="More Details"><i--}}
-{{--                                        class="bx bx-link"></i></a>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
+                                                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                                                    <img src="/assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
+                                                    <div class="portfolio-info">
+                                                        <h4>Web 2</h4>
+                                                        <p>Web</p>
+                                                        <a href="/assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery"
+                                                           class="portfolio-lightbox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
+                                                        <a href="portfolio-details.html" class="details-link" title="More Details"><i
+                                                                class="bx bx-link"></i></a>
+                                                    </div>
+                                                </div>
 
-{{--                        <div class="col-lg-4 col-md-6 portfolio-item filter-app">--}}
-{{--                            <img src="/assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">--}}
-{{--                            <div class="portfolio-info">--}}
-{{--                                <h4>App 3</h4>--}}
-{{--                                <p>App</p>--}}
-{{--                                <a href="/assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery"--}}
-{{--                                   class="portfolio-lightbox preview-link" title="App 3"><i class="bx bx-plus"></i></a>--}}
-{{--                                <a href="portfolio-details.html" class="details-link" title="More Details"><i--}}
-{{--                                        class="bx bx-link"></i></a>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
+                                                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                                                    <img src="/assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
+                                                    <div class="portfolio-info">
+                                                        <h4>App 3</h4>
+                                                        <p>App</p>
+                                                        <a href="/assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery"
+                                                           class="portfolio-lightbox preview-link" title="App 3"><i class="bx bx-plus"></i></a>
+                                                        <a href="portfolio-details.html" class="details-link" title="More Details"><i
+                                                                class="bx bx-link"></i></a>
+                                                    </div>
+                                                </div>
 
-{{--                        <div class="col-lg-4 col-md-6 portfolio-item filter-card">--}}
-{{--                            <img src="/assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">--}}
-{{--                            <div class="portfolio-info">--}}
-{{--                                <h4>Card 1</h4>--}}
-{{--                                <p>Card</p>--}}
-{{--                                <a href="/assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery"--}}
-{{--                                   class="portfolio-lightbox preview-link" title="Card 1"><i class="bx bx-plus"></i></a>--}}
-{{--                                <a href="portfolio-details.html" class="details-link" title="More Details"><i--}}
-{{--                                        class="bx bx-link"></i></a>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
+                                                <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                                                    <img src="/assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
+                                                    <div class="portfolio-info">
+                                                        <h4>Card 1</h4>
+                                                        <p>Card</p>
+                                                        <a href="/assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery"
+                                                           class="portfolio-lightbox preview-link" title="Card 1"><i class="bx bx-plus"></i></a>
+                                                        <a href="portfolio-details.html" class="details-link" title="More Details"><i
+                                                                class="bx bx-link"></i></a>
+                                                    </div>
+                                                </div>
 
-{{--                        <div class="col-lg-4 col-md-6 portfolio-item filter-card">--}}
-{{--                            <img src="/assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">--}}
-{{--                            <div class="portfolio-info">--}}
-{{--                                <h4>Card 3</h4>--}}
-{{--                                <p>Card</p>--}}
-{{--                                <a href="/assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery"--}}
-{{--                                   class="portfolio-lightbox preview-link" title="Card 3"><i class="bx bx-plus"></i></a>--}}
-{{--                                <a href="portfolio-details.html" class="details-link" title="More Details"><i--}}
-{{--                                        class="bx bx-link"></i></a>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
+                                                <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                                                    <img src="/assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
+                                                    <div class="portfolio-info">
+                                                        <h4>Card 3</h4>
+                                                        <p>Card</p>
+                                                        <a href="/assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery"
+                                                           class="portfolio-lightbox preview-link" title="Card 3"><i class="bx bx-plus"></i></a>
+                                                        <a href="portfolio-details.html" class="details-link" title="More Details"><i
+                                                                class="bx bx-link"></i></a>
+                                                    </div>
+                                                </div>
 
-{{--                        <div class="col-lg-4 col-md-6 portfolio-item filter-web">--}}
-{{--                            <img src="/assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">--}}
-{{--                            <div class="portfolio-info">--}}
-{{--                                <h4>Web 3</h4>--}}
-{{--                                <p>Web</p>--}}
-{{--                                <a href="/assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery"--}}
-{{--                                   class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>--}}
-{{--                                <a href="portfolio-details.html" class="details-link" title="More Details"><i--}}
-{{--                                        class="bx bx-link"></i></a>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
+                                                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                                                    <img src="/assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
+                                                    <div class="portfolio-info">
+                                                        <h4>Web 3</h4>
+                                                        <p>Web</p>
+                                                        <a href="/assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery"
+                                                           class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
+                                                        <a href="portfolio-details.html" class="details-link" title="More Details"><i
+                                                                class="bx bx-link"></i></a>
+                                                    </div>
+                                                </div>-->
 
                     </div>
 
@@ -504,82 +513,26 @@
                     </div>
 
                     <div class="row">
-
+                    @foreach($sectionsix as $item)
                         <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
                              data-aos-delay="100">
                             <div class="member">
                                 <div class="member-img">
-                                    <img src="/assets/img/team/team-1.jpg" class="img-fluid" alt="">
+                                    <img src="{{ asset("/storage/$item->image") }}" class="img-fluid" alt="">
                                     <div class="social">
-                                        <a href=""><i class="bi bi-twitter"></i></a>
-                                        <a href=""><i class="bi bi-facebook"></i></a>
-                                        <a href=""><i class="bi bi-instagram"></i></a>
-                                        <a href=""><i class="bi bi-linkedin"></i></a>
+                                        <a href="{{ $item->link_twitter }}"><i class="bi bi-twitter"></i></a>
+                                        <a href="{{ $item->link_facebook }}"><i class="bi bi-facebook"></i></a>
+                                        <a href="{{ $item->link_instagram }}"><i class="bi bi-instagram"></i></a>
+                                        <a href="{{ $item->link_linkedin }}"><i class="bi bi-linkedin"></i></a>
                                     </div>
                                 </div>
                                 <div class="member-info">
-                                    <h4>Walter White</h4>
-                                    <span>Chief Executive Officer</span>
+                                    <h4>{{ $item->sub_title }}</h4>
+                                    <span>{{ $item->sub_text }}</span>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
-                             data-aos-delay="200">
-                            <div class="member">
-                                <div class="member-img">
-                                    <img src="/assets/img/team/team-2.jpg" class="img-fluid" alt="">
-                                    <div class="social">
-                                        <a href=""><i class="bi bi-twitter"></i></a>
-                                        <a href=""><i class="bi bi-facebook"></i></a>
-                                        <a href=""><i class="bi bi-instagram"></i></a>
-                                        <a href=""><i class="bi bi-linkedin"></i></a>
-                                    </div>
-                                </div>
-                                <div class="member-info">
-                                    <h4>Sarah Jhonson</h4>
-                                    <span>Product Manager</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
-                             data-aos-delay="300">
-                            <div class="member">
-                                <div class="member-img">
-                                    <img src="/assets/img/team/team-3.jpg" class="img-fluid" alt="">
-                                    <div class="social">
-                                        <a href=""><i class="bi bi-twitter"></i></a>
-                                        <a href=""><i class="bi bi-facebook"></i></a>
-                                        <a href=""><i class="bi bi-instagram"></i></a>
-                                        <a href=""><i class="bi bi-linkedin"></i></a>
-                                    </div>
-                                </div>
-                                <div class="member-info">
-                                    <h4>William Anderson</h4>
-                                    <span>CTO</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
-                             data-aos-delay="400">
-                            <div class="member">
-                                <div class="member-img">
-                                    <img src="/assets/img/team/team-4.jpg" class="img-fluid" alt="">
-                                    <div class="social">
-                                        <a href=""><i class="bi bi-twitter"></i></a>
-                                        <a href=""><i class="bi bi-facebook"></i></a>
-                                        <a href=""><i class="bi bi-instagram"></i></a>
-                                        <a href=""><i class="bi bi-linkedin"></i></a>
-                                    </div>
-                                </div>
-                                <div class="member-info">
-                                    <h4>Amanda Jepson</h4>
-                                    <span>Accountant</span>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
 
                     </div>
 
@@ -598,124 +551,121 @@
                     </div>
 
                     <div class="row justify-content-center">
+                        @foreach($sectionseven as $item)
                         <div class="col-xl-10">
                             <ul class="faq-list">
-
                                 <li>
-                                    <div data-bs-toggle="collapse" class="collapsed question" href="#faq1">Non
-                                        consectetur a
-                                        erat nam at lectus urna duis? <i class="bi bi-chevron-down icon-show"></i><i
+                                    <div data-bs-toggle="collapse" class="collapsed question" href="#faq1">
+                                        {{ $item->sub_title }}
+                                        <i class="bi bi-chevron-down icon-show"></i><i
                                             class="bi bi-chevron-up icon-close"></i></div>
                                     <div id="faq1" class="collapse" data-bs-parent=".faq-list">
                                         <p>
-                                            Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat
-                                            lacus
-                                            laoreet non curabitur gravida. Venenatis lectus magna fringilla urna
-                                            porttitor
-                                            rhoncus dolor purus non.
+                                            {{ $item->sub_text }}
                                         </p>
                                     </div>
                                 </li>
 
-                                <li>
-                                    <div data-bs-toggle="collapse" href="#faq2" class="collapsed question">Feugiat
-                                        scelerisque varius morbi enim nunc faucibus a pellentesque? <i
-                                            class="bi bi-chevron-down icon-show"></i><i
-                                            class="bi bi-chevron-up icon-close"></i></div>
-                                    <div id="faq2" class="collapse" data-bs-parent=".faq-list">
-                                        <p>
-                                            Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi.
-                                            Id
-                                            interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus
-                                            scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper
-                                            dignissim.
-                                            Mauris ultrices eros in cursus turpis massa tincidunt dui.
-                                        </p>
-                                    </div>
-                                </li>
+{{--                                <li>--}}
+{{--                                    <div data-bs-toggle="collapse" href="#faq2" class="collapsed question">Feugiat--}}
+{{--                                        scelerisque varius morbi enim nunc faucibus a pellentesque? <i--}}
+{{--                                            class="bi bi-chevron-down icon-show"></i><i--}}
+{{--                                            class="bi bi-chevron-up icon-close"></i></div>--}}
+{{--                                    <div id="faq2" class="collapse" data-bs-parent=".faq-list">--}}
+{{--                                        <p>--}}
+{{--                                            Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi.--}}
+{{--                                            Id--}}
+{{--                                            interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus--}}
+{{--                                            scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper--}}
+{{--                                            dignissim.--}}
+{{--                                            Mauris ultrices eros in cursus turpis massa tincidunt dui.--}}
+{{--                                        </p>--}}
+{{--                                    </div>--}}
+{{--                                </li>--}}
 
-                                <li>
-                                    <div data-bs-toggle="collapse" href="#faq3" class="collapsed question">Dolor sit
-                                        amet
-                                        consectetur adipiscing elit pellentesque habitant morbi? <i
-                                            class="bi bi-chevron-down icon-show"></i><i
-                                            class="bi bi-chevron-up icon-close"></i></div>
-                                    <div id="faq3" class="collapse" data-bs-parent=".faq-list">
-                                        <p>
-                                            Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis
-                                            orci.
-                                            Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit
-                                            amet
-                                            nisl
-                                            suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis
-                                            convallis
-                                            convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi
-                                            quis
-                                        </p>
-                                    </div>
-                                </li>
+{{--                                <li>--}}
+{{--                                    <div data-bs-toggle="collapse" href="#faq3" class="collapsed question">Dolor sit--}}
+{{--                                        amet--}}
+{{--                                        consectetur adipiscing elit pellentesque habitant morbi? <i--}}
+{{--                                            class="bi bi-chevron-down icon-show"></i><i--}}
+{{--                                            class="bi bi-chevron-up icon-close"></i></div>--}}
+{{--                                    <div id="faq3" class="collapse" data-bs-parent=".faq-list">--}}
+{{--                                        <p>--}}
+{{--                                            Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis--}}
+{{--                                            orci.--}}
+{{--                                            Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit--}}
+{{--                                            amet--}}
+{{--                                            nisl--}}
+{{--                                            suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis--}}
+{{--                                            convallis--}}
+{{--                                            convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi--}}
+{{--                                            quis--}}
+{{--                                        </p>--}}
+{{--                                    </div>--}}
+{{--                                </li>--}}
 
-                                <li>
-                                    <div data-bs-toggle="collapse" href="#faq4" class="collapsed question">Ac odio
-                                        tempor
-                                        orci dapibus. Aliquam eleifend mi in nulla? <i
-                                            class="bi bi-chevron-down icon-show"></i><i
-                                            class="bi bi-chevron-up icon-close"></i></div>
-                                    <div id="faq4" class="collapse" data-bs-parent=".faq-list">
-                                        <p>
-                                            Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi.
-                                            Id
-                                            interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus
-                                            scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper
-                                            dignissim.
-                                            Mauris ultrices eros in cursus turpis massa tincidunt dui.
-                                        </p>
-                                    </div>
-                                </li>
+{{--                                <li>--}}
+{{--                                    <div data-bs-toggle="collapse" href="#faq4" class="collapsed question">Ac odio--}}
+{{--                                        tempor--}}
+{{--                                        orci dapibus. Aliquam eleifend mi in nulla? <i--}}
+{{--                                            class="bi bi-chevron-down icon-show"></i><i--}}
+{{--                                            class="bi bi-chevron-up icon-close"></i></div>--}}
+{{--                                    <div id="faq4" class="collapse" data-bs-parent=".faq-list">--}}
+{{--                                        <p>--}}
+{{--                                            Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi.--}}
+{{--                                            Id--}}
+{{--                                            interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus--}}
+{{--                                            scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper--}}
+{{--                                            dignissim.--}}
+{{--                                            Mauris ultrices eros in cursus turpis massa tincidunt dui.--}}
+{{--                                        </p>--}}
+{{--                                    </div>--}}
+{{--                                </li>--}}
 
-                                <li>
-                                    <div data-bs-toggle="collapse" href="#faq5" class="collapsed question">Tempus
-                                        quam
-                                        pellentesque nec nam aliquam sem et tortor consequat? <i
-                                            class="bi bi-chevron-down icon-show"></i><i
-                                            class="bi bi-chevron-up icon-close"></i></div>
-                                    <div id="faq5" class="collapse" data-bs-parent=".faq-list">
-                                        <p>
-                                            Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim
-                                            suspendisse in est ante in. Nunc vel risus commodo viverra maecenas
-                                            accumsan.
-                                            Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis
-                                            blandit
-                                            turpis cursus in
-                                        </p>
-                                    </div>
-                                </li>
+{{--                                <li>--}}
+{{--                                    <div data-bs-toggle="collapse" href="#faq5" class="collapsed question">Tempus--}}
+{{--                                        quam--}}
+{{--                                        pellentesque nec nam aliquam sem et tortor consequat? <i--}}
+{{--                                            class="bi bi-chevron-down icon-show"></i><i--}}
+{{--                                            class="bi bi-chevron-up icon-close"></i></div>--}}
+{{--                                    <div id="faq5" class="collapse" data-bs-parent=".faq-list">--}}
+{{--                                        <p>--}}
+{{--                                            Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim--}}
+{{--                                            suspendisse in est ante in. Nunc vel risus commodo viverra maecenas--}}
+{{--                                            accumsan.--}}
+{{--                                            Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis--}}
+{{--                                            blandit--}}
+{{--                                            turpis cursus in--}}
+{{--                                        </p>--}}
+{{--                                    </div>--}}
+{{--                                </li>--}}
 
-                                <li>
-                                    <div data-bs-toggle="collapse" href="#faq6" class="collapsed question">Tortor
-                                        vitae
-                                        purus faucibus ornare. Varius vel pharetra vel turpis nunc eget lorem dolor?
-                                        <i
-                                            class="bi bi-chevron-down icon-show"></i><i
-                                            class="bi bi-chevron-up icon-close"></i></div>
-                                    <div id="faq6" class="collapse" data-bs-parent=".faq-list">
-                                        <p>
-                                            Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae
-                                            ultricies
-                                            leo integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit
-                                            amet.
-                                            Turpis nunc eget lorem dolor sed. Ut venenatis tellus in metus vulputate
-                                            eu
-                                            scelerisque. Pellentesque diam volutpat commodo sed egestas egestas
-                                            fringilla
-                                            phasellus faucibus. Nibh tellus molestie nunc non blandit massa enim
-                                            nec.
-                                        </p>
-                                    </div>
-                                </li>
+{{--                                <li>--}}
+{{--                                    <div data-bs-toggle="collapse" href="#faq6" class="collapsed question">Tortor--}}
+{{--                                        vitae--}}
+{{--                                        purus faucibus ornare. Varius vel pharetra vel turpis nunc eget lorem dolor?--}}
+{{--                                        <i--}}
+{{--                                            class="bi bi-chevron-down icon-show"></i><i--}}
+{{--                                            class="bi bi-chevron-up icon-close"></i></div>--}}
+{{--                                    <div id="faq6" class="collapse" data-bs-parent=".faq-list">--}}
+{{--                                        <p>--}}
+{{--                                            Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae--}}
+{{--                                            ultricies--}}
+{{--                                            leo integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit--}}
+{{--                                            amet.--}}
+{{--                                            Turpis nunc eget lorem dolor sed. Ut venenatis tellus in metus vulputate--}}
+{{--                                            eu--}}
+{{--                                            scelerisque. Pellentesque diam volutpat commodo sed egestas egestas--}}
+{{--                                            fringilla--}}
+{{--                                            phasellus faucibus. Nibh tellus molestie nunc non blandit massa enim--}}
+{{--                                            nec.--}}
+{{--                                        </p>--}}
+{{--                                    </div>--}}
+{{--                                </li>--}}
 
                             </ul>
                         </div>
+                        @endforeach
                     </div>
 
                 </div>
