@@ -27,7 +27,7 @@ class SectionThreeTableSeeder extends Seeder
             'sub_text' => 'Magni facilis facilis repellendus cum excepturi quaerat praesentium libre trade',
             'icon' => 'bx bx-store-alt',
             'text_three' => 'Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
-            'photo' => new UploadedFile(public_path() . '/storage/photos/bay.png', 'temp')
+            'photo' => new UploadedFile(public_path() . '/storage/photos/gleicealpi.jpg', 'temp')
 
         ]);
     }

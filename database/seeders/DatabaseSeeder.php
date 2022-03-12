@@ -10,20 +10,25 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Mod els\User::factory(10)->create();
-        $this->call(TopbarTableSeeder::class);
-        $this->call(NavbarTableSeeder::class);
-        $this->call(SectionOneTableSeeder::class);
-        $this->call(SectionTwoTableSeeder::class);
-        $this->call(SectionThreeTableSeeder::class);
-        $this->call(ProgressTableSeeder::class);
-        $this->call(ScoreTableSeeder::class);
-        $this->call(SectionFourTableSeeder::class);
-        $this->call(CarouselTableSeeder::class);
-        $this->call(TitleTableSeeder::class);
-        $this->call(CategoryTablerSeeder::class);
-        $this->call(ProductTablerSeeder::class);
-        $this->call(SectionFiveTableSeeder::class);
-        $this->call(SectionSixTableSeeder::class);
+        $this->call([TopbarTableSeeder::class,
+            NavbarTableSeeder::class,
+            SectionOneTableSeeder::class,
+            SectionTwoTableSeeder::class,
+            SectionThreeTableSeeder::class,
+            ProgressTableSeeder::class,
+            ScoreTableSeeder::class,
+            SectionFourTableSeeder::class,
+            CarouselTableSeeder::class,
+            TitleTableSeeder::class,
+            CategoryTablerSeeder::class,
+            ProductTablerSeeder::class,
+            SectionFiveTableSeeder::class,
+            SectionSixTableSeeder::class,
+            SectionSevenTableSeeder::class,
+            ContactTableSeeder::class,
+            UserTableSeeder::class,
+            PostTableSeeder::class,
+        ]);
 
     }
 }

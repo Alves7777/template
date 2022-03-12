@@ -683,37 +683,38 @@
                     </div>
 
                     <div class="row" data-aos="fade-up" data-aos-delay="100">
+                        @foreach($contact as $item)
                         <div class="col-lg-6">
                             <div class="info-box mb-4">
-                                <i class="bx bx-map"></i>
-                                <h3>Our Address</h3>
-                                <p>A108 Adam Street, New York, NY 535022</p>
+                                <i class="{{ $item->icon }}"></i>
+                                <h3>{{ $item->title }}</h3>
+                                <p>{{ $item->text }}</p>
                             </div>
                         </div>
+                        @endforeach
 
-                        <div class="col-lg-3 col-md-6">
-                            <div class="info-box  mb-4">
-                                <i class="bx bx-envelope"></i>
-                                <h3>Email Us</h3>
-                                <p>contact@example.com</p>
-                            </div>
-                        </div>
+{{--                        <div class="col-lg-3 col-md-6">--}}
+{{--                            <div class="info-box  mb-4">--}}
+{{--                                <i class="bx bx-envelope"></i>--}}
+{{--                                <h3>Email Us</h3>--}}
+{{--                                <p>contact@example.com</p>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
 
-                        <div class="col-lg-3 col-md-6">
-                            <div class="info-box  mb-4">
-                                <i class="bx bx-phone-call"></i>
-                                <h3>Call Us</h3>
-                                <p>+1 5589 55488 55</p>
-                            </div>
-                        </div>
+{{--                        <div class="col-lg-3 col-md-6">--}}
+{{--                            <div class="info-box  mb-4">--}}
+{{--                                <i class="bx bx-phone-call"></i>--}}
+{{--                                <h3>Call Us</h3>--}}
+{{--                                <p>+1 5589 55488 55</p>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
 
                     </div>
 
                     <div class="row" data-aos="fade-up" data-aos-delay="100">
-
                         <div class="col-lg-6 ">
                             <iframe class="mb-4 mb-lg-0"
-                                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3981.1417280681612!2d-38.50240538612261!3d-3.7793263972505553!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c74f4422e48b61%3A0x6b09a962daf1cfe3!2sR.%20Amador%20Bueno%2C%201328%20-%20Jardim%20Das%20Oliveiras%2C%20Fortaleza%20-%20CE%2C%2060821-040!5e0!3m2!1spt-BR!2sbr!4v1643429428346!5m2!1spt-BR!2sbr"
                                     frameborder="0" style="border:0; width: 100%; height: 384px;"
                                     allowfullscreen></iframe>
                         </div>
@@ -765,7 +766,7 @@
         {{--                    <div class="col-lg-6">--}}
         {{--                        <h4>Join Our Newsletter</h4>--}}
         {{--                        <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>--}}
-        {{--                        <form action="" method="post">--}}
+        {{--                        <form action="" method="Post">--}}
         {{--                            <input type="email" name="email"><input type="submit" value="Subscribe">--}}
         {{--                        </form>--}}
         {{--                    </div>--}}

@@ -6,6 +6,7 @@ use App\AbstractView\AbstractView;
 use App\Http\Controllers\CollectionsImages\CollectionsImagesController;
 use App\Models\Admin;
 use App\Models\Carousel\Carousel;
+use App\Models\Contact\Contact;
 use App\Models\NavBar\Navbar;
 use App\Models\Pages\Pages;
 use App\Models\Progress\Progress;
@@ -52,6 +53,7 @@ class Controller extends BaseController
             $view[12] => Carousel::all(),
             $view[13] => SectionSix::all(),
             $view[14] => SectionSeven::all(),
+            $view[15] => Contact::all(),
         ]);
 
         //MESSAGES

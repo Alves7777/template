@@ -21,7 +21,8 @@ class AbstractView
         11 => 'sectionfive',
         12 => 'collectionsimages',
         13 => 'sectionsix',
-        14 => 'sectionseven'
+        14 => 'sectionseven',
+        15 => 'contact'
     ];
 
     // CRUDS
@@ -130,6 +131,30 @@ class AbstractView
         $this->show = 'collectionsimages.show';
         $this->edit = 'collectionsimages.edit';
         $this->delete = 'collectionsimages.destroy';
+
+        return true;
+    }
+
+    public function setContact()
+    {
+        $this->title = 'Contatos';
+        $this->index = 'contact.index';
+        $this->create = 'contact.create';
+        $this->show = 'contact.show';
+        $this->edit = 'contact.edit';
+        $this->delete = 'contact.destroy';
+
+        return true;
+    }
+
+    public function setPost()
+    {
+        $this->title = 'Postes';
+        $this->index = 'post.index';
+        $this->create = 'post.create';
+        $this->show = 'post.show';
+        $this->edit = 'post.edit';
+        $this->delete = 'post.destroy';
 
         return true;
     }

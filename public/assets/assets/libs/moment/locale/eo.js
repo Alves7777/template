@@ -42,7 +42,7 @@
             sameElse : 'L'
         },
         relativeTime : {
-            future : 'post %s',
+            future : 'Post %s',
             past : 'antaŭ %s',
             s : 'sekundoj',
             ss : '%d sekundoj',

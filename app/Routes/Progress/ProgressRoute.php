@@ -10,7 +10,7 @@ class ProgressRoute
     public static function routes()
     {
         Route::resource('progress',ProgressController::class);
-        Route::match(['get', 'post'], 'export-excel', [ProgressController::class, 'exportExcel'])->name('export-excel');
+        Route::match(['get', 'Post'], 'export-excel', [ProgressController::class, 'exportExcel'])->name('export-excel');
 
     }
 }

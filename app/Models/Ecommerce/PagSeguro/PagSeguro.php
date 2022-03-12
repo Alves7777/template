@@ -45,7 +45,7 @@ class PagSeguro extends Model
 //        $params = http_build_query($params);
 
 //        $guzzle = new Guzzle;
-//        $response = $guzzle->request('post', config('pagseguro.url_checkout_sandbox'), [
+//        $response = $guzzle->request('Post', config('pagseguro.url_checkout_sandbox'), [
 //            'query' => $params,
 //        ]);
 //
@@ -54,7 +54,7 @@ class PagSeguro extends Model
         $client = new Guzzle([
             'headers' => ['content-type' => 'application/json', 'Accept' => 'application/json']
         ]);
-        $response = $client->request('post', config('pagseguro.url_checkout_sandbox'), [
+        $response = $client->request('Post', config('pagseguro.url_checkout_sandbox'), [
             'json' => $params,
         ]);
 
