@@ -6,12 +6,14 @@ use App\Http\Controllers\Ecommerce\PagSeguro\PagSeguroController;
 use App\Http\Controllers\Site\_PagesController;
 use App\Http\Controllers\Site\HomeController;
 use App\Routes\CollectionsImages\CollectionsImagesRoute;
+use App\Routes\Contact\ContactRoute;
 use App\Routes\Dashboard\DashboardRoute;
 use App\Routes\Ecommerce\Product\ProductRoute;
 use App\Routes\Ecommerce\Client\ClientRoute;
 use App\Routes\Ecommerce\UserEcommerce\UserEcommerceRoute;
 use App\Routes\Navbar\NavbarRoute;
 use App\Routes\Pages\PagesRoute;
+use App\Routes\Post\PostRoute;
 use App\Routes\Progress\ProgressRoute;
 use App\Routes\Score\ScoreRoute;
 use App\Routes\SectionFive\SectionFiveRoute;
@@ -29,7 +31,7 @@ use Illuminate\Support\Facades\Route;
 
 //api test
 Route::get('/contato',[ApiFreightController::class, 'getFreight']);
-Route::get('/contato-post',[ApiFreightController::class, 'postFreight']);
+Route::get('/contato-Post',[ApiFreightController::class, 'postFreight']);
 
 //test
 Route::get('/cursos', function () {
@@ -73,6 +75,8 @@ Route::group(['middleware'=> ['auth']], function () {
     DashboardRoute::routes();
     CollectionsImagesRoute::routes();
     SectionSevenRoute::routes();
+    ContactRoute::routes();
+    PostRoute::routes();
 
 });
 
@@ -88,7 +92,7 @@ Route::prefix('admin')->group(function() {
     Route::get('logout/', [App\Http\Controllers\Auth\AdminLoginController::class,'logout'])->name('admin.logout');
     Route::get('/', [App\Http\Controllers\Auth\AdminController::class, 'index'])->name('admin.dashboard');
     Route::get('/admin-register', [App\Http\Controllers\Auth\AdminRegisterController::class, 'adminRegister'])->name('admin_register');
-    Route::match(['get', 'post'], 'register-admin/add', [AdminRegisterController::class, 'addRegister'])->name('add_register');
+    Route::match(['get', 'Post'], 'register-admin/add', [AdminRegisterController::class, 'addRegister'])->name('add_register');
 
     Route::post('pagseguro', [PagSeguroController::class, 'pagseguro'])->name('pagseguro');
 

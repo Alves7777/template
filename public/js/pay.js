@@ -102,6 +102,7 @@ function pagar() {
                 npacelas: $(".nparcels").val(),
                 totalPagar: $(".totalPagar").val(),
                 totalpart: $(".totalpart").val(),
+                totalteste: $(".totalending").val(),
             }, function (result) {
                 alert(result);
             });
@@ -114,21 +115,21 @@ function pagar() {
 
     })
 
-    function createTransactionCard()
-    {
-        let data = $("#form").serialize()
+}
 
-        $.ajax({
-            url: "/payment/cart",
-            method: "POST",
-            data: data
-        }).done(function (data) {
-            console.log(data)
-            alert(data)
-        }).fail(function () {
-            alert('fail request!!!')
-        })
+function createTransactionCard()
+{
+    let data = $("#form").serialize()
 
-    }
+    $.ajax({
+        url: "/payment/cart",
+        method: "POST",
+        data: data
+    }).done(function (data) {
+        console.log(data)
+        alert(data)
+    }).fail(function () {
+        alert('fail request!!!')
+    })
 
 }

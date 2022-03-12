@@ -9,7 +9,7 @@ class UserEcommerceRoute
 {
     public static function routes()
     {
-        Route::match(['get', 'post'], 'user-ecommerce', [UserEcommerceController::class, 'userEcommerce'])->name('user-ecommerce');
+        Route::match(['get', 'Post'], 'user-ecommerce', [UserEcommerceController::class, 'userEcommerce'])->name('user-ecommerce');
 
     }
 }

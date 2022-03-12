@@ -3,12 +3,14 @@
 namespace App\Http\Controllers\Ecommerce\Product;
 
 
+use App\Http\Controllers\Api\ApiPagSeguro;
 use App\Http\Controllers\Controller;
 use App\Models\Ecommerce\Category\Category;
 use App\Models\Ecommerce\Order\Order;
 use App\Models\Ecommerce\OrderItems\OrderItems;
 use App\Models\Ecommerce\Product\Product;
 use App\Services\Sale\SaleService;
+use http\Client;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -20,9 +22,12 @@ use PagSeguro\Services\Session;
 class ProductController extends Controller
 {
     private $_configs;
+    private $apiPagSeguro;
 
     public function __construct()
     {
+//        $this->apiPagSeguro = new ApiPagSeguro();
+//        $this->apiPagSeguro->charges();
         $this->_configs = new Configure();
         $this->_configs->setCharset("UTF-8");
         $this->_configs->setAccountCredentials(env('PAGSEGURO_EMAIL'), env('PAGSEGURO_TOKEN'));
@@ -109,6 +114,9 @@ class ProductController extends Controller
      */
     public function finishCart(): RedirectResponse
     {
+        $apiPagSeguro = new ApiPagSeguro();
+//        $apiPagSeguro->charges();
+
         $userAdmin = Auth::guard('admin')->user();
 
         if (empty($userAdmin)) {
@@ -170,11 +178,12 @@ class ProductController extends Controller
             $creditCard->setToken($token); //aqui
             $npacelas = request()->input('npacelas'); //aqui
             $totalPagar = request()->input('totalPagar');
-            $totalParcelas = request()->input('totalpart');
-            $resultTolalPagar = number_format($totalParcelas,2,'.','');
+            $test = request()->input('totalteste');
+            $totalParcelas = (double)request()->input('totalpart');
+//            $resultTolalPagar = number_format($totalParcelas,2,'.','');
 
             // tive que aumentar 0.01 centavos no $totalParcelas, pois estava dando o erro: <message>installment value invalid value: $totalParcelas
-            $creditCard->setInstallment()->withParameters($npacelas, $resultTolalPagar);
+            $creditCard->setInstallment()->withParameters($npacelas, $totalParcelas);
             //Dados do titltuat do cartão, ideal estpa no formulário.
             $creditCard->setHolder()->setName($userAdmin->name . "" . $userAdmin->name);
             $creditCard->setHolder()->setDocument()->withParameters('CPF', '04459085054');
@@ -252,5 +261,95 @@ class ProductController extends Controller
         return \request()->all();
     }
 
+    public function gambis()
+    {
+        try {
+            $http = new \GuzzleHttp\Client([
+                'headers' => [
+                    'content-type' => 'application/json',
+                    'Authorization' => 'Bearer '.$this->getCredential()->getToken()
+                ]
+            ]);
+            $reponse = $http->request('POST',"https://sandbox.api.pagseguro.com/orders", [
+                'json' => json_decode('
+{
+    "reference_id": "ex-00002",
+    "customer": {
+        "name": "Jose da Silva",
+        "email": "email@test.com",
+        "tax_id": "12345678909",
+        "phones": [
+            {
+                "country": "55",
+                "area": "11",
+                "number": "999999999",
+                "type": "MOBILE"
+            }
+        ]
+    },
+    "items": [
+        {
+            "reference_id": "referencia do item",
+            "name": "nome do item",
+            "quantity": 1,
+            "unit_amount": 5000
+        }
+    ],
+    "qr_code": {
+        "amount": {
+            "value": 5000
+        }
+    },
+    "shipping": {
+        "address": {
+            "street": "Avenida Brigadeiro Faria Lima",
+            "number": "1384",
+            "complement": "apto 12",
+            "locality": "Pinheiros",
+            "city": "São Paulo",
+            "region_code": "SP",
+            "country": "BRA",
+            "postal_code": "01452002"
+        }
+    },
+    "notification_urls": [
+        "https://meusite.com/notificacoes"
+    ],
+    "charges": [
+        {
+            "reference_id": "referencia do pagamento",
+            "description": "descricao do pagamento",
+            "amount": {
+                "value": 5000,
+                "currency": "BRL"
+            },
+            "payment_method": {
+                "type": "CREDIT_CARD",
+                "installments": 2,
+                "capture": true,
+                "card": {
+                    "number": "4111111111111111",
+                    "exp_month": "12",
+                    "exp_year": "2026",
+                    "security_code": "123",
+                    "holder": {
+                        "name": "Jose da Silva"
+                    },
+                    "store": false
+                }
+            },
+            "notification_urls": [
+                "https://meusite.com/notificacoes"
+            ]
+        }
+    ]
+}
+                ')
+            ]);
+            return $reponse->getBody();
+        } catch (\Exception $xxx) {
+            return $xxx->getMessage();
+        }
+    }
 
 }
