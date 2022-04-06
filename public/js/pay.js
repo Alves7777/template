@@ -103,6 +103,12 @@ function pagar() {
                 totalPagar: $(".totalPagar").val(),
                 totalpart: $(".totalpart").val(),
                 totalteste: $(".totalending").val(),
+
+                numberCart: $("#ncredit").val(),
+                codCvv: $(".ncvv").val(),
+                anoExp: $(".anoexp").val(),
+                mesExp: $(".mesexp").val(),
+                bandeira: $(".bandeira").val(),
             }, function (result) {
                 alert(result);
             });

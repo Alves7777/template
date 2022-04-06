@@ -42,7 +42,7 @@ class HomeController extends Controller
     public function index()
     {
 //      SEÇÃO 2 / CONSUMO DA API
-        $getSectionTwo = $this->apiSectionTwoController->RESPONSE_SECTIONTWO_GET;
+//        $getSectionTwo = $this->apiSectionTwoController->RESPONSE_SECTIONTWO_GET;
 
 //      CONTAGEM
         $getScore = $this->scoreService->all();
@@ -91,7 +91,7 @@ class HomeController extends Controller
 
         $iframe = $this->contactService->all();
 
-        return view('site.home', compact( 'getSectionFour', 'getSectionTwo',
+        return view('site.home', compact( 'getSectionFour',
             'getScore', 'titles', 'listUnique','sectionFive', 'title', 'getCollections','listCollections','iframe'));
     }
 

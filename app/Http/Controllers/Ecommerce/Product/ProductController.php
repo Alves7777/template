@@ -28,6 +28,9 @@ class ProductController extends Controller
     {
 //        $this->apiPagSeguro = new ApiPagSeguro();
 //        $this->apiPagSeguro->charges();
+        $this->email = config('pagseguro')['email'];
+        $this->token = config('pagseguro')['token'];
+
         $this->_configs = new Configure();
         $this->_configs->setCharset("UTF-8");
         $this->_configs->setAccountCredentials(env('PAGSEGURO_EMAIL'), env('PAGSEGURO_TOKEN'));
@@ -116,6 +119,7 @@ class ProductController extends Controller
     {
         $apiPagSeguro = new ApiPagSeguro();
 //        $apiPagSeguro->charges();
+        $test = $this->getGambis();
 
         $userAdmin = Auth::guard('admin')->user();
 
@@ -180,7 +184,7 @@ class ProductController extends Controller
             $totalPagar = request()->input('totalPagar');
             $test = request()->input('totalteste');
             $totalParcelas = (double)request()->input('totalpart');
-//            $resultTolalPagar = number_format($totalParcelas,2,'.','');
+            $resultTolalPagar = number_format($totalParcelas, 2, '.', '');
 
             // tive que aumentar 0.01 centavos no $totalParcelas, pois estava dando o erro: <message>installment value invalid value: $totalParcelas
             $creditCard->setInstallment()->withParameters($npacelas, $totalParcelas);
@@ -188,7 +192,7 @@ class ProductController extends Controller
             $creditCard->setHolder()->setName($userAdmin->name . "" . $userAdmin->name);
             $creditCard->setHolder()->setDocument()->withParameters('CPF', '04459085054');
             $creditCard->setHolder()->setBirthDate('07/02/1994');
-            $creditCard->setHolder()->setPhone()->withParameters(85,987826658);
+            $creditCard->setHolder()->setPhone()->withParameters(85, 987826658);
 
             $creditCard->setMode('DEFAULT');
             $result = $creditCard->register($this->getCredential());
@@ -203,6 +207,54 @@ class ProductController extends Controller
         request()->session()->flash($result['status'], $result['message']);
 
         return redirect()->route('view_cart');
+    }
+
+    public function getGambis()
+    {
+        try {
+            $creditCard = new \PagSeguro\Domains\Requests\DirectPayment\CreditCard();
+
+            $token = request()->input('cardtoken');
+            $creditCard->setToken($token);
+
+            $sessionCode = Session::create(
+                $this->getCredential()
+            );
+            $IDSession = $sessionCode->getResult();
+
+            $npacelas = request()->input('npacelas'); //aqui
+            $totalPagar = request()->input('totalPagar');
+            $totalParcelas = (double)request()->input('totalpart');
+            $totalteste = request()->input('totalteste');
+
+            $bandeira = request()->input('bandeira');
+
+            $http = new \GuzzleHttp\Client([
+                'headers' => [
+                    'content-type' => 'application/json',
+                    'Authorization' => 'Bearer ' . $this->getCredential()->getToken(),
+                ]
+            ]);
+            $res = $http->request('GET',
+                "https://sandbox.pagseguro.uol.com.br/checkout/v2/installments.json?sessionId={$IDSession}&amount={$totalPagar}&creditCardBrand={$bandeira}&maxInstallmentNoInterest={$npacelas}");
+            //      $response = $http->request('POST',
+//                "https://df.uol.com.br/v2/cards", [
+//                    'json' => [
+//                        'sessionId'=> $token,
+//                        'amount'=> \request()->input('totalPagar'),
+//                        'cardNumber'=> \request()->input('numberCart'),
+//                        'cardBrand'=> $bandeira,
+//                        'cardCvv'=> \request()->input('codCvv'),
+//                        'cardExpirationMonth'=> \request()->input('mesExp'),
+//                        'cardExpirationYear'=> \request()->input('anoExp')
+//                    ]
+//                ]);
+            $body = json_decode($res->getBody(), true);
+            $content = ['status'  => 'success', 'data' => $body];
+            return json_decode($res->getBody(), true);
+        } catch (\Exception $e) {
+            return $e->getMessage();
+        }
     }
 
     public function purchaseHistory()
@@ -267,89 +319,29 @@ class ProductController extends Controller
             $http = new \GuzzleHttp\Client([
                 'headers' => [
                     'content-type' => 'application/json',
-                    'Authorization' => 'Bearer '.$this->getCredential()->getToken()
+                    'Authorization' => 'Bearer ' . $this->getCredential()->getToken(),
+                    'Accept: application/vnd.pagseguro.com.br.v3+xml;charset=ISO-8859-1',
                 ]
             ]);
-            $reponse = $http->request('POST',"https://sandbox.api.pagseguro.com/orders", [
-                'json' => json_decode('
-{
-    "reference_id": "ex-00002",
-    "customer": {
-        "name": "Jose da Silva",
-        "email": "email@test.com",
-        "tax_id": "12345678909",
-        "phones": [
-            {
-                "country": "55",
-                "area": "11",
-                "number": "999999999",
-                "type": "MOBILE"
-            }
-        ]
-    },
-    "items": [
-        {
-            "reference_id": "referencia do item",
-            "name": "nome do item",
-            "quantity": 1,
-            "unit_amount": 5000
-        }
-    ],
-    "qr_code": {
-        "amount": {
-            "value": 5000
-        }
-    },
-    "shipping": {
-        "address": {
-            "street": "Avenida Brigadeiro Faria Lima",
-            "number": "1384",
-            "complement": "apto 12",
-            "locality": "Pinheiros",
-            "city": "São Paulo",
-            "region_code": "SP",
-            "country": "BRA",
-            "postal_code": "01452002"
-        }
-    },
-    "notification_urls": [
-        "https://meusite.com/notificacoes"
-    ],
-    "charges": [
-        {
-            "reference_id": "referencia do pagamento",
-            "description": "descricao do pagamento",
-            "amount": {
-                "value": 5000,
-                "currency": "BRL"
-            },
-            "payment_method": {
-                "type": "CREDIT_CARD",
-                "installments": 2,
-                "capture": true,
-                "card": {
-                    "number": "4111111111111111",
-                    "exp_month": "12",
-                    "exp_year": "2026",
-                    "security_code": "123",
-                    "holder": {
-                        "name": "Jose da Silva"
-                    },
-                    "store": false
-                }
-            },
-            "notification_urls": [
-                "https://meusite.com/notificacoes"
-            ]
-        }
-    ]
-}
-                ')
-            ]);
-            return $reponse->getBody();
+//            $response = $http->request('POST',
+//                "https://ws.sandbox.pagseguro.uol.com.br/v2/sessions?email=$this->email&token=$this->token");
+
+            $amount = 200;
+            $data = [];
+            $sessionCode = Session::create(
+                $this->getCredential()
+            );
+
+            $IDSession = $sessionCode->getResult();
+//            $data['sessionID'] = $IDSession;
+
+            $response = $http->request('GET',
+                "https://ws.sandbox.pagseguro.uol.com.br/payment-methods?amount={$amount}&sessionId={$IDSession}");
+
+            return $response->getBody();
+
         } catch (\Exception $xxx) {
             return $xxx->getMessage();
         }
     }
-
 }
