@@ -11,16 +11,16 @@ class ApiSectionTwoController extends ApisController
 {
     public string $index = 'sectiontwo.index';
 
-    public function index()
-    {
-        try {
-            $getSectionTwo = $this->RESPONSE_SECTIONTWO_GET;
-            return view($this->index, compact('getSectionTwo'));
-        } catch (Exception $e) {
-            alert()->error($this->MSG_ERROR);
-            return redirect()->back();
-        }
-    }
+//    public function index()
+//    {
+//        try {
+//            $getSectionTwo = $this->RESPONSE_SECTIONTWO_GET;
+//            return view($this->index, compact('getSectionTwo'));
+//        } catch (Exception $e) {
+//            alert()->error($this->MSG_ERROR);
+//            return redirect()->back();
+//        }
+//    }
 
     public function create()
     {

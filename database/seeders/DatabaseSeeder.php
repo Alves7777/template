@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
             SectionFiveTableSeeder::class,
             SectionSixTableSeeder::class,
             SectionSevenTableSeeder::class,
-            ContactTableSeeder::class,
+//            ContactTableSeeder::class,
             UserTableSeeder::class,
             PostTableSeeder::class,
         ]);

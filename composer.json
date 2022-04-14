@@ -18,7 +18,8 @@
         "laravelcollective/html": "^6.2",
         "okipa/laravel-table": "^4.0",
         "pagseguro/pagseguro-php-sdk": "^6.0",
-        "realrashid/sweet-alert": "^4.1"
+        "realrashid/sweet-alert": "^4.1",
+      "ext-curl": "*"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.6",

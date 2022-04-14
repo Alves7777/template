@@ -24,7 +24,7 @@ class ApisController
         //ROUTES DELETE
         $this->ROUTE_SECTIONTWO_DELETE = 'section-two/delete{id}';
         //RESPONSE GET
-        $this->RESPONSE_SECTIONTWO_GET = HTTP::get($this->URL . $this->ROUTE_SECTIONTWO_GET)['data'];
+//        $this->RESPONSE_SECTIONTWO_GET = HTTP::get($this->URL . $this->ROUTE_SECTIONTWO_GET)['data'];
         // CLIENT
         $this->CLIENT = new Client(['headers' => ['content-type' => 'application/json', 'Accept' => 'application/json']]);
 
