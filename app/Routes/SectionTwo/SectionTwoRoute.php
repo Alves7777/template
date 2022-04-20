@@ -2,14 +2,14 @@
 
 namespace App\Routes\SectionTwo;
 
-use App\Http\Controllers\Api\ApiSectionTwoController;
+use App\Http\Controllers\SectionTwo\SectionTwoController;
 use Illuminate\Support\Facades\Route;
 
 class SectionTwoRoute
 {
     public static function routes()
     {
-        Route::resource('/sectiontwo',ApiSectionTwoController::class);
+        Route::resource('/sectiontwo',SectionTwoController::class);
 
     }
 }

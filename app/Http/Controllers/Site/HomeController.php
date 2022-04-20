@@ -3,46 +3,44 @@
 namespace App\Http\Controllers\Site;
 
 use App\AbstractView\AbstractView;
-use App\Http\Controllers\Api\ApiSectionTwoController;
-use App\Http\Controllers\Contact\ContactController;
 use App\Http\Controllers\Controller;
 use App\Models\Carousel\Carousel;
-use App\Services\CollectionsImages\CollectionsImagesService;
 use App\Services\Contact\ContactService;
 use App\Services\Score\ScoreService;
 use App\Services\SectionFive\SectionFiveService;
 use App\Services\SectionFour\SectionFourService;
+use App\Services\SectionTwo\SectionTwoService;
 use App\Services\Title\TitleService;
 
 class HomeController extends Controller
 {
     private ScoreService $scoreService;
     private SectionFourService $sectionFourService;
-    private ApiSectionTwoController $apiSectionTwoController;
+    private SectionTwoService $sectionTwoController;
     private TitleService $titleService;
     private SectionFiveService $sectionFiveService;
     private ContactService $contactService;
 
-    public function __construct(ScoreService            $scoreService,
-                                ApiSectionTwoController $apiSectionTwoController,
-                                SectionFourService      $sectionFourService,
-                                SectionFiveService      $sectionFiveService,
-                                TitleService            $titleService,
-                                ContactService          $contactService)
+    public function __construct(ScoreService       $scoreService,
+                                SectionFourService $sectionFourService,
+                                SectionFiveService $sectionFiveService,
+                                TitleService       $titleService,
+                                ContactService     $contactService,
+                                SectionTwoService  $sectionTwoController)
     {
         parent::__construct();
         $this->scoreService = $scoreService;
         $this->sectionFiveService = $sectionFiveService;
         $this->sectionFourService = $sectionFourService;
         $this->contactService = $contactService;
-        $this->apiSectionTwoController = $apiSectionTwoController;
+        $this->sectionTwoController = $sectionTwoController;
         $this->titleService = $titleService;
     }
 
     public function index()
     {
 //      SEÇÃO 2 / CONSUMO DA API
-       // $getSectionTwo = $this->apiSectionTwoController->RESPONSE_SECTIONTWO_GET;
+        $getSectionTwo = $this->sectionTwoController->all();
 
 //      CONTAGEM
         $getScore = $this->scoreService->all();
@@ -56,12 +54,12 @@ class HomeController extends Controller
         $titles = $abstractView->loopThroughArray($getTitle);
 
         $title = $abstractView->getInfoFromArray($getTitle,
-            1,'color_title',
-            1,'title',
-            1,'text',
-            2,'color_title',
-            2,'title',
-            2,'text');
+            1, 'color_title',
+            1, 'title',
+            1, 'text',
+            2, 'color_title',
+            2, 'title',
+            2, 'text');
 
         $getSectionFive = $this->sectionFiveService->all();
         $sectionFive = $abstractView->loopThroughArray($getSectionFive);
@@ -77,22 +75,32 @@ class HomeController extends Controller
         $collections = Carousel::all();
         $listCollections = $abstractView->loopThroughArray($collections);
         $getCollections = $abstractView->getInfoFromArray($listCollections,
-            1,'photo',
+            1, 'photo',
             2, 'photo',
-            3,'photo',
-            4,'photo',
-            5,'photo',
+            3, 'photo',
+            4, 'photo',
+            5, 'photo',
             6, 'photo',
-            7,'photo',
-            8,'photo',
-            9,'photo',
-            10,'photo');
+            7, 'photo',
+            8, 'photo',
+            9, 'photo',
+            10, 'photo');
 
 
         $iframe = $this->contactService->all();
 
-        return view('site.home', compact( 'getSectionFour',
-            'getScore', 'titles', 'listUnique','sectionFive', 'title', 'getCollections','listCollections','iframe'));
+        return view('site.home',
+            compact('getSectionFour',
+                'getSectionTwo',
+                'getScore',
+                'titles',
+                'listUnique',
+                'sectionFive',
+                'title',
+                'getCollections',
+                'listCollections',
+                'iframe')
+        );
     }
 
 }
