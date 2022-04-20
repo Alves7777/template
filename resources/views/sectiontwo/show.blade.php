@@ -2,7 +2,7 @@
 
 @section('content')
 
-{{--    @include('confirm-delete',['url' => route('sectionone.destroy', $sectionone->id)])--}}
+    @include('confirm-delete',['url' => route('sectiontwo.destroy', $sectiontwo->id)])
     <div class="row">
         <div class="col-12">
             <div class="card card-purple card-outline">
@@ -10,7 +10,7 @@
                     <div class="card-header">
                         <div class="card-tools" style="display: flex; justify-content: flex-end; align-items: center; ">
                             <div>
-                                <a href="{{route('sectionone.index')}}" class="btn btn-sectionone" type="submit"
+                                <a href="{{route('sectiontwo.index')}}" class="btn btn-navbar" type="submit"
                                    style="margin-right: 0px;">
                                     <i class="fas fa-arrow-left"></i>
                                 </a>
@@ -18,7 +18,7 @@
                         </div>
                         <h5>
                             <i class="fas fa-th-list"></i>
-                            Detalhes da Seção 1
+                            Detalhes da Seção 2
                         </h5>
                     </div>
                 </div>
@@ -26,8 +26,8 @@
 {{--                    <p><strong>Título_1: </strong>{{ $item['title'] }}</p>--}}
 {{--                    <p><strong>Título_2: </strong>{{ $item['description'] }}</p>--}}
 {{--                    <p><strong>Foto:</strong><br>--}}
-{{--                        <img src="{{ asset("/storage/$sectionone->photo") }}"--}}
-{{--                             alt="{{ $sectionone->name }}"--}}
+{{--                        <img src="{{ asset("/storage/$sectiontwo->photo") }}"--}}
+{{--                             alt="{{ $sectiontwo->name }}"--}}
 {{--                             style="border-radius: 35px; width: 150px; height: 150px">--}}
 {{--                    </p>--}}
                     <hr>

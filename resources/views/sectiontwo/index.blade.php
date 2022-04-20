@@ -8,7 +8,7 @@
             <div class="card">
                 <div class="card-header test" style="display: flex; justify-content: flex-end;align-items: center;">
                     <div>
-                        <a href="{{route('sectionone.index')}}" class="btn btn-navbar" type="submit"
+                        <a href="{{route('sectiontwo.index')}}" class="btn btn-navbar" type="submit"
                            style="margin-right: -15px;">
                             <i class="fas fa-arrow-left"></i>
                         </a>
@@ -27,7 +27,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($getSectionTwo as $item)
+                        @foreach($sectiontwo as $item)
                             <tr>
                                 <td>{{ $item['title'] }}</td>
                                 <td>{{ $item['description'] }}</td>
@@ -35,9 +35,9 @@
                                 <td>{{ $item['icon'] }}</td>
                                 <td>{{ $item['color_icon'] }}</td>
                                 <td>
-{{--                                    <a href="{{ route('sectionone.show', $item['color_icon'] ) }}"--}}
-{{--                                       type="button" class="btn btn-secondary btn-sm">Detalhes</a>--}}
-                                    <a href="{{ route('sectiontwo.edit', $item['id']) }}"
+                                    <a href="{{ route('sectiontwo.show', $item->id  ) }}"
+                                       type="button" class="btn btn-secondary btn-sm">Detalhes</a>
+                                    <a href="{{ route('sectiontwo.edit', $item->id  ) }}"
                                        type="button" class="btn btn-primary btn-sm">Editar</a>
                                 </td>
                             </tr>

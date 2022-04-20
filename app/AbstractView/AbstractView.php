@@ -159,6 +159,18 @@ class AbstractView
         return true;
     }
 
+    public function setSectionTwo()
+    {
+        $this->title = 'Seção 2';
+        $this->index = 'sectiontwo.index';
+        $this->create = 'sectiontwo.create';
+        $this->show = 'sectiontwo.show';
+        $this->edit = 'sectiontwo.edit';
+        $this->delete = 'sectiontwo.destroy';
+
+        return true;
+    }
+
     // LÓGICAS
     public function getValidation($data = null, $qtdMax = null): string
     {
