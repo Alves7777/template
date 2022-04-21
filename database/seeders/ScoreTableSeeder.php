@@ -11,14 +11,27 @@ class ScoreTableSeeder extends Seeder
 
     public function run()
     {
-
-        for ($i = 1; $i <= AbstractView::QTD_SEEDER['qtd_3']; $i++) {
-            Score::create([
-                'icon' => "bi bi-emoji-smile",
-                'number' => "15{$i}",
-                'name' => "clientes",
-            ]);
-        }
+        $score = new Score();
+        $score->create([
+            'icon' => "bi bi-emoji-smile",
+            'number' => "50",
+            'name' => "Média de clientes por mês",
+        ]);
+        $score->create([
+            'icon' => "bi bi-emoji-smile",
+            'number' => "5",
+            'name' => "Vendedores",
+        ]);
+        $score->create([
+            'icon' => "bi bi-emoji-smile",
+            'number' => "4",
+            'name' => "Campeonantos",
+        ]);
+        $score->create([
+            'icon' => "bi bi-emoji-smile",
+            'number' => "24",
+            'name' => "Atendimento 24hrs",
+        ]);
     }
 
 }

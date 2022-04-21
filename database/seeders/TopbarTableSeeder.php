@@ -19,7 +19,7 @@ class TopbarTableSeeder extends Seeder
     {
         $this->topbarService->create([
             'icon_email' => 'bi bi-envelope-fill',
-            'email' => 'email@email.com',
+            'email' => 'alvesimportedproducts@gmail.com',
             'icon_phone' => 'bi bi-telephone-fill',
             'phone' => '(85)99429-8785',
             'color_top_bar' => '#FF0000',
@@ -28,9 +28,9 @@ class TopbarTableSeeder extends Seeder
             'icon_3' => 'bi bi-linkedin',
             'icon_4' => 'bi bi-twitter',
             'link_email' => 'https://www.google.com/',
-            'link_phone' => 'https://www.google.com/',
-            'link_icon_1' => 'https://www.instagram.com/',
-            'link_icon_2' => 'https://www.facebook.com/',
+            'link_phone' => 'https://wa.me/5585994298785?text=Gostaria+falar+com+um+vendedor...',
+            'link_icon_1' => 'https://www.instagram.com/alvesimported',
+            'link_icon_2' => 'https://www.facebook.com/AlvesImportedProducts',
             'link_icon_3' => 'https://www.linkedin.com/',
             'link_icon_4' => 'https://twitter.com/',
         ]);
