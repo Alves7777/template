@@ -441,6 +441,9 @@
         </li>
         <li class="list-divider"></li>
         <li class="nav-small-cap"><span class="hide-menu">Extra</span></li>
+        <li class="sidebar-item"><a class="sidebar-link sidebar-link" href="../../docs/docs.html"
+                                    aria-expanded="false"><i data-feather="edit-3" class="feather-icon"></i><span
+                    class="hide-menu">Documentation</span></a></li>
         <li class="sidebar-item"><a class="sidebar-link sidebar-link" href="authentication-login1.html"
                                     aria-expanded="false"><i data-feather="log-out" class="feather-icon"></i><span
                     class="hide-menu">Logout</span></a></li>
