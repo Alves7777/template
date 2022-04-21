@@ -16,7 +16,7 @@ class SectionTwoTableSeeder extends Seeder
                 "icon" => "bx bx-world",
                 "color_icon" => "#f7052900",
                 "title" => "Section Two {$i}",
-                "description" => "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
+                "description" => "OK Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
                 "url" => "https://www.google.com",
             ]);
         }
