@@ -10,14 +10,23 @@ class ProgressTableSeeder extends Seeder
 {
     public function run()
     {
-        $qtd = AbstractView::QTD_SEEDER['qtd_1'];
         $progress = new Progress();
 
-        for ($i = 1; $i <= $qtd;  $i++) {
-            $progress->create([
-                'progress_name' => "TESTE {$i}",
-                'percentage' => 10 + $i
-            ]);
-        }
+        $progress->create([
+            'progress_name' => "CAMISAS FUTEBOL - VENDIDAS",
+            'percentage' => 100
+        ]);
+        $progress->create([
+            'progress_name' => "CAMISAS BASQUETES - VENDIDAS",
+            'percentage' => 80
+        ]);
+        $progress->create([
+            'progress_name' => "CAMISAS FUTEBOL AMERICANO - VENDIDAS",
+            'percentage' => 70
+        ]);
+        $progress->create([
+            'progress_name' => "CAMISAS ROCK DO GELO - VENDIDAS",
+            'percentage' => 50
+        ]);
     }
 }
