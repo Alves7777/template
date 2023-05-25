@@ -48,11 +48,10 @@
 </head>
 
 <body>
-@include('site.navbar')
 <main>
-    <br>
-    <div class="container">
+    <div class="">
         <div class="row">
+        @include('site.navbar')
 
 {{--            {{dd(Auth::guard('ecommerce'))}}--}}
 
@@ -62,18 +61,19 @@
 {{--                </div>--}}
 {{--            @endif--}}
 
-            @if($message = Session::get('error'))
-                <div class="col-12">
-                    <div class="alert alert-danger">{{ $message }}</div>
-                </div>
-            @endif
-            @if($message = Session::get('success'))
-                <div class="col-12">
-                    <div class="alert alert-success">{{ $message }}</div>
-                </div>
-            @endif
+{{--            @if($message = Session::get('error'))--}}
+{{--                <div class="col-12">--}}
+{{--                    <div class="alert alert-danger">{{ $message }}</div>--}}
+{{--                </div>--}}
+{{--            @endif--}}
+{{--            @if($message = Session::get('success'))--}}
+{{--                <div class="col-12">--}}
+{{--                    <div class="alert alert-success">{{ $message }}</div>--}}
+{{--                </div>--}}
+{{--            @endif--}}
         </div>
     </div>
+
     @yield('content')
 </main>
 @include('sweetalert::alert')
