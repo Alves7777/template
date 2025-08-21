@@ -17,6 +17,7 @@ class SectionOneTableSeeder extends Seeder
 
     public function run()
     {
+        $client = \App\Models\Client::where('slug', 'default-client')->first();
         $this->sectionOneService->create([
             'title'=> 'Alves Imported',
             'color_title'=> '#FD7E14',
@@ -29,8 +30,8 @@ class SectionOneTableSeeder extends Seeder
             'icon_video'=> 'bi bi-play-circle',
             'color_icon_video'=> '#FF0000',
             'color_text_video'=> '#000000',
-            'image' => new UploadedFile(public_path() . '/storage/photos/bay.png', 'temp')
-
+            'image' => new UploadedFile(public_path() . '/storage/photos/bay.png', 'temp'),
+            'client_id' => $client ? $client->id : 1
         ]);
     }
 

@@ -18,6 +18,7 @@ class TopbarTableSeeder extends Seeder
     public function run()
     {
         $this->topbarService->create([
+            'client_id' => 1,
             'icon_email' => 'bi bi-envelope-fill',
             'email' => 'alvesimportedproducts@gmail.com',
             'icon_phone' => 'bi bi-telephone-fill',

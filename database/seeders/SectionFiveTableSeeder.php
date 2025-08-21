@@ -22,6 +22,7 @@ class SectionFiveTableSeeder extends Seeder
     {
         for ($i = 1;$i <= AbstractView::QTD_SEEDER['qtd_1']; $i++) {
             $this->sectionFiveService->create([
+                'client_id' => 1,
                 'title' => "Teste{$i}",
                 'color_title' => "#FD7E14",
                 'url' => "www.google.com.br",

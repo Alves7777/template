@@ -16,21 +16,25 @@ class ScoreTableSeeder extends Seeder
             'icon' => "bi bi-emoji-smile",
             'number' => "50",
             'name' => "Média de clientes por mês",
+            'client_id' => 1
         ]);
         $score->create([
             'icon' => "bi bi-emoji-smile",
             'number' => "5",
             'name' => "Vendedores",
+            'client_id' => 1
         ]);
         $score->create([
             'icon' => "bi bi-emoji-smile",
             'number' => "4",
             'name' => "Campeonantos",
+            'client_id' => 1
         ]);
         $score->create([
             'icon' => "bi bi-emoji-smile",
             'number' => "24",
             'name' => "Atendimento 24hrs",
+            'client_id' => 1
         ]);
     }
 

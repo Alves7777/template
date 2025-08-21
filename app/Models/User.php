@@ -19,6 +19,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'client_id',
     ];
 
     /**
@@ -44,6 +45,11 @@ class User extends Authenticatable
     public function comment()
     {
         return $this->hasMany(CommentComment::class);
+    }
+
+    public function client()
+    {
+        return $this->belongsTo(Client::class);
     }
 }
 

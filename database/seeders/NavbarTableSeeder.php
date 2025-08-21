@@ -19,6 +19,7 @@ class NavbarTableSeeder extends Seeder
     public function run()
     {
         $this->navbarService->create([
+            'client_id' => 1,
             'logo'    => new UploadedFile(public_path() . '/storage/photos/logo.jpeg', 'temp'),
             'title_1' => 'Home',
             'title_2' => 'Sobre',

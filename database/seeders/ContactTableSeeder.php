@@ -28,7 +28,6 @@ class ContactTableSeeder extends Seeder
                 'icon'=> "bi bi-emoji-smile",
                 'title'=> "teste {$i}",
                 'text'=> 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
-                'iframe'=> 'teste',
             ]);
         }
     }

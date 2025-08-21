@@ -14,19 +14,23 @@ class ProgressTableSeeder extends Seeder
 
         $progress->create([
             'progress_name' => "CAMISAS FUTEBOL - VENDIDAS",
-            'percentage' => 100
+            'percentage' => 100,
+            'client_id' => 1
         ]);
         $progress->create([
             'progress_name' => "CAMISAS BASQUETES - VENDIDAS",
-            'percentage' => 80
+            'percentage' => 80,
+            'client_id' => 1
         ]);
         $progress->create([
             'progress_name' => "CAMISAS FUTEBOL AMERICANO - VENDIDAS",
-            'percentage' => 70
+            'percentage' => 70,
+            'client_id' => 1
         ]);
         $progress->create([
             'progress_name' => "CAMISAS ROCK DO GELO - VENDIDAS",
-            'percentage' => 50
+            'percentage' => 50,
+            'client_id' => 1
         ]);
     }
 }

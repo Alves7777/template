@@ -19,6 +19,7 @@ class SectionSixTableSeeder extends Seeder
     public function run()
     {
         $this->sectionSixService->create([
+            'client_id' => 1,
             'sub_title' => "Teste",
             'sub_text' => "#FD7E14",
             'link_twitter' => "www.google.com.br",
@@ -29,6 +30,7 @@ class SectionSixTableSeeder extends Seeder
         ]);
 
         $this->sectionSixService->create([
+            'client_id' => 1,
             'sub_title' => "Teste",
             'sub_text' => "#FD7E14",
             'link_twitter' => "www.google.com.br",

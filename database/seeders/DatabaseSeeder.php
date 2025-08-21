@@ -10,7 +10,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Mod els\User::factory(10)->create();
-        $this->call([
+      $this->call([
+          ClientDefaultSeeder::class,
               TopbarTableSeeder::class,
               NavbarTableSeeder::class,
               SectionOneTableSeeder::class,
@@ -25,9 +26,9 @@ class DatabaseSeeder extends Seeder
               SectionFiveTableSeeder::class,
               SectionSixTableSeeder::class,
               SectionSevenTableSeeder::class,
-//              ContactTableSeeder::class,
+              ContactTableSeeder::class,
               UserTableSeeder::class,
-          //  PostTableSeeder::class,
+              PostTableSeeder::class,
         ]);
 
     }
