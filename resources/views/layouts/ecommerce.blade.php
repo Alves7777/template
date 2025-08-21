@@ -121,7 +121,7 @@
     </nav>
     @yield('content')
 </main>
-@include('sweetalert::alert')
+{{--@include('sweetalert::alert')--}}
 <!-- Navbar -->
 </body>
 </html>
