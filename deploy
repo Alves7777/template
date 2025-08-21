@@ -1,0 +1,11 @@
+No GitHub, defina a branch master como produção e develop para desenvolvimento.
+O fluxo será:
+Commits e PRs em develop para novas features e correções.
+Quando estiver pronto para produção, faça merge de develop em master:
+
+git checkout master
+git merge develop
+git push origin master
+
+develop: ambiente de desenvolvimento.
+master: ambiente de produção.
