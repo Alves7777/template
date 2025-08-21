@@ -1,93 +1,45 @@
-# For more information: https://laravel.com/docs/sail
-version: '3'
+version: "3.9"
+
 services:
-    laravel.test:
+    api:
+        container_name: template
         build:
-            context: ./vendor/laravel/sail/runtimes/8.0
+            context: .
             dockerfile: Dockerfile
             args:
-                WWWGROUP: '${WWWGROUP}'
-        image: sail-8.0/app
+                uid: ${UID}
         extra_hosts:
-            - 'host.docker.internal:host-gateway'
+            - host.docker.internal:host-gateway
         ports:
-            - '${APP_PORT:-80}:80'
-        environment:
-            WWWUSER: '${WWWUSER}'
-            LARAVEL_SAIL: 1
-            XDEBUG_MODE: '${SAIL_XDEBUG_MODE:-off}'
-            XDEBUG_CONFIG: '${SAIL_XDEBUG_CONFIG:-client_host=host.docker.internal}'
+            - 7112:80
         volumes:
-            - '.:/var/www/html'
-        networks:
-            - sail
+            - .:/var/www/html
+            - ./vendor:/var/www/html/vendor
         depends_on:
             - mysql
-            - redis
-            - meilisearch
-            - selenium
+        networks:
+            - template
+        entrypoint: ["/usr/local/bin/entrypoint.sh"]
+
     mysql:
-        image: 'mysql:8.0'
+        image: mysql:8.0
+        container_name: master-database
         ports:
-            - '${FORWARD_DB_PORT:-3306}:3306'
+            - 3315:3306
+        volumes:
+            - ./docker/database/api/run/var:/var/lib/mysql
+            - ./docker/database/api/conf/my.cnf:/etc/mysql/my.cnf
+            - ./docker/database/api/dump.sql:/dump.sql
         environment:
-            MYSQL_ROOT_PASSWORD: '${DB_PASSWORD}'
-            MYSQL_DATABASE: '${DB_DATABASE}'
-            MYSQL_USER: '${DB_USERNAME}'
-            MYSQL_PASSWORD: '${DB_PASSWORD}'
-            MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
-        volumes:
-            - 'sailmysql:/var/lib/mysql'
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: template
+            MYSQL_USER: lucas
+            MYSQL_PASSWORD: 123456
+        command: --default-authentication-plugin=mysql_native_password
         networks:
-            - sail
-        healthcheck:
-          test: ["CMD", "mysqladmin", "ping", "-p${DB_PASSWORD}"]
-          retries: 3
-          timeout: 5s
-    redis:
-        image: 'redis:alpine'
-        ports:
-            - '${FORWARD_REDIS_PORT:-6379}:6379'
-        volumes:
-            - 'sailredis:/data'
-        networks:
-            - sail
-        healthcheck:
-          test: ["CMD", "redis-cli", "ping"]
-          retries: 3
-          timeout: 5s
-    meilisearch:
-        image: 'getmeili/meilisearch:latest'
-        ports:
-            - '${FORWARD_MEILISEARCH_PORT:-7700}:7700'
-        volumes:
-            - 'sailmeilisearch:/data.ms'
-        networks:
-            - sail
-        healthcheck:
-          test: ["CMD", "wget", "--no-verbose", "--spider",  "http://localhost:7700/health"]
-          retries: 3
-          timeout: 5s
-    mailhog:
-        image: 'mailhog/mailhog:latest'
-        ports:
-            - '${FORWARD_MAILHOG_PORT:-1025}:1025'
-            - '${FORWARD_MAILHOG_DASHBOARD_PORT:-8025}:8025'
-        networks:
-            - sail
-    selenium:
-       image: 'selenium/standalone-chrome'
-       volumes:
-            - '/dev/shm:/dev/shm'
-       networks:
-           - sail
+            - template
+
 networks:
-    sail:
-        driver: bridge
-volumes:
-    sailmysql:
-        driver: local
-    sailredis:
-        driver: local
-    sailmeilisearch:
-        driver: local
+    template:
+        external: true
+        name: template
