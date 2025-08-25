@@ -44,4 +44,12 @@ class SectionTwoRepository
         return $sectionTwo->delete();
     }
 
+    public function getSlug($clientId)
+    {
+        return $this->entity->newQuery()
+            ->where('client_id', $clientId)
+            ->orderBy('created_at', 'DESC')
+            ->get();
+    }
+
 }

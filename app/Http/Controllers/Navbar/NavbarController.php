@@ -68,7 +68,7 @@ class NavbarController extends Controller
         }
     }
 
-    public function show($id)
+    public function show($id, $user)
     {
         try {
             $navbar = $this->navbarService->findOrFail($id);
@@ -79,10 +79,10 @@ class NavbarController extends Controller
         }
     }
 
-    public function edit($id)
+    public function edit($id, $user)
     {
         try {
-            $navbar = $this->navbarService->findOrFail($id);
+            $navbar = $this->navbarService->findOrFail($id, $user);
             return view('navbar.edit', compact('navbar'));
         } catch (Exception $e) {
             alert()->error($this->title . " não encontrada.");
@@ -90,10 +90,10 @@ class NavbarController extends Controller
         }
     }
 
-    public function update(NavbarRequest $request, $id): RedirectResponse
+    public function update(NavbarRequest $request, $id, $user): RedirectResponse
     {
         try {
-            $this->navbarService->update($id, $request->validated());
+            $this->navbarService->update($id, $user, $request->validated());
             alert()->success($this->title . " editado com sucesso.");
             return redirect()->route($this->route_index);
         } catch (Exception $e) {
@@ -102,10 +102,10 @@ class NavbarController extends Controller
         }
     }
 
-    public function destroy($id): RedirectResponse
+    public function destroy($id, $user): RedirectResponse
     {
         try {
-            $this->navbarService->delete($id);
+            $this->navbarService->delete($id, $user);
             alert()->success($this->title . " excluído com sucesso.");
             return redirect()->route($this->route_index);
         } catch (Exception $e) {

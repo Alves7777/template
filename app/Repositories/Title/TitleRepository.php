@@ -55,4 +55,12 @@ class TitleRepository
     {
         return $this->entity->newQuery()->pluck($column, $key);
     }
+
+    public function getSlug($clientId)
+    {
+        return $this->entity->newQuery()
+            ->where('client_id', $clientId)
+            ->orderBy('title', 'ASC')
+            ->get();
+    }
 }

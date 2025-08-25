@@ -9,7 +9,7 @@ class NavbarRoute
 {
     public static function routes()
     {
-        Route::resource('navbar', NavbarController::class);
+        Route::resource('/navbar', NavbarController::class);
 
     }
 }
