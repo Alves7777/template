@@ -10,10 +10,17 @@ class UserTableSeeder extends Seeder
 
     public function run()
     {
-        User::create([
-            'name'     => 'Lucas',
-            'email'    => 'lucas@gmail.com',
-            'password' => bcrypt('123456')
-        ]);
+        $client = \App\Models\Client::where('slug', 'default-client')->first();
+        User::firstOrCreate(
+            [
+                'email' => 'lucas@gmail.com'
+            ],
+            [
+                'name'     => 'Lucas',
+                'is_master'    => true,
+                'client_id' => $client ? $client->id : 1,
+                'password' => bcrypt('123456')
+            ]
+        );
     }
 }

@@ -14,6 +14,7 @@ class TitleTableSeeder extends Seeder
     {
         for ($i = 1;$i <= AbstractView::QTD_SEEDER['qtd_1']; $i++) {
             Title::create([
+                'client_id' => 1,
                 'title' => "Testando {$i}",
                 'color_title' => "#dd0d0d",
                 'text' => "Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita.",

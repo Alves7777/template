@@ -11,6 +11,9 @@ class PostTableSeeder extends Seeder
 
     public function run()
     {
-        Post::factory()->count(self::QUANTITY)->create();
+        $client = \App\Models\Client::where('slug', 'default-client')->first();
+        Post::factory()->count(self::QUANTITY)->create([
+            'client_id' => $client ? $client->id : 1
+        ]);
     }
 }

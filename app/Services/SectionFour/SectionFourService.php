@@ -13,6 +13,11 @@ class SectionFourService extends SectionFourRepository
         $this->sectionFourRepository = $sectionFourRepository;
     }
 
+    public function getSlug($clientId)
+    {
+        return $this->sectionFourRepository->getSlug($clientId);
+    }
+
     public function all()
     {
         return $this->sectionFourRepository->all();

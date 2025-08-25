@@ -65,11 +65,11 @@
                                     aria-expanded="false"><i data-feather="grid" class="feather-icon"></i><span
                     class="hide-menu">Títulos Site</span></a>
             <ul aria-expanded="false" class="collapse  first-level base-level-line">
-                <li class="sidebar-item"><a href="{{ route('title.create') }}" class="sidebar-link"><span
+                <li class="sidebar-item"><a href="{{ route('title.create', ['user' => request()->route('user') ?? $user->id ?? $client_slug ?? '1']) }}" class="sidebar-link"><span
                             class="hide-menu"> Adicionar
                                         </span></a>
                 </li>
-                <li class="sidebar-item"><a href="{{ route('title.index') }}" class="sidebar-link"><span
+                <li class="sidebar-item"><a href="{{ route('title.index', ['user' => request()->route('user') ?? $user->id ?? $client_slug ?? '1']) }}" class="sidebar-link"><span
                             class="hide-menu"> Listar
                                         </span></a>
                 </li>
@@ -81,11 +81,11 @@
                                     aria-expanded="false"><i data-feather="grid" class="feather-icon"></i><span
                     class="hide-menu">Navbar </span></a>
             <ul aria-expanded="false" class="collapse  first-level base-level-line">
-                <li class="sidebar-item"><a href="{{ route('navbar.create') }}" class="sidebar-link"><span
+                <li class="sidebar-item"><a href="{{ route('navbar.create', ['user' => request()->route('user') ?? $user->id ?? $client_slug ?? '1']) }}" class="sidebar-link"><span
                             class="hide-menu"> Adicionar
                                         </span></a>
                 </li>
-                <li class="sidebar-item"><a href="{{ route('navbar.index') }}" class="sidebar-link"><span
+                <li class="sidebar-item"><a href="{{ route('navbar.index', ['user' => request()->route('user') ?? $user->id ?? $client_slug ?? '1']) }}" class="sidebar-link"><span
                             class="hide-menu"> Listar
                                         </span></a>
                 </li>
@@ -96,11 +96,11 @@
                                     aria-expanded="false"><i data-feather="grid" class="feather-icon"></i><span
                     class="hide-menu">Topbar </span></a>
             <ul aria-expanded="false" class="collapse  first-level base-level-line">
-                <li class="sidebar-item"><a href="{{ route('topbar.create') }}" class="sidebar-link"><span
+                <li class="sidebar-item"><a href="{{ route('topbar.create', ['user' => request()->route('user') ?? $user->id ?? $client_slug ?? '1']) }}" class="sidebar-link"><span
                             class="hide-menu"> Adicionar
                                         </span></a>
                 </li>
-                <li class="sidebar-item"><a href="{{ route('topbar.index') }}" class="sidebar-link"><span
+                <li class="sidebar-item"><a href="{{ route('topbar.index', ['user' => request()->route('user') ?? $user->id ?? $client_slug ?? '1']) }}" class="sidebar-link"><span
                             class="hide-menu"> Listar
                                         </span></a>
                 </li>
@@ -111,11 +111,11 @@
                                     aria-expanded="false"><i data-feather="grid" class="feather-icon"></i><span
                     class="hide-menu">Seção 1 </span></a>
             <ul aria-expanded="false" class="collapse  first-level base-level-line">
-                <li class="sidebar-item"><a href="{{ route('sectionone.create') }}" class="sidebar-link"><span
+                <li class="sidebar-item"><a href="{{ route('sectionone.create', ['user' => request()->route('user') ?? $user->id ?? $client_slug ?? '1']) }}" class="sidebar-link"><span
                             class="hide-menu"> Adicionar
                                         </span></a>
                 </li>
-                <li class="sidebar-item"><a href="{{ route('sectionone.index') }}" class="sidebar-link"><span
+                <li class="sidebar-item"><a href="{{ route('sectionone.index', ['user' => request()->route('user') ?? $user->id ?? $client_slug ?? '1']) }}" class="sidebar-link"><span
                             class="hide-menu"> Listar
                                         </span></a>
                 </li>
@@ -127,11 +127,11 @@
                                     aria-expanded="false"><i data-feather="grid" class="feather-icon"></i><span
                     class="hide-menu">Seção 2 </span></a>
             <ul aria-expanded="false" class="collapse  first-level base-level-line">
-                <li class="sidebar-item"><a href="{{ route('sectiontwo.create') }}" class="sidebar-link"><span
+                <li class="sidebar-item"><a href="{{ route('sectiontwo.create', ['user' => request()->route('user') ?? $user->id ?? $client_slug ?? '1']) }}" class="sidebar-link"><span
                             class="hide-menu"> Adicionar
                                         </span></a>
                 </li>
-                <li class="sidebar-item"><a href="{{ route('sectiontwo.index') }}" class="sidebar-link"><span
+                <li class="sidebar-item"><a href="{{ route('sectiontwo.index', ['user' => request()->route('user') ?? $user->id ?? $client_slug ?? '1']) }}" class="sidebar-link"><span
                             class="hide-menu"> Listar
                                         </span></a>
                 </li>
@@ -142,11 +142,11 @@
                                     aria-expanded="false"><i data-feather="grid" class="feather-icon"></i><span
                     class="hide-menu">Seção 3 </span></a>
             <ul aria-expanded="false" class="collapse  first-level base-level-line">
-                <li class="sidebar-item"><a href="{{ route('sectionthree.create') }}" class="sidebar-link"><span
+                <li class="sidebar-item"><a href="{{ route('sectionthree.create', ['user' => request()->route('user') ?? $user->id ?? $client_slug ?? '1']) }}" class="sidebar-link"><span
                             class="hide-menu"> Adicionar
                                         </span></a>
                 </li>
-                <li class="sidebar-item"><a href="{{ route('sectionthree.index') }}" class="sidebar-link"><span
+                <li class="sidebar-item"><a href="{{ route('sectionthree.index', ['user' => request()->route('user') ?? $user->id ?? $client_slug ?? '1']) }}" class="sidebar-link"><span
                             class="hide-menu"> Listar
                                         </span></a>
                 </li>
@@ -157,11 +157,11 @@
                                     aria-expanded="false"><i data-feather="grid" class="feather-icon"></i><span
                     class="hide-menu">Página </span></a>
             <ul aria-expanded="false" class="collapse  first-level base-level-line">
-                <li class="sidebar-item"><a href="{{ route('pages.create') }}" class="sidebar-link"><span
+                <li class="sidebar-item"><a href="{{ route('pages.create', ['user' => request()->route('user') ?? $user->id ?? $client_slug ?? '1']) }}" class="sidebar-link"><span
                             class="hide-menu"> Adicionar
                                         </span></a>
                 </li>
-                <li class="sidebar-item"><a href="{{ route('pages.index') }}" class="sidebar-link"><span
+                <li class="sidebar-item"><a href="{{ route('pages.index', ['user' => request()->route('user') ?? $user->id ?? $client_slug ?? '1']) }}" class="sidebar-link"><span
                             class="hide-menu"> Listar
                                         </span></a>
                 </li>
@@ -172,11 +172,11 @@
                                     aria-expanded="false"><i data-feather="grid" class="feather-icon"></i><span
                     class="hide-menu">Progresso </span></a>
             <ul aria-expanded="false" class="collapse  first-level base-level-line">
-                <li class="sidebar-item"><a href="{{ route('progress.create') }}" class="sidebar-link"><span
+                <li class="sidebar-item"><a href="{{ route('progress.create', ['user' => request()->route('user') ?? $user->id ?? $client_slug ?? '1']) }}" class="sidebar-link"><span
                             class="hide-menu"> Adicionar
                                         </span></a>
                 </li>
-                <li class="sidebar-item"><a href="{{ route('progress.index') }}" class="sidebar-link"><span
+                <li class="sidebar-item"><a href="{{ route('progress.index', ['user' => request()->route('user') ?? $user->id ?? $client_slug ?? '1']) }}" class="sidebar-link"><span
                             class="hide-menu"> Listar
                                         </span></a>
                 </li>
@@ -187,11 +187,11 @@
                                     aria-expanded="false"><i data-feather="grid" class="feather-icon"></i><span
                     class="hide-menu">Contagem </span></a>
             <ul aria-expanded="false" class="collapse  first-level base-level-line">
-                <li class="sidebar-item"><a href="{{ route('score.create') }}" class="sidebar-link"><span
+                <li class="sidebar-item"><a href="{{ route('score.create', ['user' => request()->route('user') ?? $user->id ?? $client_slug ?? '1']) }}" class="sidebar-link"><span
                             class="hide-menu"> Adicionar
                                         </span></a>
                 </li>
-                <li class="sidebar-item"><a href="{{ route('score.index') }}" class="sidebar-link"><span
+                <li class="sidebar-item"><a href="{{ route('score.index', ['user' => request()->route('user') ?? $user->id ?? $client_slug ?? '1']) }}" class="sidebar-link"><span
                             class="hide-menu"> Listar
                                         </span></a>
                 </li>
@@ -202,11 +202,11 @@
                                     aria-expanded="false"><i data-feather="grid" class="feather-icon"></i><span
                     class="hide-menu">Seção 4 </span></a>
             <ul aria-expanded="false" class="collapse  first-level base-level-line">
-                <li class="sidebar-item"><a href="{{ route('sectionfour.create') }}" class="sidebar-link"><span
+                <li class="sidebar-item"><a href="{{ route('sectionfour.create', ['user' => request()->route('user') ?? $user->id ?? $client_slug ?? '1']) }}" class="sidebar-link"><span
                             class="hide-menu"> Adicionar
                                         </span></a>
                 </li>
-                <li class="sidebar-item"><a href="{{ route('sectionfour.index') }}" class="sidebar-link"><span
+                <li class="sidebar-item"><a href="{{ route('sectionfour.index', ['user' => request()->route('user') ?? $user->id ?? $client_slug ?? '1']) }}" class="sidebar-link"><span
                             class="hide-menu"> Listar
                                         </span></a>
                 </li>
@@ -217,11 +217,11 @@
                                     aria-expanded="false"><i data-feather="grid" class="feather-icon"></i><span
                     class="hide-menu">Seção 5 </span></a>
             <ul aria-expanded="false" class="collapse  first-level base-level-line">
-                <li class="sidebar-item"><a href="{{ route('sectionfive.create') }}" class="sidebar-link"><span
+                <li class="sidebar-item"><a href="{{ route('sectionfive.create', ['user' => request()->route('user') ?? $user->id ?? $client_slug ?? '1']) }}" class="sidebar-link"><span
                             class="hide-menu"> Adicionar
                                         </span></a>
                 </li>
-                <li class="sidebar-item"><a href="{{ route('sectionfive.index') }}" class="sidebar-link"><span
+                <li class="sidebar-item"><a href="{{ route('sectionfive.index', ['user' => request()->route('user') ?? $user->id ?? $client_slug ?? '1']) }}" class="sidebar-link"><span
                             class="hide-menu"> Listar
                                         </span></a>
                 </li>
@@ -232,11 +232,11 @@
                                     aria-expanded="false"><i data-feather="grid" class="feather-icon"></i><span
                     class="hide-menu">Coleção de Imagens </span></a>
             <ul aria-expanded="false" class="collapse  first-level base-level-line">
-                <li class="sidebar-item"><a href="{{ route('collectionsimages.create') }}" class="sidebar-link"><span
+                <li class="sidebar-item"><a href="{{ route('collectionsimages.create', ['user' => request()->route('user') ?? $user->id ?? $client_slug ?? '1']) }}" class="sidebar-link"><span
                             class="hide-menu"> Adicionar
                                         </span></a>
                 </li>
-                <li class="sidebar-item"><a href="{{ route('collectionsimages.index') }}" class="sidebar-link"><span
+                <li class="sidebar-item"><a href="{{ route('collectionsimages.index', ['user' => request()->route('user') ?? $user->id ?? $client_slug ?? '1']) }}" class="sidebar-link"><span
                             class="hide-menu"> Listar
                                         </span></a>
                 </li>
@@ -247,11 +247,11 @@
                                     aria-expanded="false"><i data-feather="grid" class="feather-icon"></i><span
                     class="hide-menu">Seção 6 </span></a>
             <ul aria-expanded="false" class="collapse  first-level base-level-line">
-                <li class="sidebar-item"><a href="{{ route('sectionsix.create') }}" class="sidebar-link"><span
+                <li class="sidebar-item"><a href="{{ route('sectionsix.create', ['user' => request()->route('user') ?? $user->id ?? $client_slug ?? '1']) }}" class="sidebar-link"><span
                             class="hide-menu"> Adicionar
                                         </span></a>
                 </li>
-                <li class="sidebar-item"><a href="{{ route('sectionsix.index') }}" class="sidebar-link"><span
+                <li class="sidebar-item"><a href="{{ route('sectionsix.index', ['user' => request()->route('user') ?? $user->id ?? $client_slug ?? '1']) }}" class="sidebar-link"><span
                             class="hide-menu"> Listar
                                         </span></a>
                 </li>
@@ -262,11 +262,11 @@
                                     aria-expanded="false"><i data-feather="grid" class="feather-icon"></i><span
                     class="hide-menu">Seção 7 </span></a>
             <ul aria-expanded="false" class="collapse  first-level base-level-line">
-                <li class="sidebar-item"><a href="{{ route('sectionseven.create') }}" class="sidebar-link"><span
+                <li class="sidebar-item"><a href="{{ route('sectionseven.create', ['user' => request()->route('user') ?? $user->id ?? $client_slug ?? '1']) }}" class="sidebar-link"><span
                             class="hide-menu"> Adicionar
                                         </span></a>
                 </li>
-                <li class="sidebar-item"><a href="{{ route('sectionseven.index') }}" class="sidebar-link"><span
+                <li class="sidebar-item"><a href="{{ route('sectionseven.index', ['user' => request()->route('user') ?? $user->id ?? $client_slug ?? '1']) }}" class="sidebar-link"><span
                             class="hide-menu"> Listar
                                         </span></a>
                 </li>
@@ -277,11 +277,11 @@
                                     aria-expanded="false"><i data-feather="grid" class="feather-icon"></i><span
                     class="hide-menu">Contato </span></a>
             <ul aria-expanded="false" class="collapse  first-level base-level-line">
-                <li class="sidebar-item"><a href="{{ route('contact.create') }}" class="sidebar-link"><span
+                <li class="sidebar-item"><a href="{{ route('contact.create', ['user' => request()->route('user') ?? $user->id ?? $client_slug ?? '1']) }}" class="sidebar-link"><span
                             class="hide-menu"> Adicionar
                                         </span></a>
                 </li>
-                <li class="sidebar-item"><a href="{{ route('contact.index') }}" class="sidebar-link"><span
+                <li class="sidebar-item"><a href="{{ route('contact.index', ['user' => request()->route('user') ?? $user->id ?? $client_slug ?? '1']) }}" class="sidebar-link"><span
                             class="hide-menu"> Listar
                                         </span></a>
                 </li>

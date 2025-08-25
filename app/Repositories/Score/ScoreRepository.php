@@ -21,6 +21,15 @@ class ScoreRepository
             ->get();
     }
 
+    public function getSlug($clientId)
+    {
+        return $this->entity
+            ->newQuery()
+            ->where('client_id', $clientId)
+            ->orderBy('number', 'DESC')
+            ->get();
+    }
+
     public function create(array $property)
     {
         return $this->entity->newQuery()->create($property);

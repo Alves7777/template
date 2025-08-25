@@ -18,6 +18,11 @@ class ScoreService extends ScoreRepository
         return $this->scoreRepository->all();
     }
 
+    public function getSlug($clientId)
+    {
+        return $this->scoreRepository->getSlug($clientId);
+    }
+
     public function create(array $property)
     {
         return $this->scoreRepository->create($property);

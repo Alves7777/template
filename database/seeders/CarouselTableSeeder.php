@@ -24,18 +24,21 @@ class CarouselTableSeeder extends Seeder
     public function run()
     {
         $this->collectionsImagesService->create([
+            'client_id' => 1,
             'photo' => new UploadedFile(public_path() . '/storage/photos/alpi.jpg', 'temp'),
             'sub_title' => "teste_sub",
             'text' => "Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita",
             'title' => "Ut possimus",
         ]);
         $this->collectionsImagesService->create([
+            'client_id' => 1,
             'photo' => new UploadedFile(public_path() . '/storage/photos/alpi.jpg', 'temp'),
             'background' => new UploadedFile(public_path() . '/storage/photos/bayerngol.jpeg', 'temp'),
             'title' => "teste",
             'sub_title' => "teste_sub",
             'text' => "Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita"]);
         $this->collectionsImagesService->create([
+            'client_id' => 1,
             'photo' => new UploadedFile(public_path() . '/storage/photos/alpi2.jpg', 'temp'),
             'background' => new UploadedFile(public_path() . '/storage/photos/bayerngol.jpeg', 'temp'),
             'title' => "teste",

@@ -43,14 +43,19 @@ class SectionTwoTableSeeder extends Seeder
             "url" => "https://www.google.com",
         ];
 
-        $sectionTwo = new SectionTwo($array);
-        $sectionTwo->save();
-        $sectionTwo = new SectionTwo($array1);
-        $sectionTwo->save();
-        $sectionTwo = new SectionTwo($array2);
-        $sectionTwo->save();
-        $sectionTwo = new SectionTwo($array3);
-        $sectionTwo->save();
+    $client = \App\Models\Client::where('slug', 'default-client')->first();
+    $array['client_id'] = $client ? $client->id : 1;
+    $array1['client_id'] = $client ? $client->id : 1;
+    $array2['client_id'] = $client ? $client->id : 1;
+    $array3['client_id'] = $client ? $client->id : 1;
+    $sectionTwo = new SectionTwo($array);
+    $sectionTwo->save();
+    $sectionTwo = new SectionTwo($array1);
+    $sectionTwo->save();
+    $sectionTwo = new SectionTwo($array2);
+    $sectionTwo->save();
+    $sectionTwo = new SectionTwo($array3);
+    $sectionTwo->save();
     }
 
 }

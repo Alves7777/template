@@ -13,6 +13,11 @@ class TitleService extends TitleRepository
         $this->titleRepository = $titleRepository;
     }
 
+    public function getSlug($clientId)
+    {
+        return $this->titleRepository->getSlug($clientId);
+    }
+
     public function all()
     {
         return $this->titleRepository->all();

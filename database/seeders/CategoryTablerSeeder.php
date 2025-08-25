@@ -11,11 +11,11 @@ class CategoryTablerSeeder extends Seeder
     public function run()
     {
 
-        $cat1 = new Category(['category' => 'Informatica']);
-        $cat1->save();
+    $cat1 = new Category(['category' => 'Informatica', 'client_id' => 1]);
+    $cat1->save();
 
-        $cat2 = new Category(['category' => 'Eletrônico']);
-        $cat2->save();
+    $cat2 = new Category(['category' => 'Eletrônico', 'client_id' => 1]);
+    $cat2->save();
 
     }
 

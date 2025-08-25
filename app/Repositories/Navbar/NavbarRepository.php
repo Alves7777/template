@@ -25,27 +25,28 @@ class NavbarRepository
         return $this->entity->newQuery()->create($property);
     }
 
-    public function findOrFail($id)
+    public function findOrFail($id, $user)
     {
-        return $this->entity->newQuery()->findOrFail($id);
+        return $this->entity->newQuery()
+            ->where('id', $id)
+            ->where('client_id', $user)
+            ->firstOrFail();
     }
 
-    public function update($id, array $property)
+    public function update($id, $user, array $property)
     {
-        $navbar = $this->findOrFail($id);
+        $navbar = $this->findOrFail($id, $user);
         if (!empty($property)) {
             self::removePhoto($navbar->logo);
-
             $navbar->update($property);
         }
         return $navbar;
     }
 
-    public function delete(string $id)
+    public function delete(string $id, $user)
     {
-        $navbar = $this->findOrFail($id);
+        $navbar = $this->findOrFail($id, $user);
         self::removePhoto($navbar->logo);
-
         return $navbar->delete();
     }
 

@@ -55,4 +55,12 @@ class ContactRepository
     {
         return $this->entity->newQuery()->pluck($column, $key);
     }
+
+    public function getSlug($clientId)
+    {
+        return $this->entity->newQuery()
+            ->where('client_id', $clientId)
+            ->orderBy('created_at')
+            ->get();
+    }
 }

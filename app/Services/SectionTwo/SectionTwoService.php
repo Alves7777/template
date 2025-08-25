@@ -14,6 +14,11 @@ class SectionTwoService
         $this->sectionTwoRepository = $sectionTwoRepository;
     }
 
+    public function getSlug($clientId)
+    {
+        return $this->sectionTwoRepository->getSlug($clientId);
+    }
+
     public function all(): Collection
     {
         return $this->sectionTwoRepository->all();

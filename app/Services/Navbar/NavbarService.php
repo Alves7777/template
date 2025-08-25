@@ -28,22 +28,22 @@ class NavbarService
         return $this->navbarRepository->create($property);
     }
 
-    public function findOrFail($id)
+    public function findOrFail($id, $user)
     {
-        return $this->navbarRepository->findOrFail($id);
+        return $this->navbarRepository->findOrFail($id, $user);
     }
 
-    public function update($id, array $property)
+    public function update($id, $user, array $property)
     {
         if (!empty($property['logo'])) {
             $property['logo'] = $this->uploadPhoto($property['logo']);
         }
-        return $this->navbarRepository->update($id, $property);
+        return $this->navbarRepository->update($id, $user, $property);
     }
 
-    public function delete(string $id)
+    public function delete(string $id, $user)
     {
-        return $this->navbarRepository->delete($id);
+        return $this->navbarRepository->delete($id, $user);
     }
 
     public function get()

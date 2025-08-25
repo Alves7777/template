@@ -1,5 +1,39 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
+// Rotas dinâmicas para cada cliente
+//Route::group(['prefix' => '{client_slug}', 'middleware' => ['auth', 'client.tenant']], function () {
+//    // Página inicial do cliente
+//    Route::get('/', function () {
+//        $client = app('currentClient');
+//        return view('client.home', compact('client'));
+//    })->name('client.home');
+
+    // Rotas de módulos (todas as rotas de features do sistema)
+//    \App\Routes\Navbar\NavbarRoute::routes();
+//    \App\Routes\Topbar\TopbarRoute::routes();
+//    \App\Routes\Pages\PagesRoute::routes();
+//    \App\Routes\SectionOne\SectionOneRoute::routes();
+//    \App\Routes\SectionTwo\SectionTwoRoute::routes();
+//    \App\Routes\SectionThree\SectionThreeRoute::routes();
+//    \App\Routes\Progress\ProgressRoute::routes();
+//    \App\Routes\Score\ScoreRoute::routes();
+//    \App\Routes\SectionFour\SectionFourRoute::routes();
+//    \App\Routes\Title\TitleRoute::routes();
+//    \App\Routes\SectionFive\SectionFiveRoute::routes();
+//    \App\Routes\SectionSix\SectionSixRoute::routes();
+//    \App\Routes\Dashboard\DashboardRoute::routes();
+//    \App\Routes\CollectionsImages\CollectionsImagesRoute::routes();
+//    \App\Routes\SectionSeven\SectionSevenRoute::routes();
+//    \App\Routes\Contact\ContactRoute::routes();
+//    \App\Routes\Post\PostRoute::routes();
+//    \App\Routes\Master\MasterRoute::routes();
+//});
+
+// ================= ROTAS PÚBLICAS E TESTES COMENTADAS =================
+
+
 use App\Http\Controllers\Api\ApiFreightController;
 use App\Http\Controllers\Auth\AdminRegisterController;
 use App\Http\Controllers\Ecommerce\PagSeguro\PagSeguroController;
@@ -26,8 +60,16 @@ use App\Routes\SectionTwo\SectionTwoRoute;
 use App\Routes\Title\TitleRoute;
 use App\Routes\Topbar\TopbarRoute;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Route;
+//use Illuminate\Support\Facades\Route;
 
+
+//Route::group(['prefix' => '{client_slug}', 'middleware' => ['auth', 'client.tenant']], function () {
+//    // Página inicial do cliente
+////    Route::get('/', function () {
+////        $client = app('currentClient');
+////        return view('client.home', compact('client'));
+////    })->name('client.home');
+//});
 
 //api test
 Route::get('/contato',[ApiFreightController::class, 'getFreight']);
@@ -40,7 +82,7 @@ Route::get('/cursos', function () {
 
 // ecommerce
 ClientRoute::routes();
-ProductRoute::routes();
+//ProductRoute::routes();
 UserEcommerceRoute::routes();
 //Route::get('/product', function () {
 //    return view('site.ecommerce.product');
@@ -60,6 +102,8 @@ Route::get('/page_10',[_PagesController::class, 'page_10']);
 Route::get('/page_11',[_PagesController::class, 'page_11']);
 
 Route::group(['middleware'=> ['auth']], function () {
+
+    // 'user.self' 'prefix' => 'portal/{user}',
     NavbarRoute::routes();
     TopbarRoute::routes();
     PagesRoute::routes();
@@ -102,3 +146,5 @@ Route::prefix('admin')->group(function() {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+

@@ -14,6 +14,7 @@ class SectionFourTableSeeder extends Seeder
         $sectionFour = new SectionFour();
 
         $sectionFour->create([
+            'client_id' => 1,
             'title' => "Check our Services",
             'color_title' => "#FD7E14",
             'text' => "Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita.",
@@ -24,6 +25,7 @@ class SectionFourTableSeeder extends Seeder
             'url' => "www.google.com.br"
         ]);
         $sectionFour->create([
+            'client_id' => 1,
             'title' => "Check our Services",
             'color_title' => "#FD7E14",
             'text' => "Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita.",
@@ -34,6 +36,7 @@ class SectionFourTableSeeder extends Seeder
             'url' => "www.google.com.br"
         ]);
         $sectionFour->create([
+            'client_id' => 1,
             'title' => "Check our Services",
             'color_title' => "#FD7E14",
             'text' => "Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita.",

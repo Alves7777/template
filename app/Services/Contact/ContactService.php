@@ -13,6 +13,11 @@ class ContactService extends ContactRepository
         $this->contactRepository = $contactRepository;
     }
 
+    public function getSlug($clientId)
+    {
+        return $this->contactRepository->getSlug($clientId);
+    }
+
     public function all()
     {
         return $this->contactRepository->all();
