@@ -4,7 +4,7 @@ namespace App\Services\Title;
 
 use App\Repositories\Title\TitleRepository;
 
-class TitleService extends TitleRepository
+class TitleService
 {
     private TitleRepository $titleRepository;
 
@@ -13,29 +13,29 @@ class TitleService extends TitleRepository
         $this->titleRepository = $titleRepository;
     }
 
-    public function all()
+    public function all($clientId = null)
     {
-        return $this->titleRepository->all();
+        return $this->titleRepository->all($clientId);
     }
 
-    public function create(array $property)
+    public function create(array $property, $clientId = null)
     {
-        return $this->titleRepository->create($property);
+        return $this->titleRepository->create($property, $clientId);
     }
 
-    public function findOrFail($id)
+    public function findOrFail($id, $clientId = null)
     {
-        return $this->titleRepository->findOrFail($id);
+        return $this->titleRepository->findOrFail($id, $clientId);
     }
 
-    public function update($id, array $property)
+    public function update($id, array $property, $clientId = null)
     {
-        return $this->titleRepository->update($id, $property);
+        return $this->titleRepository->update($id, $property, $clientId);
     }
 
-    public function delete(string $id)
+    public function delete(string $id, $clientId = null)
     {
-        return $this->titleRepository->delete($id);
+        return $this->titleRepository->delete($id, $clientId);
     }
 
     public function firstOrFail()

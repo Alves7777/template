@@ -15,6 +15,7 @@ services:
         volumes:
             - .:/var/www/html
             - ./vendor:/var/www/html/vendor
+            - ./docker/database/api/dump.sql:/dump.sql
         depends_on:
             - mysql
         networks:

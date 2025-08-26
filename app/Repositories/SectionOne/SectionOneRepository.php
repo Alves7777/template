@@ -4,20 +4,24 @@ namespace App\Repositories\SectionOne;
 
 use App\Models\SectionOne\SectionOne;
 use App\Traits\UploadFile;
+use App\Traits\HasClientId;
 
 class SectionOneRepository
 {
     private SectionOne $entity;
     use UploadFile;
+    use HasClientId;
 
     public function __construct(SectionOne $entity)
     {
         $this->entity = $entity;
     }
 
-    public function all()
+    public function all($clientId = null)
     {
-        return $this->entity->newQuery()->get();
+        return $this->entity->newQuery()
+            ->where('client_id', $this->getClientId($clientId))
+            ->get();
     }
 
     public function create(array $property)

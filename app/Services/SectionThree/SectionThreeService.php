@@ -20,7 +20,7 @@ class SectionThreeService extends SectionThreeRepository
         return $this->sectionThreeRepository->all();
     }
 
-    public function create(array $property)
+    public function create(array $property): \App\Models\SectionThree\SectionThree
     {
         if (!empty($property['photo'])) {
             $property['photo'] = $this->uploadPhoto($property['photo']);
@@ -34,7 +34,7 @@ class SectionThreeService extends SectionThreeRepository
         return $this->sectionThreeRepository->findOrFail($id);
     }
 
-    public function update($id, array $property)
+    public function update($id, array $property): \App\Models\SectionThree\SectionThree
     {
         if (!empty($property['photo'])) {
             $property['photo'] = $this->uploadPhoto($property['photo']);
@@ -42,12 +42,12 @@ class SectionThreeService extends SectionThreeRepository
         return $this->sectionThreeRepository->update($id, $property);
     }
 
-    public function delete(string $id)
+    public function delete($id)
     {
         return $this->sectionThreeRepository->delete($id);
     }
 
-    public function firstOrFail()
+    public function firstOrFail(): \App\Models\SectionThree\SectionThree
     {
         return $this->sectionThreeRepository->firstOrFail();
     }

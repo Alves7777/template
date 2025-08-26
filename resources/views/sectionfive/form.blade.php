@@ -20,13 +20,13 @@
             </div>
             <div class="form-group">
                 <label for="image">Imagem</label>
-                <input name="image" value="{{ $sectionfive['image'] ?? old(['image']) }}" type="file" class="form-control"
+                <input name="image" value="{{ $sectionfive['image'] ?? old('image') }}" type="file" class="form-control"
                        id="image"
                        placeholder="Enter image">
             </div>
             <div class="form-group">
                 <label for="background">Background</label>
-                <input name="background" value="{{ $sectionfive['background'] ?? old(['background']) }}" type="file" class="form-control"
+                <input name="background" value="{{ $sectionfive['background'] ?? old('background') }}" type="file" class="form-control"
                        id="background"
                        placeholder="Enter image">
             </div>
