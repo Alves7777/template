@@ -19,6 +19,7 @@ use App\Models\SectionSix\SectionSix;
 use App\Models\SectionThree\SectionThree;
 use App\Models\Title\Title;
 use App\Models\Topbar\Topbar;
+use App\Services\CollectionsImages\CollectionsImagesService;
 use App\Services\SectionThree\SectionThreeService;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -47,7 +48,6 @@ class Controller extends BaseController
         // Compartilha dados globais filtrados por clientId usando os Services
     public function shareClientData($clientId)
     {
-//        dd($clientId);
         // Instancie os services necessários (adicione outros conforme sua necessidade)
         $navbarService = app(\App\Services\Navbar\NavbarService::class);
         $topbarService = app(\App\Services\Topbar\TopbarService::class);
@@ -58,7 +58,7 @@ class Controller extends BaseController
         $sectionFourService = app(\App\Services\SectionFour\SectionFourService::class);
         $titleService = app(\App\Services\Title\TitleService::class);
         $sectionFiveService = app(\App\Services\SectionFive\SectionFiveService::class);
-//        $carouselService = app(\App\Services\Carousel\CarouselService::class);
+        $collectionsImagesService = app(CollectionsImagesService::class);
         $sectionSixService = app(\App\Services\SectionSix\SectionSixService::class);
         $sectionSevenService = app(\App\Services\SectionSeven\SectionSevenService::class);
         $contactService = app(\App\Services\Contact\ContactService::class);
@@ -73,7 +73,7 @@ class Controller extends BaseController
             'sectionfour' => $sectionFourService->all($clientId),
             'title' => $titleService->all($clientId),
             'sectionfive' => $sectionFiveService->all($clientId),
-//            'carousel' => $carouselService->all($clientId),
+            'carousel' => $collectionsImagesService->all($clientId),
             'sectionsix' => $sectionSixService->all($clientId),
             'sectionseven' => $sectionSevenService->all($clientId),
             'contact' => $contactService->all($clientId),

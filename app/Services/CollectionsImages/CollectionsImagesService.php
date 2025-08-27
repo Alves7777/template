@@ -3,56 +3,48 @@
 namespace App\Services\CollectionsImages;
 
 use App\Repositories\CollectionsImages\CollectionsImagesRepository;
-use App\Traits\UploadFile;
 
 class CollectionsImagesService
 {
-
     private CollectionsImagesRepository $collectionsImagesRepository;
-    use UploadFile;
 
     public function __construct(CollectionsImagesRepository $collectionsImagesRepository)
     {
         $this->collectionsImagesRepository = $collectionsImagesRepository;
     }
 
-    public function all()
+    public function all($clientId = null)
     {
-        return $this->collectionsImagesRepository->all();
+        return $this->collectionsImagesRepository->all($clientId);
     }
 
-    public function create(array $property)
+    public function create(array $property, $clientId = null)
     {
-        $property['photo'] = !empty($property['photo']) ? $this->uploadPhoto($property['photo']) : '';
-
-        return $this->collectionsImagesRepository->create($property);
+        return $this->collectionsImagesRepository->create($property, $clientId);
     }
 
-    public function findOrFail($id)
+    public function findOrFail($id, $clientId = null)
     {
-        return $this->collectionsImagesRepository->findOrFail($id);
+        return $this->collectionsImagesRepository->findOrFail($id, $clientId);
     }
 
-    public function update($id, array $property)
+    public function update($id, array $property, $clientId = null)
     {
-        $property['photo'] = !empty($property['photo']) ? $this->uploadPhoto($property['photo']) : '';
-
-        return $this->collectionsImagesRepository->update($id, $property);
+        return $this->collectionsImagesRepository->update($id, $property, $clientId);
     }
 
-    public function delete(string $id)
+    public function delete(string $id, $clientId = null)
     {
-        return $this->collectionsImagesRepository->delete($id);
+        return $this->collectionsImagesRepository->delete($id, $clientId);
     }
 
-    public function firstOrFail()
+    public function firstOrFail($clientId = null)
     {
-        return $this->collectionsImagesRepository->firstOrFail();
+        return $this->collectionsImagesRepository->firstOrFail($clientId);
     }
 
-    public function pluck(string $column, string $key)
+    public function pluck(string $column, string $key, $clientId = null)
     {
-        return $this->collectionsImagesRepository->pluck($column, $key);
+        return $this->collectionsImagesRepository->pluck($column, $key, $clientId);
     }
-
 }
