@@ -24,9 +24,9 @@ class SectionThreeRepository
      * @param int|null $clientId
      * @return \Illuminate\Database\Eloquent\Collection
      */
-    public function all()
+    public function all(?int $clientId)
     {
-        return $this->queryByClient()->get();
+        return $this->queryByClient($clientId)->get();
     }
 
     /**

@@ -45,10 +45,8 @@ class Controller extends BaseController
 
     }
 
-        // Compartilha dados globais filtrados por clientId usando os Services
     public function shareClientData($clientId)
     {
-        // Instancie os services necessários (adicione outros conforme sua necessidade)
         $navbarService = app(\App\Services\Navbar\NavbarService::class);
         $topbarService = app(\App\Services\Topbar\TopbarService::class);
         $sectionOneService = app(\App\Services\SectionOne\SectionOneService::class);

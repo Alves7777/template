@@ -10,19 +10,18 @@
             <!-- Logo icon -->
             <a href="">
                 <b class="logo-icon">
-                    <!-- Dark Logo icon -->
-                    <img src="/assets/assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+                    <img src="{{ asset('storage/' . \App\Models\NavBar\Navbar::where('client_id', auth()->user()->client_id)->first()->logo) }}" alt="Logo" style="width: 162px; height: 70px">
                     <!-- Light Logo icon -->
-                    <img src="/assets/assets/images/logo-icon.png" alt="homepage" class="light-logo" />
+{{--                    <img src="/assets/assets/images/logo-icon.png" alt="homepage" class="light-logo" />--}}
                 </b>
                 <!--End Logo icon -->
                 <!-- Logo text -->
-                <span class="logo-text">
-                                <!-- dark Logo text -->
-                                <img src="/assets/assets/images/logo-text.png" alt="homepage" class="dark-logo" />
-                    <!-- Light Logo text -->
-                                <img src="/assets/assets/images/logo-light-text.png" class="light-logo" alt="homepage" />
-                            </span>
+{{--                <span class="logo-text">--}}
+{{--                                <!-- dark Logo text -->--}}
+{{--                                <img src="/assets/assets/images/logo-text.png" alt="homepage" class="dark-logo" />--}}
+{{--                    <!-- Light Logo text -->--}}
+{{--                                <img src="/assets/assets/images/logo-light-text.png" class="light-logo" alt="homepage" />--}}
+{{--                            </span>--}}
             </a>
         </div>
         <!-- ============================================================== -->
@@ -46,12 +45,12 @@
         <ul class="navbar-nav float-left mr-auto ml-3 pl-1">
             <!-- Notification -->
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle pl-md-3 position-relative" href="javascript:void(0)"
-                   id="bell" role="button" data-toggle="dropdown" aria-haspopup="true"
-                   aria-expanded="false">
-                    <span><i data-feather="bell" class="svg-icon"></i></span>
-                    <span class="badge badge-primary notify-no rounded-circle">5</span>
-                </a>
+{{--                <a class="nav-link dropdown-toggle pl-md-3 position-relative" href="javascript:void(0)"--}}
+{{--                   id="bell" role="button" data-toggle="dropdown" aria-haspopup="true"--}}
+{{--                   aria-expanded="false">--}}
+{{--                    <span><i data-feather="bell" class="svg-icon"></i></span>--}}
+{{--                    <span class="badge badge-primary notify-no rounded-circle">5</span>--}}
+{{--                </a>--}}
                 <div class="dropdown-menu dropdown-menu-left mailbox animated bounceInDown">
                     <ul class="list-style-none">
                         <li>
@@ -126,7 +125,7 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i data-feather="settings" class="svg-icon"></i>
+{{--                    <i data-feather="settings" class="svg-icon"></i>--}}
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="#">Action</a>
@@ -137,15 +136,15 @@
             </li>
             <li class="nav-item d-none d-md-block">
                 <a class="nav-link" href="javascript:void(0)">
-                    <div class="customize-input">
-                        <select
-                                class="custom-select form-control bg-white custom-radius custom-shadow border-0">
-                            <option selected>EN</option>
-                            <option value="1">AB</option>
-                            <option value="2">AK</option>
-                            <option value="3">BE</option>
-                        </select>
-                    </div>
+{{--                    <div class="customize-input">--}}
+{{--                        <select--}}
+{{--                                class="custom-select form-control bg-white custom-radius custom-shadow border-0">--}}
+{{--                            <option selected>EN</option>--}}
+{{--                            <option value="1">AB</option>--}}
+{{--                            <option value="2">AK</option>--}}
+{{--                            <option value="3">BE</option>--}}
+{{--                        </select>--}}
+{{--                    </div>--}}
                 </a>
             </li>
         </ul>
@@ -158,13 +157,13 @@
             <!-- ============================================================== -->
             <li class="nav-item d-none d-md-block">
                 <a class="nav-link" href="javascript:void(0)">
-                    <form>
-                        <div class="customize-input">
-                            <input class="form-control custom-shadow custom-radius border-0 bg-white"
-                                   type="search" placeholder="Search" aria-label="Search">
-                            <i class="form-control-icon" data-feather="search"></i>
-                        </div>
-                    </form>
+{{--                    <form>--}}
+{{--                        <div class="customize-input">--}}
+{{--                            <input class="form-control custom-shadow custom-radius border-0 bg-white"--}}
+{{--                                   type="search" placeholder="Search" aria-label="Search">--}}
+{{--                            <i class="form-control-icon" data-feather="search"></i>--}}
+{{--                        </div>--}}
+{{--                    </form>--}}
                 </a>
             </li>
             <!-- ============================================================== -->
