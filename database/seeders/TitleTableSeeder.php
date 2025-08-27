@@ -9,7 +9,6 @@ use Illuminate\Database\Seeder;
 
 class TitleTableSeeder extends Seeder
 {
-
     public function run()
     {
         for ($i = 1;$i <= AbstractView::QTD_SEEDER['qtd_1']; $i++) {
@@ -17,6 +16,7 @@ class TitleTableSeeder extends Seeder
                 'title' => "Testando {$i}",
                 'color_title' => "#dd0d0d",
                 'text' => "Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita.",
+                'client_id' => AbstractView::DEFAULT_CLIENT_ID,
             ]);
         }
     }

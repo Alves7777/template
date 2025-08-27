@@ -2,23 +2,25 @@
 
 namespace Database\Seeders;
 
-use App\Services\SectionSix\SectionSixService;
+use App\AbstractView\AbstractView;
 use Illuminate\Database\Seeder;
 use Illuminate\Http\UploadedFile;
+use App\Models\SectionSix\SectionSix;
+
 
 class SectionSixTableSeeder extends Seeder
 {
 
-    private SectionSixService $sectionSixService;
+    private SectionSix $sectionSix;
 
-    public function __construct(SectionSixService $sectionSixService)
+    public function __construct(SectionSix $sectionSix)
     {
-        $this->sectionSixService = $sectionSixService;
+        $this->sectionSix = $sectionSix;
     }
 
     public function run()
     {
-        $this->sectionSixService->create([
+        $this->sectionSix->create([
             'sub_title' => "Teste",
             'sub_text' => "#FD7E14",
             'link_twitter' => "www.google.com.br",
@@ -26,9 +28,11 @@ class SectionSixTableSeeder extends Seeder
             'link_instagram' => "www.google.com.br",
             'link_linkedin' => "www.google.com.br",
             'image' => new UploadedFile(public_path() . "/storage/photos/gabrielalpi.jpg", 'temp'),
+            'client_id' => AbstractView::DEFAULT_CLIENT_ID,
+
         ]);
 
-        $this->sectionSixService->create([
+        $this->sectionSix->create([
             'sub_title' => "Teste",
             'sub_text' => "#FD7E14",
             'link_twitter' => "www.google.com.br",
@@ -36,9 +40,10 @@ class SectionSixTableSeeder extends Seeder
             'link_instagram' => "www.google.com.br",
             'link_linkedin' => "www.google.com.br",
             'image' => new UploadedFile(public_path() . "/storage/photos/gleicealpi.jpg", 'temp'),
+            'client_id' => AbstractView::DEFAULT_CLIENT_ID,
         ]);
 
-        $this->sectionSixService->create([
+        $this->sectionSix->create([
             'sub_title' => "Teste",
             'sub_text' => "#FD7E14",
             'link_twitter' => "www.google.com.br",
@@ -46,9 +51,10 @@ class SectionSixTableSeeder extends Seeder
             'link_instagram' => "www.google.com.br",
             'link_linkedin' => "www.google.com.br",
             'image' => new UploadedFile(public_path() . "/storage/photos/gleicealpi1.jpg", 'temp'),
+            'client_id' => AbstractView::DEFAULT_CLIENT_ID,
         ]);
 
-        $this->sectionSixService->create([
+        $this->sectionSix->create([
             'sub_title' => "Teste",
             'sub_text' => "#FD7E14",
             'link_twitter' => "www.google.com.br",
@@ -56,9 +62,10 @@ class SectionSixTableSeeder extends Seeder
             'link_instagram' => "www.google.com.br",
             'link_linkedin' => "www.google.com.br",
             'image' => new UploadedFile(public_path() . "/storage/photos/basebol.jpg", 'temp'),
+            'client_id' => AbstractView::DEFAULT_CLIENT_ID,
         ]);
 
-        $this->sectionSixService->create([
+        $this->sectionSix->create([
             'sub_title' => "Teste",
             'sub_text' => "#FD7E14",
             'link_twitter' => "www.google.com.br",
@@ -66,6 +73,7 @@ class SectionSixTableSeeder extends Seeder
             'link_instagram' => "www.google.com.br",
             'link_linkedin' => "www.google.com.br",
             'image' => new UploadedFile(public_path() . "/storage/photos/biel.jpg", 'temp'),
+            'client_id' => AbstractView::DEFAULT_CLIENT_ID,
         ]);
     }
 

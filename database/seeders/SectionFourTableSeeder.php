@@ -8,7 +8,6 @@ use Illuminate\Database\Seeder;
 
 class SectionFourTableSeeder extends Seeder
 {
-
     public function run()
     {
         $sectionFour = new SectionFour();
@@ -21,7 +20,8 @@ class SectionFourTableSeeder extends Seeder
             'color_icon' => "#dd0d0d",
             'sub_text' => "Todos os tipos de camisas, estilo torcedor, agasalhos, shorts e caps de diversos times, você entra na AlvesImported",
             'sub_title' => "Tipos de Camisa",
-            'url' => "www.google.com.br"
+            'url' => "www.google.com.br",
+            'client_id' => AbstractView::DEFAULT_CLIENT_ID,
         ]);
         $sectionFour->create([
             'title' => "Check our Services",
@@ -31,7 +31,8 @@ class SectionFourTableSeeder extends Seeder
             'color_icon' => "#dd0d0d",
             'sub_text' => "Personalize sua camisa com o nome e número de sua preferência",
             'sub_title' => "Personalizar camisa",
-            'url' => "www.google.com.br"
+            'url' => "www.google.com.br",
+            'client_id' => AbstractView::DEFAULT_CLIENT_ID,
         ]);
         $sectionFour->create([
             'title' => "Check our Services",
@@ -41,7 +42,8 @@ class SectionFourTableSeeder extends Seeder
             'color_icon' => "#dd0d0d",
             'sub_text' => "Entregamos para todo o Brasil. Aceitamos cartões, PIX, PayPal e PicPay",
             'sub_title' => "Entregas",
-            'url' => "www.google.com.br"
+            'url' => "www.google.com.br",
+            'client_id' => AbstractView::DEFAULT_CLIENT_ID,
         ]);
     }
 

@@ -11,17 +11,17 @@ use Illuminate\Http\UploadedFile;
 class SectionFiveTableSeeder extends Seeder
 {
 
-    private SectionFiveService $sectionFiveService;
+    private SectionFive $sectionFive;
 
-    public function __construct(SectionFiveService $sectionFiveService)
+    public function __construct(SectionFive $sectionFive)
     {
-        $this->sectionFiveService = $sectionFiveService;
+        $this->sectionFive = $sectionFive;
     }
 
     public function run()
     {
         for ($i = 1;$i <= AbstractView::QTD_SEEDER['qtd_1']; $i++) {
-            $this->sectionFiveService->create([
+            $this->sectionFive->create([
                 'title' => "Teste{$i}",
                 'color_title' => "#FD7E14",
                 'url' => "www.google.com.br",
@@ -29,7 +29,7 @@ class SectionFiveTableSeeder extends Seeder
                 'text_one' => "Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita",
                 'background' => new UploadedFile(public_path() . "/storage/photos/bayerngol.jpeg", 'temp'),
                 'image' => new UploadedFile(public_path() . "/storage/photos/foto.png", 'temp'),
-
+                'client_id' => AbstractView::DEFAULT_CLIENT_ID,
             ]);
         }
     }

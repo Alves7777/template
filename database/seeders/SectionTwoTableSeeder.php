@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\AbstractView\AbstractView;
 use App\Models\SectionTwo\SectionTwo;
 use Illuminate\Database\Seeder;
 
@@ -16,7 +17,8 @@ class SectionTwoTableSeeder extends Seeder
             "color_icon" => "#f7052900",
             "title" => "Campeonado de Futebol",
             "description" => "Todos os times de futebol europeu e brasileiro.",
-            "url" => "https://www.google.com"
+            "url" => "https://www.google.com",
+            'client_id' => AbstractView::DEFAULT_CLIENT_ID,
         ];
 
         $array1 = [
@@ -25,6 +27,7 @@ class SectionTwoTableSeeder extends Seeder
             "title" => "Campeonado da NFL",
             "description" => "Melhores times do futebol americano, com a melhor qualidade.",
             "url" => "https://www.google.com",
+            'client_id' => AbstractView::DEFAULT_CLIENT_ID,
         ];
 
         $array2 = [
@@ -33,6 +36,7 @@ class SectionTwoTableSeeder extends Seeder
             "title" => "Campeonado de NBA",
             "description" => "Acompanhar uns dos melhores jodadores da NBA LeBron James. Camisa exclusivas.",
             "url" => "https://www.google.com",
+            'client_id' => AbstractView::DEFAULT_CLIENT_ID,
         ];
 
         $array3 = [
@@ -41,6 +45,7 @@ class SectionTwoTableSeeder extends Seeder
             "title" => "NHL",
             "description" => "Temos camisas da NHL também, pra quem é fã do rock do gelo.",
             "url" => "https://www.google.com",
+            'client_id' => AbstractView::DEFAULT_CLIENT_ID,
         ];
 
         $sectionTwo = new SectionTwo($array);

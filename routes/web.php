@@ -39,9 +39,9 @@ Route::get('/cursos', function () {
 })->name('site.contact');
 
 // ecommerce
-ClientRoute::routes();
-ProductRoute::routes();
-UserEcommerceRoute::routes();
+//ClientRoute::routes();
+//ProductRoute::routes();
+//UserEcommerceRoute::routes();
 //Route::get('/product', function () {
 //    return view('site.ecommerce.product');
 //});

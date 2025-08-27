@@ -5,6 +5,7 @@ namespace App\AbstractView;
 class AbstractView
 {
     // PREFIXS
+    const DEFAULT_CLIENT_ID = 1;
     const QTD_SEEDER = ['qtd_1' => 5, 'qtd_2' => 10, 'qtd_3' => 4, 'qtd_4' => 6];
     const VIEW = [
         0 => 'Error: Nome Não Existe',

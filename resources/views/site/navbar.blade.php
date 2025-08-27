@@ -24,7 +24,7 @@
             {{--        <h1 class="logo"><a href="index.html">BizLand<span>.</span></a></h1>--}}
             <!-- Uncomment below if you prefer to use an image logo -->
             <a href="/" class="">
-                <img src="{{ asset("/storage/$navbars->logo") }}"
+                <img src="{{ asset("storage/$navbars->logo") }}"
                      alt="#"
                      style="width: 162px; height: 70px">
             </a>

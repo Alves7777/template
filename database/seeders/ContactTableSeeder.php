@@ -14,21 +14,21 @@ class ContactTableSeeder extends Seeder
 
     CONST QUANTITY = 8;
 
-    private ContactService $sectionSevenService;
+    private Contact $sectionSeven;
 
-    public function __construct(ContactService $sectionSevenService)
+    public function __construct(Contact $sectionSeven)
     {
-        $this->sectionSevenService = $sectionSevenService;
+        $this->sectionSeven = $sectionSeven;
     }
 
     public function run()
     {
         for ($i = 1;$i <= self::QUANTITY; $i++) {
-            $this->sectionSevenService->create([
+            $this->sectionSeven->create([
                 'icon'=> "bi bi-emoji-smile",
                 'title'=> "teste {$i}",
                 'text'=> 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
-                'iframe'=> 'teste',
+                'client_id' => AbstractView::DEFAULT_CLIENT_ID,
             ]);
         }
     }

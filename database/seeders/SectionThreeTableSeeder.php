@@ -2,22 +2,23 @@
 
 namespace Database\Seeders;
 
-use App\Services\SectionThree\SectionThreeService;
+use App\AbstractView\AbstractView;
 use Illuminate\Database\Seeder;
 use Illuminate\Http\UploadedFile;
+use App\Models\SectionThree\SectionThree;
 
 class SectionThreeTableSeeder extends Seeder
 {
-    private SectionThreeService $sectionThreeService;
+    private SectionThree $sectionThree;
 
-    public function __construct(SectionThreeService $sectionThreeService)
+    public function __construct(SectionThree $sectionThree)
     {
-        $this->sectionThreeService = $sectionThreeService;
+        $this->sectionThree = $sectionThree;
     }
 
     public function run()
     {
-        $this->sectionThreeService->create([
+        $this->sectionThree->create([
             'title'=> 'Camisa do Barcelona estilo torcedor',
             'color_icon'=> '#FD7E14',
             'text' => '',
@@ -27,8 +28,8 @@ class SectionThreeTableSeeder extends Seeder
             'sub_text' => 'Produtos esportivos da melhor qualidade;',
             'icon' => 'bx bx-store-alt',
             'text_three' => '',
-            'photo' => new UploadedFile(public_path() . '/storage/photos/gleicealpi.jpg', 'temp')
-
+            'photo' => new UploadedFile(public_path() . '/storage/photos/gleicealpi.jpg', 'temp'),
+            'client_id' => AbstractView::DEFAULT_CLIENT_ID,
         ]);
     }
 

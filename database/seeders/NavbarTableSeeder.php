@@ -2,24 +2,25 @@
 
 namespace Database\Seeders;
 
-use App\Services\Navbar\NavbarService;
-use App\Traits\UploadFile;
+use App\AbstractView\AbstractView;
+use App\Models\NavBar\Navbar;
 use Illuminate\Database\Seeder;
 use Illuminate\Http\UploadedFile;
 
 class NavbarTableSeeder extends Seeder
 {
-    private NavbarService $navbarService;
+    private Navbar $navbar;
 
-    public function __construct(NavbarService $navbarService)
+    public function __construct(Navbar $navbar)
     {
-        $this->navbarService = $navbarService;
+        $this->navbar = $navbar;
     }
 
     public function run()
     {
-        $this->navbarService->create([
-            'logo'    => new UploadedFile(public_path() . '/storage/photos/logo.jpeg', 'temp'),
+        $this->navbar->create([
+            // 'logo'    => new UploadedFile(public_path() . '/storage/photos/logo.jpeg', originalName: 'temp'),
+            'logo'    => 'photos/logo.jpeg',,
             'title_1' => 'Home',
             'title_2' => 'Sobre',
             'title_3' => 'Serviços',
@@ -42,7 +43,7 @@ class NavbarTableSeeder extends Seeder
             'link_title_9' => 'page_11',
             'link_title_10' => 'https://wa.me/5585994298785?text=Gostaria+falar+com+um+vendedor...',
             'link_title_11' => 'https://www.instagram.com/alvesimported',
-
+            'client_id' => AbstractView::DEFAULT_CLIENT_ID,
         ]);
     }
 

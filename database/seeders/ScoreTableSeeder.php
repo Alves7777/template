@@ -8,7 +8,6 @@ use Illuminate\Database\Seeder;
 
 class ScoreTableSeeder extends Seeder
 {
-
     public function run()
     {
         $score = new Score();
@@ -16,21 +15,25 @@ class ScoreTableSeeder extends Seeder
             'icon' => "bi bi-emoji-smile",
             'number' => "50",
             'name' => "Média de clientes por mês",
+            'client_id' => AbstractView::DEFAULT_CLIENT_ID,
         ]);
         $score->create([
             'icon' => "bi bi-emoji-smile",
             'number' => "5",
             'name' => "Vendedores",
+            'client_id' => AbstractView::DEFAULT_CLIENT_ID,
         ]);
         $score->create([
             'icon' => "bi bi-emoji-smile",
             'number' => "4",
             'name' => "Campeonantos",
+            'client_id' => AbstractView::DEFAULT_CLIENT_ID,
         ]);
         $score->create([
             'icon' => "bi bi-emoji-smile",
             'number' => "24",
             'name' => "Atendimento 24hrs",
+            'client_id' => AbstractView::DEFAULT_CLIENT_ID,
         ]);
     }
 

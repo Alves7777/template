@@ -35,7 +35,7 @@ class AddClientIdToAllTables extends Migration
 
         foreach ($tables as $table) {
             Schema::table($table, function (Blueprint $table) {
-                $table->dropForeign([$table->getTable().'_client_id_foreign']);
+                $table->dropForeign(['client_id']);
                 $table->dropColumn('client_id');
             });
         }
