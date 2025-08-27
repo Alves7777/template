@@ -15,9 +15,9 @@ class SectionOneService
         $this->sectionOneRepository = $sectionOneRepository;
     }
 
-    public function all()
+    public function all($clientId = null)
     {
-        return $this->sectionOneRepository->all();
+        return $this->sectionOneRepository->all($clientId);
     }
 
     public function create(array $property)

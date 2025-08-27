@@ -1,5 +1,5 @@
-    <section id="topbar" style="background: red" class="d-flex align-items-center">
-        @foreach($topbar as $topbars)
+@foreach($topbar as $topbars)
+    <section id="topbar" style="background: {{ $topbars->color_top_bar }}" class="d-flex align-items-center">
         <div class="container d-flex justify-content-center justify-content-md-between">
         <div class="contact-info d-flex align-items-center">
             <i class="{{ $topbars->icon_email }} d-flex align-items-center"><a

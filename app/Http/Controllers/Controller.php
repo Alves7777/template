@@ -35,27 +35,6 @@ class Controller extends BaseController
 
     public function __construct()
     {
-        $abstract = new AbstractView();
-        $view = $abstract::VIEW;
-
-        View::share([
-            $view[1] => Navbar::all(),
-            $view[2] => Topbar::all(),
-            $view[3] => SectionOne::all(),
-            $view[4] => Pages::all(),
-            $view[5] => Admin::all(),
-            $view[6] => SectionThree::all(),
-            $view[7] => Progress::all(),
-            $view[8] => Score::all(),
-            $view[9] => SectionFour::all(),
-            $view[10] => Title::all(),
-            $view[11] => SectionFive::all(),
-            $view[12] => Carousel::all(),
-            $view[13] => SectionSix::all(),
-            $view[14] => SectionSeven::all(),
-            $view[15] => Contact::all(),
-        ]);
-
         //MESSAGES
         $this->MSG_ERROR = ' Página não encontrada.';
         $this->MSG_REGISTER_SUCCESS = ' Cadastrado com Sucesso.';
@@ -63,6 +42,42 @@ class Controller extends BaseController
         $this->MSG_OPS = ' Ops, Algo deu errado.';
         $this->MSG_DELETE = ' Deletado com sucesso';
 
+    }
+
+        // Compartilha dados globais filtrados por clientId usando os Services
+    public function shareClientData($clientId)
+    {
+//        dd($clientId);
+        // Instancie os services necessários (adicione outros conforme sua necessidade)
+        $navbarService = app(\App\Services\Navbar\NavbarService::class);
+        $topbarService = app(\App\Services\Topbar\TopbarService::class);
+        $sectionOneService = app(\App\Services\SectionOne\SectionOneService::class);
+        $sectionThreeService = app(\App\Services\SectionThree\SectionThreeService::class);
+        $progressService = app(\App\Services\Progress\ProgressService::class);
+        $scoreService = app(\App\Services\Score\ScoreService::class);
+        $sectionFourService = app(\App\Services\SectionFour\SectionFourService::class);
+        $titleService = app(\App\Services\Title\TitleService::class);
+        $sectionFiveService = app(\App\Services\SectionFive\SectionFiveService::class);
+//        $carouselService = app(\App\Services\Carousel\CarouselService::class);
+        $sectionSixService = app(\App\Services\SectionSix\SectionSixService::class);
+        $sectionSevenService = app(\App\Services\SectionSeven\SectionSevenService::class);
+        $contactService = app(\App\Services\Contact\ContactService::class);
+
+        \Illuminate\Support\Facades\View::share([
+            'navbar' => $navbarService->all($clientId),
+            'topbar' => $topbarService->all($clientId),
+            'sectionone' => $sectionOneService->all($clientId),
+            'sectionthree' => $sectionThreeService->all($clientId),
+            'progress' => $progressService->all($clientId),
+            'score' => $scoreService->all($clientId),
+            'sectionfour' => $sectionFourService->all($clientId),
+            'title' => $titleService->all($clientId),
+            'sectionfive' => $sectionFiveService->all($clientId),
+//            'carousel' => $carouselService->all($clientId),
+            'sectionsix' => $sectionSixService->all($clientId),
+            'sectionseven' => $sectionSevenService->all($clientId),
+            'contact' => $contactService->all($clientId),
+        ]);
     }
 
     public function ops($e)

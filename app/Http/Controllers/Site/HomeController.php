@@ -44,6 +44,8 @@ class HomeController extends Controller
         $client = Client::where('slug', $slug)->firstOrFail();
         $clientId = $client->id;
 
+        $this->shareClientData($clientId);
+
 //      SEÇÃO 2 / CONSUMO DA API
         $getSectionTwo = $this->sectionTwoController->all($clientId);
 

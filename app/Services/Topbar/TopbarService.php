@@ -14,9 +14,9 @@ class TopbarService
         $this->navbarRepository = $navbarRepository;
     }
 
-    public function all()
+    public function all($clientId = null)
     {
-        return $this->navbarRepository->all();
+        return $this->navbarRepository->all($clientId);
     }
 
     public function create(array $property)

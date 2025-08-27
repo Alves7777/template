@@ -15,9 +15,9 @@ class SectionThreeService extends SectionThreeRepository
         $this->sectionThreeRepository = $sectionThreeRepository;
     }
 
-    public function all()
+    public function all($clientId = null)
     {
-        return $this->sectionThreeRepository->all();
+        return $this->sectionThreeRepository->all($clientId);
     }
 
     public function create(array $property): \App\Models\SectionThree\SectionThree
