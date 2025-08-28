@@ -26,7 +26,60 @@
                 background-size: cover;
                 position: relative;
             }
-
+            .featured-services .icon i {
+                color: {{$colorTitle}} !important;
+            }
+            .featured-services .icon-box:hover .icon i {
+                color: #fff !important;;
+            }
+            .featured-services .icon-box:hover::before {
+                background: {{$colorTitle}} !important;
+            }
+            .skills .progress-bar {
+                background: {{$colorTitle}} !important;
+            }
+            .counts .count-box i {
+                background: {{$colorTitle}} !important;
+            }
+            .services .icon-box .icon i {
+                color: {{$colorTitle}} !important;
+            }
+            .services .icon-box:hover h4 a, .services .icon-box:hover .icon i {
+                color: {{$colorTitle}} !important;
+            }
+            .services .icon-box:hover .icon {
+                border-color: {{$colorTitle}} !important;
+            }
+            .testimonials .swiper-pagination .swiper-pagination-bullet-active {
+                background: {{$colorTitle}} !important;
+            }
+            .team .member .social a {
+                background: {{$colorTitle}} !important;
+            }
+            .contact .info-box i {
+                color: {{$colorTitle}} !important;
+            }
+            .contact .php-email-form button[type="submit"] {
+                background: {{$colorTitle}} !important;
+            }
+            #footer .footer-top .footer-links ul i {
+                color: {{$colorTitle}} !important;
+            }
+            #footer .footer-top .footer-links ul a:hover {
+                color: {{$colorTitle}} !important;
+            }
+            #footer .footer-top .social-links a {
+                background: {{$colorTitle}} !important;
+            }
+            .back-to-top {
+                background: {{$colorTitle}} !important;
+            }
+            .back-to-top:hover {
+                background: {{$colorTitle}} !important;
+            }
+            .faq .faq-list .collapsed:hover {
+                color: {{$colorTitle}} !important;
+            }
         </style>
 
         <section id="hero" class="d-flex align-items-center">
@@ -853,14 +906,14 @@
 
         <div class="container py-4">
             <div class="copyright">
-                &copy; Copyright <strong><span>BizLand</span></strong>. All Rights Reserved
+                &copy; ZEIVOLL
             </div>
             <div class="credits">
                 <!-- All the links in the footer should remain intact. -->
                 <!-- You can delete the links only if you purchased the pro version. -->
                 <!-- Licensing information: https://bootstrapmade.com/license/ -->
                 <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/bizland-bootstrap-business-template/ -->
-                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+{{--                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>--}}
             </div>
         </div>
     </footer><!-- End Footer -->

@@ -27,8 +27,8 @@ class SectionFiveTableSeeder extends Seeder
                 'url' => "www.google.com.br",
                 'text' => "Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita.",
                 'text_one' => "Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita",
-                'background' => new UploadedFile(public_path() . "/storage/photos/bayerngol.jpeg", 'temp'),
-                'image' => new UploadedFile(public_path() . "/storage/photos/foto.png", 'temp'),
+                'background' => new UploadedFile("photos/bayerngol.jpeg", 'temp'),
+                'image' => new UploadedFile("photos/foto.png", 'temp'),
                 'client_id' => AbstractView::DEFAULT_CLIENT_ID,
             ]);
         }

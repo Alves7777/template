@@ -28,7 +28,7 @@ class SectionThreeTableSeeder extends Seeder
             'sub_text' => 'Produtos esportivos da melhor qualidade;',
             'icon' => 'bx bx-store-alt',
             'text_three' => '',
-            'photo' => new UploadedFile(public_path() . '/storage/photos/gleicealpi.jpg', 'temp'),
+            'photo' => new UploadedFile('photos/gleicealpi.jpg', 'temp'),
             'client_id' => AbstractView::DEFAULT_CLIENT_ID,
         ]);
     }

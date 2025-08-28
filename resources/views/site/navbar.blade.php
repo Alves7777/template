@@ -1,4 +1,15 @@
 @foreach($topbar as $topbars)
+    <style>
+        .navbar-mobile a:hover, .navbar-mobile .active, .navbar-mobile li:hover > a {
+            color: {{$colorTitle}} !important;
+        }
+        .navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
+            color: {{$colorTitle}} !important;
+        }
+        .navbar > ul > li > a:before {
+            background: {{$colorTitle}} !important;
+        }
+    </style>
     <section id="topbar" style="background: {{ $topbars->color_top_bar }}" class="d-flex align-items-center">
         <div class="container d-flex justify-content-center justify-content-md-between">
         <div class="contact-info d-flex align-items-center">

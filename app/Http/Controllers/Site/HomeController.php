@@ -95,6 +95,7 @@ class HomeController extends Controller
             10, 'photo');
 
         $iframe = $this->contactService->all($clientId);
+        $colorTitle = $this->titleService->all($clientId)->pluck('color_title')->first();
 
         return view('site.home',
             compact('getSectionFour',
@@ -106,7 +107,8 @@ class HomeController extends Controller
                 'title',
                 'getCollections',
                 'listCollections',
-                'iframe')
+                'iframe',
+                'colorTitle')
         );
     }
 

@@ -20,7 +20,7 @@ class NavbarTableSeeder extends Seeder
     {
         $this->navbar->create([
             // 'logo'    => new UploadedFile(public_path() . '/storage/photos/logo.jpeg', originalName: 'temp'),
-            'logo'    => 'photos/logo.jpeg',,
+            'logo'    => new UploadedFile('photos/logo.jpeg','temp'),
             'title_1' => 'Home',
             'title_2' => 'Sobre',
             'title_3' => 'Serviços',

@@ -30,7 +30,7 @@ class SectionOneTableSeeder extends Seeder
             'icon_video'=> 'bi bi-play-circle',
             'color_icon_video'=> '#FF0000',
             'color_text_video'=> '#000000',
-            'image' => new UploadedFile(public_path() . '/storage/photos/bay.png', 'temp'),
+            'image' => new UploadedFile('photos/bay.png', 'temp'),
             'client_id' => AbstractView::DEFAULT_CLIENT_ID,
         ]);
     }

@@ -10,7 +10,6 @@ use App\Models\SectionSix\SectionSix;
 
 class SectionSixTableSeeder extends Seeder
 {
-
     private SectionSix $sectionSix;
 
     public function __construct(SectionSix $sectionSix)
@@ -27,7 +26,7 @@ class SectionSixTableSeeder extends Seeder
             'link_facebook' => "www.google.com.br",
             'link_instagram' => "www.google.com.br",
             'link_linkedin' => "www.google.com.br",
-            'image' => new UploadedFile(public_path() . "/storage/photos/gabrielalpi.jpg", 'temp'),
+            'image' => new UploadedFile("photos/gabrielalpi.jpg", 'temp'),
             'client_id' => AbstractView::DEFAULT_CLIENT_ID,
 
         ]);
@@ -39,7 +38,7 @@ class SectionSixTableSeeder extends Seeder
             'link_facebook' => "www.google.com.br",
             'link_instagram' => "www.google.com.br",
             'link_linkedin' => "www.google.com.br",
-            'image' => new UploadedFile(public_path() . "/storage/photos/gleicealpi.jpg", 'temp'),
+            'image' => new UploadedFile("photos/gleicealpi.jpg", 'temp'),
             'client_id' => AbstractView::DEFAULT_CLIENT_ID,
         ]);
 
@@ -50,7 +49,7 @@ class SectionSixTableSeeder extends Seeder
             'link_facebook' => "www.google.com.br",
             'link_instagram' => "www.google.com.br",
             'link_linkedin' => "www.google.com.br",
-            'image' => new UploadedFile(public_path() . "/storage/photos/gleicealpi1.jpg", 'temp'),
+            'image' => new UploadedFile("photos/gleicealpi1.jpg", 'temp'),
             'client_id' => AbstractView::DEFAULT_CLIENT_ID,
         ]);
 
@@ -61,7 +60,7 @@ class SectionSixTableSeeder extends Seeder
             'link_facebook' => "www.google.com.br",
             'link_instagram' => "www.google.com.br",
             'link_linkedin' => "www.google.com.br",
-            'image' => new UploadedFile(public_path() . "/storage/photos/basebol.jpg", 'temp'),
+            'image' => new UploadedFile("photos/basebol.jpg", 'temp'),
             'client_id' => AbstractView::DEFAULT_CLIENT_ID,
         ]);
 
@@ -72,7 +71,7 @@ class SectionSixTableSeeder extends Seeder
             'link_facebook' => "www.google.com.br",
             'link_instagram' => "www.google.com.br",
             'link_linkedin' => "www.google.com.br",
-            'image' => new UploadedFile(public_path() . "/storage/photos/biel.jpg", 'temp'),
+            'image' => new UploadedFile("photos/biel.jpg", 'temp'),
             'client_id' => AbstractView::DEFAULT_CLIENT_ID,
         ]);
     }
