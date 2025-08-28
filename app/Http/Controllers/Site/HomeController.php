@@ -12,6 +12,7 @@ use App\Services\SectionFive\SectionFiveService;
 use App\Services\SectionFour\SectionFourService;
 use App\Services\SectionTwo\SectionTwoService;
 use App\Services\Title\TitleService;
+use App\Services\Topbar\TopbarService;
 
 class HomeController extends Controller
 {
@@ -21,13 +22,15 @@ class HomeController extends Controller
     private TitleService $titleService;
     private SectionFiveService $sectionFiveService;
     private ContactService $contactService;
+    private TopbarService $topbarService;
 
     public function __construct(ScoreService       $scoreService,
                                 SectionFourService $sectionFourService,
                                 SectionFiveService $sectionFiveService,
                                 TitleService       $titleService,
                                 ContactService     $contactService,
-                                SectionTwoService  $sectionTwoController)
+                                SectionTwoService  $sectionTwoController,
+                                TopbarService      $topbarService)
     {
         parent::__construct();
         $this->scoreService = $scoreService;
@@ -36,6 +39,7 @@ class HomeController extends Controller
         $this->contactService = $contactService;
         $this->sectionTwoController = $sectionTwoController;
         $this->titleService = $titleService;
+        $this->topbarService = $topbarService;
     }
 
     public function index($slug)
@@ -95,7 +99,7 @@ class HomeController extends Controller
             10, 'photo');
 
         $iframe = $this->contactService->all($clientId);
-        $colorTitle = $this->titleService->all($clientId)->pluck('color_title')->first();
+        $colorTitle = $this->topbarService->all($clientId)->first()->color_top_bar;
 
         return view('site.home',
             compact('getSectionFour',

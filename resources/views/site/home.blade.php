@@ -80,6 +80,15 @@
             .faq .faq-list .collapsed:hover {
                 color: {{$colorTitle}} !important;
             }
+            .portfolio .portfolio-item .portfolio-links a:hover {
+                background: {{$colorTitle}} !important;
+            }
+            .portfolio-lightbox {
+                color: {{$colorTitle}} !important;
+            }
+            .details-link {
+                color: {{$colorTitle}} !important;
+            }
         </style>
 
         <section id="hero" class="d-flex align-items-center">
