@@ -10,17 +10,42 @@ class UserTableSeeder extends Seeder
 {
     public function run()
     {
-        $client = Client::create([
-            'name'  => 'Alves Imported',
-            'slug' => 'alvesimported',
-            'phone' => '85994298785',
-        ]);
+        $clients = [
+            [
+                'name'  => 'Alves Imported',
+                'slug'  => 'alvesimported',
+                'phone' => '85994298785',
+                'user'  => [
+                    'name'     => 'Lucas',
+                    'email'    => 'lucas@gmail.com',
+                    'password' => bcrypt('123456'),
+                ],
+            ],
+            [
+                'name'  => 'AM Pratas',
+                'slug'  => 'ampratas',
+                'phone' => '85994298785',
+                'user'  => [
+                    'name'     => 'AMpratas',
+                    'email'    => 'ampratas@gmail.com',
+                    'password' => bcrypt('123456'),
+                ],
+            ],
+        ];
 
-        User::create([
-            'name'     => 'Lucas',
-            'email'    => 'lucas@gmail.com',
-            'password' => bcrypt('123456'),
-            'client_id' => $client->id,
-        ]);
+        foreach ($clients as $clientData) {
+            $client = Client::create([
+                'name'  => $clientData['name'],
+                'slug'  => $clientData['slug'],
+                'phone' => $clientData['phone'],
+            ]);
+
+            User::create([
+                'name'      => $clientData['user']['name'],
+                'email'     => $clientData['user']['email'],
+                'password'  => $clientData['user']['password'],
+                'client_id' => $client->id,
+            ]);
+        }
     }
 }

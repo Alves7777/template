@@ -9,7 +9,7 @@ services:
             args:
                 uid: ${UID}
         extra_hosts:
-            - host.docker.internal:host-gateway
+            - "host.docker.internal:192.168.151.164"
         ports:
             - 7112:80
         volumes:
