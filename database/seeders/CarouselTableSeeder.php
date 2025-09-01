@@ -19,6 +19,7 @@ class CarouselTableSeeder extends Seeder
 
     public function run()
     {
+        // Alves Imported
         $this->collectionsImages->create([
             'photo' => new UploadedFile('photos/alpi.jpg', 'temp'),
             'sub_title' => "teste_sub",
@@ -89,6 +90,80 @@ class CarouselTableSeeder extends Seeder
             'sub_title' => "teste_sub",
             'text' => "Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita",
             'client_id' => AbstractView::DEFAULT_CLIENT_ID,
+        ]);
+
+        // AM Pratas
+        $this->collectionsImages->create([
+            'photo' => new UploadedFile('photos/ampratas/ampratas(1).jpeg', 'temp'),
+            'background' => new UploadedFile('photos/ampratas/ampratas(2).jpeg', 'temp'),
+            'title' => "Joias Exclusivas",
+            'sub_title' => "Prata legítima",
+            'text' => "Conheça nossa coleção de joias em prata 925, feitas para brilhar.",
+            'client_id' => AbstractView::AM_PRATAS,
+        ]);
+        $this->collectionsImages->create([
+            'photo' => new UploadedFile('photos/ampratas/ampratas(3).jpeg', 'temp'),
+            'background' => new UploadedFile('photos/ampratas/ampratas(4).jpeg', 'temp'),
+            'title' => "Design Moderno",
+            'sub_title' => "Sofisticação",
+            'text' => "Peças exclusivas para quem valoriza elegância e autenticidade.",
+            'client_id' => AbstractView::AM_PRATAS,
+        ]);
+        $this->collectionsImages->create([
+            'photo' => new UploadedFile('photos/ampratas/ampratas(2).jpeg', 'temp'),
+            'background' => new UploadedFile('photos/ampratas/ampratas(3).jpeg', 'temp'),
+            'title' => "Presente Perfeito",
+            'sub_title' => "Para todas as ocasiões",
+            'text' => "Surpreenda quem você ama com uma joia AM Pratas.",
+            'client_id' => AbstractView::AM_PRATAS,
+        ]);
+        $this->collectionsImages->create([
+            'photo' => new UploadedFile('photos/ampratas/ampratas(2).jpeg', 'temp'),
+            'background' => new UploadedFile('photos/ampratas/ampratas(3).jpeg', 'temp'),
+            'title' => "Presente Perfeito",
+            'sub_title' => "Para todas as ocasiões",
+            'text' => "Surpreenda quem você ama com uma joia AM Pratas.",
+            'client_id' => AbstractView::AM_PRATAS,
+        ]);
+        $this->collectionsImages->create([
+            'photo' => new UploadedFile('photos/ampratas/ampratas(1).jpeg', 'temp'),
+            'background' => new UploadedFile('photos/ampratas/ampratas(2).jpeg', 'temp'),
+            'title' => "Joias Exclusivas",
+            'sub_title' => "Prata legítima",
+            'text' => "Conheça nossa coleção de joias em prata 925, feitas para brilhar.",
+            'client_id' => AbstractView::AM_PRATAS,
+        ]);
+        $this->collectionsImages->create([
+            'photo' => new UploadedFile('photos/ampratas/ampratas(3).jpeg', 'temp'),
+            'background' => new UploadedFile('photos/ampratas/ampratas(4).jpeg', 'temp'),
+            'title' => "Design Moderno",
+            'sub_title' => "Sofisticação",
+            'text' => "Peças exclusivas para quem valoriza elegância e autenticidade.",
+            'client_id' => AbstractView::AM_PRATAS,
+        ]);
+        $this->collectionsImages->create([
+            'photo' => new UploadedFile('photos/ampratas/ampratas(2).jpeg', 'temp'),
+            'background' => new UploadedFile('photos/ampratas/ampratas(3).jpeg', 'temp'),
+            'title' => "Presente Perfeito",
+            'sub_title' => "Para todas as ocasiões",
+            'text' => "Surpreenda quem você ama com uma joia AM Pratas.",
+            'client_id' => AbstractView::AM_PRATAS,
+        ]);
+        $this->collectionsImages->create([
+            'photo' => new UploadedFile('photos/ampratas/ampratas(2).jpeg', 'temp'),
+            'background' => new UploadedFile('photos/ampratas/ampratas(3).jpeg', 'temp'),
+            'title' => "Presente Perfeito",
+            'sub_title' => "Para todas as ocasiões",
+            'text' => "Surpreenda quem você ama com uma joia AM Pratas.",
+            'client_id' => AbstractView::AM_PRATAS,
+        ]);
+        $this->collectionsImages->create([
+            'photo' => new UploadedFile('photos/ampratas/ampratas(2).jpeg', 'temp'),
+            'background' => new UploadedFile('photos/ampratas/ampratas(3).jpeg', 'temp'),
+            'title' => "Presente Perfeito",
+            'sub_title' => "Para todas as ocasiões",
+            'text' => "Surpreenda quem você ama com uma joia AM Pratas.",
+            'client_id' => AbstractView::AM_PRATAS,
         ]);
     }
 

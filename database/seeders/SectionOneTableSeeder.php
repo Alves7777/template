@@ -33,6 +33,22 @@ class SectionOneTableSeeder extends Seeder
             'image' => new UploadedFile('photos/bay.png', 'temp'),
             'client_id' => AbstractView::DEFAULT_CLIENT_ID,
         ]);
+
+        $this->sectionOne->create([
+            'title'=> 'AM Pratas',
+            'color_title'=> '#000000',
+            'description'=> 'A melhor loja de pratas que você já viu!',
+            'text_button'=> 'Saiba Mais',
+            'color_button'=> '#000000',
+            'url_button'=> 'https://www.google.com.br/',
+            'text_video'=> 'Veja o Vídeo',
+            'url_video'=> 'https://youtu.be/G0F8Ienh914',
+            'icon_video'=> 'bi bi-play-circle',
+            'color_icon_video'=> '#000000',
+            'color_text_video'=> '#000000',
+            'image' => new UploadedFile('photos/ampratas/submenu_prata.png', 'temp'), // ajuste o nome do arquivo conforme necessário
+            'client_id' => AbstractView::DEFAULT_CLIENT_ID,
+        ]);
     }
 
 }

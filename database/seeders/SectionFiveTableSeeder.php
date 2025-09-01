@@ -20,6 +20,7 @@ class SectionFiveTableSeeder extends Seeder
 
     public function run()
     {
+        // Alves Imported
         for ($i = 1;$i <= AbstractView::QTD_SEEDER['qtd_1']; $i++) {
             $this->sectionFive->create([
                 'title' => "Teste{$i}",
@@ -30,6 +31,20 @@ class SectionFiveTableSeeder extends Seeder
                 'background' => new UploadedFile("photos/bayerngol.jpeg", 'temp'),
                 'image' => new UploadedFile("photos/foto.png", 'temp'),
                 'client_id' => AbstractView::DEFAULT_CLIENT_ID,
+            ]);
+        }
+
+        // AM Pratas
+        for ($i = 1;$i <= AbstractView::QTD_SEEDER['qtd_1']; $i++) {
+            $this->sectionFive->create([
+                'title' => "Joia Exclusiva {$i}",
+                'color_title' => "#111111",
+                'url' => "https://ampratas.com.br/joia{$i}",
+                'text' => "Prata legítima, design sofisticado e acabamento impecável.",
+                'text_one' => "Peça única para quem valoriza exclusividade.",
+                'background' => new UploadedFile("photos/ampratas/ampratas({$i}).jpeg", 'temp'),
+                'image' => new UploadedFile("photos/ampratas/ampratas({$i}).jpeg", 'temp'),
+                'client_id' => AbstractView::AM_PRATAS,
             ]);
         }
     }

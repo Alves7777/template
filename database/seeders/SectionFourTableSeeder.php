@@ -12,6 +12,7 @@ class SectionFourTableSeeder extends Seeder
     {
         $sectionFour = new SectionFour();
 
+        // Alves Imported
         $sectionFour->create([
             'title' => "Check our Services",
             'color_title' => "#FD7E14",
@@ -44,6 +45,41 @@ class SectionFourTableSeeder extends Seeder
             'sub_title' => "Entregas",
             'url' => "www.google.com.br",
             'client_id' => AbstractView::DEFAULT_CLIENT_ID,
+        ]);
+
+        // AM Pratas
+        $sectionFour->create([
+            'title' => "Conheça nossas Joias",
+            'color_title' => "#111111",
+            'text' => "Pratas legítimas, design sofisticado e garantia de procedência.",
+            'icon' => "bx bxs-diamond",
+            'color_icon' => "#222222",
+            'sub_text' => "Pulseiras, correntes, anéis e pingentes para todos os estilos.",
+            'sub_title' => "Variedade em Prata",
+            'url' => "https://ampratas.com.br/joias",
+            'client_id' => AbstractView::AM_PRATAS,
+        ]);
+        $sectionFour->create([
+            'title' => "Personalize sua Joia",
+            'color_title' => "#222222",
+            'text' => "Gravação exclusiva para eternizar momentos especiais.",
+            'icon' => "bx bxs-heart",
+            'color_icon' => "#333333",
+            'sub_text' => "Personalize com nomes, datas ou frases.",
+            'sub_title' => "Gravação Personalizada",
+            'url' => "https://ampratas.com.br/personalize",
+            'client_id' => AbstractView::AM_PRATAS,
+        ]);
+        $sectionFour->create([
+            'title' => "Entrega Segura",
+            'color_title' => "#000000",
+            'text' => "Enviamos para todo o Brasil com seguro e rastreio.",
+            'icon' => "bx bxs-truck",
+            'color_icon' => "#111111",
+            'sub_text' => "Receba sua joia com total segurança e agilidade.",
+            'sub_title' => "Frete Rápido",
+            'url' => "https://ampratas.com.br/entrega",
+            'client_id' => AbstractView::AM_PRATAS,
         ]);
     }
 

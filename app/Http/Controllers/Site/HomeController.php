@@ -63,7 +63,6 @@ class HomeController extends Controller
 //      TÍTULOS
         $getTitle = $this->titleService->all($clientId);
         $titles = $abstractView->loopThroughArray($getTitle);
-
         $title = $abstractView->getInfoFromArray($getTitle,
             1, 'color_title',
             1, 'title',
