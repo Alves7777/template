@@ -44,10 +44,10 @@ class SectionOneTableSeeder extends Seeder
             'text_video'=> 'Veja o Vídeo',
             'url_video'=> 'https://youtu.be/G0F8Ienh914',
             'icon_video'=> 'bi bi-play-circle',
-            'color_icon_video'=> '#000000',
+            'color_icon_video'=> '#4f4040ff',
             'color_text_video'=> '#000000',
             'image' => new UploadedFile('photos/ampratas/submenu_prata.png', 'temp'), // ajuste o nome do arquivo conforme necessário
-            'client_id' => AbstractView::DEFAULT_CLIENT_ID,
+            'client_id' => AbstractView::AM_PRATAS,
         ]);
     }
 

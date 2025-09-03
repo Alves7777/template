@@ -42,7 +42,7 @@ class TopbarTableSeeder extends Seeder
             'email' => 'alvesimportedproducts@gmail.com',
             'icon_phone' => 'bi bi-telephone-fill',
             'phone' => '(85)99674-4989',
-            'color_top_bar' => '#FF0000',
+            'color_top_bar' => '#0f0f0fff',
             'icon_1' => 'bi bi-instagram',
             'icon_2' => 'bi bi-facebook',
             'icon_3' => 'bi bi-linkedin',
