@@ -637,15 +637,15 @@
                     </div>
 
                     <div class="row justify-content-center">
-                        @foreach($sectionseven as $item)
+                        @foreach($sectionseven as $key => $item)
                         <div class="col-xl-10">
                             <ul class="faq-list">
                                 <li>
-                                    <div data-bs-toggle="collapse" class="collapsed question" href="#faq1">
+                                    <div data-bs-toggle="collapse" class="collapsed question" href="#faq{{ $key }}">
                                         {{ $item->sub_title }}
                                         <i class="bi bi-chevron-down icon-show"></i><i
                                             class="bi bi-chevron-up icon-close"></i></div>
-                                    <div id="faq1" class="collapse" data-bs-parent=".faq-list">
+                                    <div id="faq{{ $key }}" class="collapse" data-bs-parent=".faq-list">
                                         <p>
                                             {{ $item->sub_text }}
                                         </p>
