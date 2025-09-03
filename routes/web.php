@@ -39,14 +39,15 @@ Route::get('/cursos', function () {
 })->name('site.contact');
 
 // ecommerce
-ClientRoute::routes();
-ProductRoute::routes();
-UserEcommerceRoute::routes();
+//ClientRoute::routes();
+//ProductRoute::routes();
+//UserEcommerceRoute::routes();
 //Route::get('/product', function () {
 //    return view('site.ecommerce.product');
 //});
 
-Route::get('/', [HomeController::class, 'index']);
+//Route::get('/', [HomeController::class, 'index']);
+Route::get('/web/{slug}', [HomeController::class, 'index'])->where('slug', '[a-zA-Z0-9-]+');
 Route::get('/page_1',[_PagesController::class, 'page_1']);
 Route::get('/page_2',[_PagesController::class, 'page_2']);
 Route::get('/page_3',[_PagesController::class, 'page_3']);

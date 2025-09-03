@@ -9,12 +9,13 @@ services:
             args:
                 uid: ${UID}
         extra_hosts:
-            - host.docker.internal:host-gateway
+            - "host.docker.internal:192.168.151.164"
         ports:
             - 7112:80
         volumes:
             - .:/var/www/html
             - ./vendor:/var/www/html/vendor
+            - ./docker/database/api/dump.sql:/dump.sql
         depends_on:
             - mysql
         networks:

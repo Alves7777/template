@@ -4,7 +4,7 @@ namespace App\Services\SectionSeven;
 
 use App\Repositories\SectionSeven\SectionSevenRepository;
 
-class SectionSevenService extends SectionSevenRepository
+class SectionSevenService
 {
     private SectionSevenRepository $sectionSevenRepository;
 
@@ -13,39 +13,39 @@ class SectionSevenService extends SectionSevenRepository
         $this->sectionSevenRepository = $sectionSevenRepository;
     }
 
-    public function all()
+    public function all($clientId = null)
     {
-        return $this->sectionSevenRepository->all();
+        return $this->sectionSevenRepository->all($clientId);
     }
 
-    public function create(array $property)
+    public function create(array $property, $clientId = null)
     {
-        return $this->sectionSevenRepository->create($property);
+        return $this->sectionSevenRepository->create($property, $clientId);
     }
 
-    public function findOrFail($id)
+    public function findOrFail($id, $clientId = null)
     {
-        return $this->sectionSevenRepository->findOrFail($id);
+        return $this->sectionSevenRepository->findOrFail($id, $clientId);
     }
 
-    public function update($id, array $property)
+    public function update($id, array $property, $clientId = null)
     {
-        return $this->sectionSevenRepository->update($id, $property);
+        return $this->sectionSevenRepository->update($id, $property, $clientId);
     }
 
-    public function delete(string $id)
+    public function delete(string $id, $clientId = null)
     {
-        return $this->sectionSevenRepository->delete($id);
+        return $this->sectionSevenRepository->delete($id, $clientId);
     }
 
-    public function firstOrFail()
+    public function firstOrFail($clientId = null)
     {
-        return $this->sectionSevenRepository->firstOrFail();
+        return $this->sectionSevenRepository->firstOrFail($clientId);
     }
 
-    public function pluck(string $column, string $key)
+    public function pluck(string $column, string $key, $clientId = null)
     {
-        return $this->sectionSevenRepository->pluck($column, $key);
+        return $this->sectionSevenRepository->pluck($column, $key, $clientId);
     }
 
 }

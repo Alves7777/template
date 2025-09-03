@@ -1,5 +1,16 @@
-    <section id="topbar" style="background: red" class="d-flex align-items-center">
-        @foreach($topbar as $topbars)
+@foreach($topbar as $topbars)
+    <style>
+        .navbar-mobile a:hover, .navbar-mobile .active, .navbar-mobile li:hover > a {
+            color: {{$colorTitle}} !important;
+        }
+        .navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
+            color: {{$colorTitle}} !important;
+        }
+        .navbar > ul > li > a:before {
+            background: {{$colorTitle}} !important;
+        }
+    </style>
+    <section id="topbar" style="background: {{ $topbars->color_top_bar }}" class="d-flex align-items-center">
         <div class="container d-flex justify-content-center justify-content-md-between">
         <div class="contact-info d-flex align-items-center">
             <i class="{{ $topbars->icon_email }} d-flex align-items-center"><a
@@ -24,7 +35,7 @@
             {{--        <h1 class="logo"><a href="index.html">BizLand<span>.</span></a></h1>--}}
             <!-- Uncomment below if you prefer to use an image logo -->
             <a href="/" class="">
-                <img src="{{ asset("/storage/$navbars->logo") }}"
+                <img src="{{ asset("storage/$navbars->logo") }}"
                      alt="#"
                      style="width: 162px; height: 70px">
             </a>

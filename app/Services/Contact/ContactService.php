@@ -4,7 +4,7 @@ namespace App\Services\Contact;
 
 use App\Repositories\Contact\ContactRepository;
 
-class ContactService extends ContactRepository
+class ContactService
 {
     private ContactRepository $contactRepository;
 
@@ -13,39 +13,29 @@ class ContactService extends ContactRepository
         $this->contactRepository = $contactRepository;
     }
 
-    public function all()
+    public function all($clientId = null)
     {
-        return $this->contactRepository->all();
+        return $this->contactRepository->all($clientId);
     }
 
-    public function create(array $property)
+    public function create(array $property, $clientId = null)
     {
-        return $this->contactRepository->create($property);
+        return $this->contactRepository->create($property, $clientId);
     }
 
-    public function findOrFail($id)
+    public function findOrFail($id, $clientId = null)
     {
-        return $this->contactRepository->findOrFail($id);
+        return $this->contactRepository->findOrFail($id, $clientId);
     }
 
-    public function update($id, array $property)
+    public function update($id, array $property, $clientId = null)
     {
-        return $this->contactRepository->update($id, $property);
+        return $this->contactRepository->update($id, $property, $clientId);
     }
 
-    public function delete(string $id)
+    public function delete(string $id, $clientId = null)
     {
-        return $this->contactRepository->delete($id);
-    }
-
-    public function firstOrFail()
-    {
-        return $this->contactRepository->firstOrFail();
-    }
-
-    public function pluck(string $column, string $key)
-    {
-        return $this->contactRepository->pluck($column, $key);
+        return $this->contactRepository->delete($id, $clientId);
     }
 
 }

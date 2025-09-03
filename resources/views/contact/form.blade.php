@@ -16,7 +16,7 @@
             </div>
             <div class="form-group">
                 {{ Form::label('iframe', 'Localização', ['class' => 'control-label']) }}
-                {{ Form::iframe('iframe', $contact['iframe'] ?? old('iframe'), ['placeholder' => '','class'=>'form-control'])}}
+                {{ Form::textarea('iframe', $contact['iframe'] ?? old('iframe'), ['placeholder' => 'Cole o código de incorporação do mapa aqui','class'=>'form-control', 'rows' => 4])}}
             </div>
         </div>
     </div>

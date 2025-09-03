@@ -5,12 +5,14 @@ namespace App\Http\Controllers\Site;
 use App\AbstractView\AbstractView;
 use App\Http\Controllers\Controller;
 use App\Models\Carousel\Carousel;
+use App\Models\Client\Client;
 use App\Services\Contact\ContactService;
 use App\Services\Score\ScoreService;
 use App\Services\SectionFive\SectionFiveService;
 use App\Services\SectionFour\SectionFourService;
 use App\Services\SectionTwo\SectionTwoService;
 use App\Services\Title\TitleService;
+use App\Services\Topbar\TopbarService;
 
 class HomeController extends Controller
 {
@@ -20,13 +22,15 @@ class HomeController extends Controller
     private TitleService $titleService;
     private SectionFiveService $sectionFiveService;
     private ContactService $contactService;
+    private TopbarService $topbarService;
 
     public function __construct(ScoreService       $scoreService,
                                 SectionFourService $sectionFourService,
                                 SectionFiveService $sectionFiveService,
                                 TitleService       $titleService,
                                 ContactService     $contactService,
-                                SectionTwoService  $sectionTwoController)
+                                SectionTwoService  $sectionTwoController,
+                                TopbarService      $topbarService)
     {
         parent::__construct();
         $this->scoreService = $scoreService;
@@ -35,24 +39,30 @@ class HomeController extends Controller
         $this->contactService = $contactService;
         $this->sectionTwoController = $sectionTwoController;
         $this->titleService = $titleService;
+        $this->topbarService = $topbarService;
     }
 
-    public function index()
+    public function index($slug)
     {
+        // Busca o client pelo slug
+        $client = Client::where('slug', $slug)->firstOrFail();
+        $clientId = $client->id;
+
+        $this->shareClientData($clientId);
+
 //      SEÇÃO 2 / CONSUMO DA API
-        $getSectionTwo = $this->sectionTwoController->all();
+        $getSectionTwo = $this->sectionTwoController->all($clientId);
 
 //      CONTAGEM
-        $getScore = $this->scoreService->all();
+        $getScore = $this->scoreService->all($clientId);
 
 //      SEÇÃO 4
-        $getSectionFour = $this->sectionFourService->all();
+        $getSectionFour = $this->sectionFourService->all($clientId);
 
         $abstractView = new AbstractView();
 //      TÍTULOS
-        $getTitle = $this->titleService->all();
+        $getTitle = $this->titleService->all($clientId);
         $titles = $abstractView->loopThroughArray($getTitle);
-
         $title = $abstractView->getInfoFromArray($getTitle,
             1, 'color_title',
             1, 'title',
@@ -61,7 +71,7 @@ class HomeController extends Controller
             2, 'title',
             2, 'text');
 
-        $getSectionFive = $this->sectionFiveService->all();
+        $getSectionFive = $this->sectionFiveService->all($clientId);
         $sectionFive = $abstractView->loopThroughArray($getSectionFive);
 
         $listUnique = $abstractView->getInfoFromArray($getSectionFive,
@@ -72,7 +82,8 @@ class HomeController extends Controller
             4, 'image',
             5, 'image');
 
-        $collections = Carousel::all();
+        // Atualiza para buscar apenas as imagens do cliente específico
+        $collections = Carousel::where('client_id', $clientId)->get();
         $listCollections = $abstractView->loopThroughArray($collections);
         $getCollections = $abstractView->getInfoFromArray($listCollections,
             1, 'photo',
@@ -86,8 +97,8 @@ class HomeController extends Controller
             9, 'photo',
             10, 'photo');
 
-
-        $iframe = $this->contactService->all();
+        $iframe = $this->contactService->all($clientId);
+        $colorTitle = $this->topbarService->all($clientId)->first()->color_top_bar;
 
         return view('site.home',
             compact('getSectionFour',
@@ -99,7 +110,8 @@ class HomeController extends Controller
                 'title',
                 'getCollections',
                 'listCollections',
-                'iframe')
+                'iframe',
+                'colorTitle')
         );
     }
 

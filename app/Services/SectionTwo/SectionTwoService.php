@@ -14,9 +14,9 @@ class SectionTwoService
         $this->sectionTwoRepository = $sectionTwoRepository;
     }
 
-    public function all(): Collection
+    public function all($clientId = null)
     {
-        return $this->sectionTwoRepository->all();
+        return $this->sectionTwoRepository->all($clientId);
     }
 
     public function create(array $property)

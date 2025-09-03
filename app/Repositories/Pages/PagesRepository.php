@@ -3,19 +3,23 @@
 namespace App\Repositories\Pages;
 
 use App\Models\Pages\Pages;
+use App\Traits\HasClientId;
 
 class PagesRepository
 {
     private Pages $entity;
+    use HasClientId;
 
     public function __construct(Pages $entity)
     {
         $this->entity = $entity;
     }
 
-    public function all()
+    public function all($clientId = null)
     {
-        return $this->entity->newQuery()->get();
+        return $this->entity->newQuery()
+            ->where('client_id', $this->getClientId($clientId))
+            ->get();
     }
 
     public function create(array $property)

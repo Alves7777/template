@@ -11,25 +11,40 @@ use Illuminate\Http\UploadedFile;
 class SectionFiveTableSeeder extends Seeder
 {
 
-    private SectionFiveService $sectionFiveService;
+    private SectionFive $sectionFive;
 
-    public function __construct(SectionFiveService $sectionFiveService)
+    public function __construct(SectionFive $sectionFive)
     {
-        $this->sectionFiveService = $sectionFiveService;
+        $this->sectionFive = $sectionFive;
     }
 
     public function run()
     {
+        // Alves Imported
         for ($i = 1;$i <= AbstractView::QTD_SEEDER['qtd_1']; $i++) {
-            $this->sectionFiveService->create([
+            $this->sectionFive->create([
                 'title' => "Teste{$i}",
                 'color_title' => "#FD7E14",
                 'url' => "www.google.com.br",
                 'text' => "Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita.",
                 'text_one' => "Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita",
-                'background' => new UploadedFile(public_path() . "/storage/photos/bayerngol.jpeg", 'temp'),
-                'image' => new UploadedFile(public_path() . "/storage/photos/foto.png", 'temp'),
+                'background' => new UploadedFile("photos/bayerngol.jpeg", 'temp'),
+                'image' => new UploadedFile("photos/foto.png", 'temp'),
+                'client_id' => AbstractView::DEFAULT_CLIENT_ID,
+            ]);
+        }
 
+        // AM Pratas
+        for ($i = 1;$i <= AbstractView::QTD_SEEDER['qtd_1']; $i++) {
+            $this->sectionFive->create([
+                'title' => "Joia Exclusiva {$i}",
+                'color_title' => "#111111",
+                'url' => "https://ampratas.com.br/joia{$i}",
+                'text' => "Prata legítima, design sofisticado e acabamento impecável.",
+                'text_one' => "Peça única para quem valoriza exclusividade.",
+                'background' => new UploadedFile("photos/ampratas/ampratas({$i}).jpeg", 'temp'),
+                'image' => new UploadedFile("photos/ampratas/ampratas({$i}).jpeg", 'temp'),
+                'client_id' => AbstractView::AM_PRATAS,
             ]);
         }
     }

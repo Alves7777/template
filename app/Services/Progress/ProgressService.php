@@ -3,10 +3,11 @@
 namespace App\Services\Progress;
 
 use App\Repositories\Progress\ProgressRepository;
-use Exception;
+use App\Traits\UploadFile;
 
 class ProgressService extends ProgressRepository
 {
+    use UploadFile;
     private ProgressRepository $progressRepository;
 
     public function __construct(ProgressRepository $progressRepository)
@@ -14,13 +15,17 @@ class ProgressService extends ProgressRepository
         $this->progressRepository = $progressRepository;
     }
 
-    public function all()
+    public function all($clientId = null)
     {
-        return $this->progressRepository->all();
+        return $this->progressRepository->all($clientId);
     }
 
-    public function create(array $property)
+    public function create(array $property): \App\Models\Progress\Progress
     {
+        if (!empty($property['photo'])) {
+            $property['photo'] = $this->uploadPhoto($property['photo']);
+        }
+
         return $this->progressRepository->create($property);
     }
 
@@ -29,17 +34,20 @@ class ProgressService extends ProgressRepository
         return $this->progressRepository->findOrFail($id);
     }
 
-    public function update($id, array $property)
+    public function update($id, array $property): \App\Models\Progress\Progress
     {
+        if (!empty($property['photo'])) {
+            $property['photo'] = $this->uploadPhoto($property['photo']);
+        }
         return $this->progressRepository->update($id, $property);
     }
 
-    public function delete(string $id)
+    public function delete($id)
     {
         return $this->progressRepository->delete($id);
     }
 
-    public function firstOrFail()
+    public function firstOrFail(): \App\Models\Progress\Progress
     {
         return $this->progressRepository->firstOrFail();
     }
@@ -48,4 +56,5 @@ class ProgressService extends ProgressRepository
     {
         return $this->progressRepository->pluck($column, $key);
     }
+
 }
