@@ -80,7 +80,6 @@ Route::group(['middleware'=> ['auth']], function () {
 
 });
 
-Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -89,7 +88,6 @@ Route::get('/logic', [App\Http\Controllers\Logic\LogicController::class, 'larger
 Route::prefix('admin')->group(function() {
     Route::get('/login',[App\Http\Controllers\Auth\AdminLoginController::class, 'showLoginForm'])->name('admin.login');
     Route::post('/login', [App\Http\Controllers\Auth\AdminLoginController::class, 'login'])->name('admin.login.submit');
-    Route::get('logout/', [App\Http\Controllers\Auth\AdminLoginController::class,'logout'])->name('admin.logout');
     Route::get('/', [App\Http\Controllers\Auth\AdminController::class, 'index'])->name('admin.dashboard');
     Route::get('/admin-register', [App\Http\Controllers\Auth\AdminRegisterController::class, 'adminRegister'])->name('admin_register');
     Route::match(['get', 'Post'], 'register-admin/add', [AdminRegisterController::class, 'addRegister'])->name('add_register');
@@ -97,8 +95,8 @@ Route::prefix('admin')->group(function() {
     Route::post('pagseguro', [PagSeguroController::class, 'pagseguro'])->name('pagseguro');
 
 });
+Route::get('logout/', [App\Http\Controllers\Auth\AdminLoginController::class,'logout'])->name('logout');
 
 
-Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -1,7 +1,7 @@
 @extends('admin')
 
 @section('content')
-    @include('sweetalert::alert')
+{{--    @include('sweetalert::alert')--}}
 
     <div class="row">
         <div class="col-12">
